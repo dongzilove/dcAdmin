@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>现金管理-人工存款列表</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+			.layui-layer-btn .layui-layer-btn0{border: 1px solid #48DD95!important;background-color: #48DD95!important;color: #FEFEFE!important;}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list">
+			<div class="layui-row admin-title">
+				<span class="left title-T">人工存款列表</span>
+				<span class="right addAdmin">新增手动存款</span>
+			</div>
+			<form class="layui-form" action="" style="margin: 0 15px;">
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+						<div class="layui-form-item">
+					      <label class="layui-form-label">提交时间</label>
+					      <div class="layui-input-block">
+					        <input type="text" class="layui-input" id="test10" placeholder=" - ">
+					      </div>
+					    </div>
+					</div>
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+						<div class="layui-form-item">
+					      <label class="layui-form-label">审核时间</label>
+					      <div class="layui-input-block">
+					        <input type="text" class="layui-input" id="test11" placeholder=" - ">
+					      </div>
+					    </div>
+					</div>
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+						<div class="layui-form-item">
+							<label class="layui-form-label">用户名</label>
+							<div class="layui-input-block">
+								<input type="text" name="userName" lay-verify="userName" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+						<div class="layui-form-item">
+						    <label class="layui-form-label">支付渠道</label>
+						    <div class="layui-input-block">
+						      <select name="interest" lay-filter="aihao">
+						        <option value="0" selected="">正序</option>
+						        <option value="1">倒序</option>
+						      </select>
+						    </div>
+						</div>
+					</div>
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+						<div class="layui-form-item">
+						    <label class="layui-form-label">收款卡</label>
+						    <div class="layui-input-block">
+						      <select name="interest" lay-filter="aihao">
+						        <option value="0" selected="">正序</option>
+						        <option value="1">倒序</option>
+						      </select>
+						    </div>
+						</div>
+					</div>
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+						<div class="layui-form-item">
+						    <label class="layui-form-label">状态</label>
+						    <div class="layui-input-block">
+						      <select name="interest" lay-filter="aihao">
+						        <option value="0" selected="">正序</option>
+						        <option value="1">倒序</option>
+						      </select>
+						    </div>
+						</div>
+					</div>
+				</div>
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+						<div class="layui-form-item">
+					      <label class="layui-form-label">提交人</label>
+					      	<div class="layui-input-block">
+						      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入提交人" class="layui-input">
+						    </div>
+					    </div>
+					</div>
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+						<div class="layui-form-item">
+					      <label class="layui-form-label">订单号</label>
+					      	<div class="layui-input-block">
+						      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入订单号" class="layui-input">
+						    </div>
+					    </div>
+					</div>
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+						<div class="layui-form-item">
+					      <label class="layui-form-label">审核人</label>
+					      <div class="layui-input-block">
+						      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入审核人" class="layui-input">
+						    </div>
+					    </div>
+					</div>
+				</div>
+				
+				<div class="layui-inline" style="margin: auto;display: table;">
+					<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-btnnew" style="width: 100px;">搜索</a>
+					<button type="reset" class="layui-btn layui-btn-primary" style="width: 100px;">重置</button>
+				</div>
+			</form>
+			<!--列表展示-->
+			<table class="layui-table" lay-data="{url:'/datas/data_list.json?v=3', cellMinWidth: 80, page: true}" lay-filter="demo">
+			  <thead>
+			    <tr>
+			      <th lay-data="{field:'username', width:85}" rowspan="2">客户账号</th>
+			      <!--<th lay-data="{field:'amount', width:120}" rowspan="3">金额</th>-->
+			      <th lay-data="{align:'center'}" colspan="4">客服数据</th>
+			      <th lay-data="{align:'center'}" colspan="4">财务数据</th>
+			      <th lay-data="{align:'center'}" colspan="5">其他数据	</th>
+			      <th lay-data="{fixed: 'right', width: 80, align: 'center', toolbar: '#barDemo'}" rowspan="2">操作</th>
+			    </tr>
+			    <tr>
+			      <th lay-data="{field:'city'}" rowspan="1">支付渠道</th>
+			      <th lay-data="{field:'city'}" rowspan="1">汇款户名</th>
+			      <th lay-data="{field:'city'}" rowspan="1">存款金额</th>
+			      <th lay-data="{field:'city'}" rowspan="1">订单号</th>
+			      <th lay-data="{field:'city'}" rowspan="1">收款卡</th>
+			      <th lay-data="{field:'city'}" rowspan="1">汇款户名</th>
+			      <th lay-data="{field:'city'}" rowspan="1">付款金额</th>
+			      <th lay-data="{field:'city'}" rowspan="1">订单号</th>
+			      <th lay-data="{field:'city'}" rowspan="1">提交人</th>
+			      <th lay-data="{field:'city'}" rowspan="1">提交时间</th>
+			      <th lay-data="{field:'city'}" rowspan="1">审核人</th>
+			      <th lay-data="{field:'city'}" rowspan="1">审核时间</th>
+			      <th lay-data="{field:'city'}" rowspan="1">状态</th>
+			    </tr>
+			  </thead>
+			</table>
+			 
+			<script type="text/html" id="barDemo">
+			  <a class="layui-btn layui-btn-btnnew" lay-event="detail" style="height: 45px;width: 45px;line-height: 30px;padding: 0;">明细</a>
+			</script>
+			
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script>
+			layui.use('table', function(){
+			  var table = layui.table;
+			  table.on('tool(demo)', function(obj){
+				    var data = obj.data;
+				    if(obj.event === 'detail'){
+				      layer.msg('客户账号：'+ data.username + ' 的查看操作');
+				      layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: '手工存款明细'
+				        ,area: ['100%', '100%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'manualDetail.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				        ,zIndex: layer.zIndex //重点1
+				      });
+				    } else if(obj.event === 'del'){
+				      layer.confirm('真的删除行么', function(index){
+				        obj.del();
+				        layer.close(index);
+				      });
+				    } else if(obj.event === 'edit'){
+				      layer.alert('编辑行：<br>'+ JSON.stringify(data))
+				    }
+				  });
+			});
+		</script>
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate,
+					$ = layui.jquery;
+				
+				//日期时间范围
+			  laydate.render({
+			    elem: '#test10'
+			    ,type: 'datetime'
+			    ,range: true
+			  });
+			  //日期时间范围
+			  laydate.render({
+			    elem: '#test11'
+			    ,type: 'datetime'
+			    ,range: true
+			  });
+			  form.on('radio(filter)', function(data){
+			  	if(data.value == 0){
+			  		$('#hideUser').addClass("layui-hide")
+			  		$('#hideZd').removeClass("layui-hide")
+			  	}else{
+			  		$('#hideUser').removeClass("layui-hide")
+			  		$('#hideZd').addClass("layui-hide")
+			  	}
+			  });  
+			  $(".addAdmin").on('click',function(){
+			  		layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: '新增手动存款'
+				        ,area: ['80%', '100%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'addManual.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				        ,zIndex: layer.zIndex //重点1
+				      });
+			  })
+			  
+			});
+			
+		</script>
+	</body>
+
+</html>

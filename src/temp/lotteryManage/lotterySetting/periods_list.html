@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>奖期列表</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div style="padding: 10px 0 0 10px">
+        <button class="layui-btn increase layui-btn-btnnew MassProduction">批量生成奖期</button>
+    </div>
+    <form class="layui-form" action="">
+        <table class="layui-table">
+            <thead>
+            <tr>
+                <td>
+                    <input name="group_tag" value="1" type="checkbox" title="反选">
+                </td>
+                <td>彩种</td>
+                <td>期号</td>
+                <td>所属哪天</td>
+                <td>周期开始时间</td>
+                <td>周期结束时间</td>
+                <td>开奖号码</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <input name="group_tag" value="4583708" type="checkbox" title="4583708">
+                </td>
+                <td>CQSSC</td>
+                <td>20180101-001</td>
+                <td>2018-01-01</td>
+                <td>2017-12-31 23:59:30</td>
+                <td>2018-01-01 00:05:20</td>
+                <td>20326</td>
+            </tr>
+            <tr>
+                <td>
+                    <input name="group_tag" value="4583709" type="checkbox" title="4583709">
+                </td>
+                <td>CQSSC</td>
+                <td>20180101-002</td>
+                <td>2018-01-01</td>
+                <td>2018-01-01 00:05:20</td>
+                <td>2018-01-01 00:10:20</td>
+                <td>28183</td>
+            </tr>
+            <tr>
+                <td>
+                    <input name="group_tag" value="4583710" type="checkbox" title="4583710">
+                </td>
+                <td>CQSSC</td>
+                <td>20180101-003</td>
+                <td>2018-01-01</td>
+                <td>2018-01-01 00:10:20</td>
+                <td>2018-01-01 00:15:20</td>
+                <td>08007</td>
+            </tr>
+            <tr style="text-align: center">
+                <td colspan="7">
+                    <button class="layui-btn layui-btn-danger">删除奖期</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+    <div id="demo7"></div>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use('layer', function () {
+        var $ = layui.jquery;
+        $('.MassProduction').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '批量生成奖期'
+                , area: ['100%', '100%']
+                , shade: 0
+                , maxmin: true
+                , content: 'MassProduction.html'
+                , zIndex: layer.zIndex //重点1
+            })
+        })
+    })
+    layui.use(['laypage','form'], function () {
+        var laypage = layui.laypage;
+        //完整功能(分页)
+        laypage.render({
+            elem: 'demo7'
+            , count: 100
+            , layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+    });
+</script>
+</body>
+</html>

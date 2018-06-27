@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加文章</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <form class="layui-form" action="">
+        <table class="layui-table">
+            <tbody>
+            <tr>
+                <td>文章标题:</td>
+                <td><input class="layui-input" type="text" placeholder="请输入标题"></td>
+            </tr>
+            <tr>
+                <td>文章分类:</td>
+                <td>
+                    <select>
+                        <option value="-1">请选择</option>
+                        <option value="7">新闻资讯</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>文章内容:</td>
+                <td>
+                    <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>状态:</td>
+                <td>
+                    <select>
+                        <option value="1">正常</option>
+                        <option value="0">删除</option>
+                    </select>
+                </td>
+            </tr>
+            <tr style="text-align: center">
+                <td></td>
+                <td colspan="2">
+                    <button lay-submit="" lay-filter="demo1" class="layui-btn layui-btn-btnnew">更新</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use(['layer','form'], function () {
+        var $ = layui.jquery,form = layui.form;
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert('更新成功', {
+                title: '提交信息'
+            })
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

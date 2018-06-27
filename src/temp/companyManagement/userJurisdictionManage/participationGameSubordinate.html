@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>参与游戏下级菜单</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/companyManagement.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html{background: #F2F5F4;}
+    .layui-table td, .layui-table th{
+        padding: 9px 13px;
+    }
+</style>
+<body>
+<div class="user_jurisdiction_manage admin-list">
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>menuid</td>
+            <td>名称</td>
+            <td>说明</td>
+            <td>控制器</td>
+            <td>行为</td>
+            <td>是否启用</td>
+            <td>是否记录日志</td>
+            <td>排序</td>
+            <td>下级菜单</td>
+            <td>更新时间</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>2</td>
+            <td>重庆时时彩</td>
+            <td>CQSSC</td>
+            <td>game</td>
+            <td>cqssc</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td>
+                <input type="text" value="10" size="3">
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2013-07-31 18:53:20</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>55</td>
+            <td>黑龙江时时彩</td>
+            <td>黑龙江时时彩</td>
+            <td>game</td>
+            <td>hljssc</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td>
+                <input type="text" value="20" size="3">
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2013-07-31 18:53:20</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>56</td>
+            <td>新疆时时彩</td>
+            <td>新疆时时彩</td>
+            <td>game</td>
+            <td>xjssc</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td>
+                <input type="text" value="30" size="3">
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2013-08-01 00:38:59</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>61</td>
+            <td>天津时时彩</td>
+            <td>天津时时彩</td>
+            <td>game</td>
+            <td>tjssc</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td>
+                <input type="text" value="40" size="3">
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2013-12-18 21:31:02</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>257</td>
+            <td>进入彩种界面</td>
+            <td>进入彩种界面</td>
+            <td>game</td>
+            <td>initCaiZhong</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td>
+                <input type="text" value="100" size="3">
+            </td>
+            <td>
+                无
+            </td>
+            <td>2017-12-10 17:21:13</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>山东十一运</td>
+            <td>SD11Y</td>
+            <td>game</td>
+            <td>sd11y</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td>
+                <input type="text" value="100" size="3">
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2013-08-01 00:38:59</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>268</td>
+            <td>河北快三信用</td>
+            <td>河北快三信用</td>
+            <td>game</td>
+            <td>hebeiks_x</td>
+            <td>启用</td>
+            <td>记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2018-03-31 19:38:06</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>269</td>
+            <td>河北快三</td>
+            <td>河北快三</td>
+            <td>game</td>
+            <td>hebeiks</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-02-28 19:27:24</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>270</td>
+            <td>湖北快三信用</td>
+            <td>湖北快三信用</td>
+            <td>game</td>
+            <td>hbks_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-02-28 19:28:11</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>271</td>
+            <td>湖北快三</td>
+            <td>湖北快三</td>
+            <td>game</td>
+            <td>hbks</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-02-28 19:28:35</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>272</td>
+            <td>广西快三信用</td>
+            <td>广西快三信用</td>
+            <td>game</td>
+            <td>gxks_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-02-28 19:28:58</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>273</td>
+            <td>北京快三</td>
+            <td>北京快三</td>
+            <td>game</td>
+            <td>gxks</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-02-28 19:29:41</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>274</td>
+            <td>北京快三信用</td>
+            <td>北京快三信用</td>
+            <td>game</td>
+            <td>bjks_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-02-28 19:30:05</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>275</td>
+            <td>北京快三</td>
+            <td>北京快三</td>
+            <td>game</td>
+            <td>bjks</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-02-28 19:30:50</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>289</td>
+            <td>甘肃快三</td>
+            <td>甘肃快三</td>
+            <td>game</td>
+            <td>gsks</td>
+            <td>启用</td>
+            <td>记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-03-31 19:38:59</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>295</td>
+            <td>甘肃快三信用</td>
+            <td>甘肃快三信用</td>
+            <td>game</td>
+            <td>gsks_x</td>
+            <td>启用</td>
+            <td>记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-03-31 19:39:21</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>58</td>
+            <td>江苏11选5</td>
+            <td>江苏11选5</td>
+            <td>game</td>
+            <td>js115</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2017-04-21 14:00:01</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>314</td>
+            <td>进入彩种new</td>
+            <td>进入彩种new</td>
+            <td>game</td>
+            <td>initCaiZhong2</td>
+            <td>启用</td>
+            <td>记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-05-17 14:47:19</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>59</td>
+            <td>江西11选5</td>
+            <td>江西11选5</td>
+            <td>game</td>
+            <td>jx115</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2013-12-16 00:40:01</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>60</td>
+            <td>广东11选5</td>
+            <td>广东11选5</td>
+            <td>game</td>
+            <td>gd115</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2013-12-16 00:40:12</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>62</td>
+            <td>3D</td>
+            <td>一天一期</td>
+            <td>game</td>
+            <td>low3D</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2014-03-30 00:32:58</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>63</td>
+            <td>P3P5</td>
+            <td>排列三、排列五</td>
+            <td>game</td>
+            <td>P3P5</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2014-03-30 00:22:16</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>68</td>
+            <td>时时彩开奖号</td>
+            <td>时时彩开奖号</td>
+            <td>game</td>
+            <td>openedIssues</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2014-06-11 17:10:25</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>72</td>
+            <td>时时彩</td>
+            <td>时时彩</td>
+            <td>game</td>
+            <td>jyzssc</td>
+            <td>启用</td>
+            <td>记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2016-12-12 17:17:45</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>74</td>
+            <td>yzffc</td>
+            <td>yzffc</td>
+            <td>game</td>
+            <td>yzffc</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2014-10-17 23:00:35</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>78</td>
+            <td>休闲游戏</td>
+            <td>休闲游戏</td>
+            <td>game</td>
+            <td>egame</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2014-12-22 18:55:03</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>83</td>
+            <td>江苏快三</td>
+            <td>江苏快三</td>
+            <td>game</td>
+            <td>jsks</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2015-04-13 23:34:52</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>84</td>
+            <td>快三夺宝</td>
+            <td>快三夺宝</td>
+            <td>game</td>
+            <td>ksffc</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2015-05-18 17:50:37</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>85</td>
+            <td>快乐扑克</td>
+            <td>快乐扑克</td>
+            <td>game</td>
+            <td>klpk</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2015-07-06 18:53:51</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>86</td>
+            <td>11选5分分彩</td>
+            <td>11选5分分彩</td>
+            <td>game</td>
+            <td>ffc115</td>
+            <td>启用</td>
+            <td>记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2015-10-30 00:18:03</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>87</td>
+            <td>秒秒彩</td>
+            <td>秒秒彩</td>
+            <td>game</td>
+            <td>yzmmc</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2016-12-12 17:17:56</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>105</td>
+            <td>所有追号撤单</td>
+            <td>所有追号撤单</td>
+            <td>game</td>
+            <td>cancelAllTrace</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2016-07-12 15:24:54</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>106</td>
+            <td>北京PK拾</td>
+            <td>北京PK拾</td>
+            <td>game</td>
+            <td>bjpks</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2016-07-25 15:10:51</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>107</td>
+            <td>北京PK拾Iframe</td>
+            <td>北京PK拾Iframe</td>
+            <td>game</td>
+            <td>bjpksIframe</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2016-08-10 11:50:18</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>120</td>
+            <td>东京1.5分彩</td>
+            <td>东京1.5分彩</td>
+            <td>game</td>
+            <td>dj15</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2016-10-17 19:06:35</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>121</td>
+            <td>安徽快三</td>
+            <td>安徽快三</td>
+            <td>game</td>
+            <td>ahks</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2016-11-02 15:47:07</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>122</td>
+            <td>福建快三</td>
+            <td>福建快三</td>
+            <td>game</td>
+            <td>fjks</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2016-11-04 11:03:15</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>123</td>
+            <td>游戏大厅</td>
+            <td>游戏大厅</td>
+            <td>game</td>
+            <td>lobby</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2016-12-12 17:17:10</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>124</td>
+            <td>香港六合彩</td>
+            <td>LHC</td>
+            <td>game</td>
+            <td>lhc</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm cz_submenus">下级菜单</button>
+            </td>
+            <td>2017-03-10 19:48:03</td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>127</td>
+            <td>双色球</td>
+            <td>双色球</td>
+            <td>game</td>
+            <td>ssq</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-03-31 18:26:08</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>128</td>
+            <td>幸运28</td>
+            <td>幸运28</td>
+            <td>game</td>
+            <td>xy28</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-04-07 17:22:42</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>385</td>
+            <td>急速赛车</td>
+            <td>急速赛车</td>
+            <td>game</td>
+            <td>jssc</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-05-19 17:29:56</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>386</td>
+            <td>急速赛车信用</td>
+            <td>急速赛车信用</td>
+            <td>game</td>
+            <td>jssc_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-05-19 17:31:03</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>140</td>
+            <td>六合彩信用</td>
+            <td>江苏快三信用</td>
+            <td>game</td>
+            <td>lhc_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-05 15:54:47</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>141</td>
+            <td>江苏快三信用</td>
+            <td>江苏快三信用</td>
+            <td>game</td>
+            <td>jsks_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-05 15:55:11</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>143</td>
+            <td>安徽快三信用</td>
+            <td>安徽快三信用</td>
+            <td>game</td>
+            <td>ahks_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-09 17:17:50</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>144</td>
+            <td>快三分分彩信用</td>
+            <td>快三分分彩信用</td>
+            <td>game</td>
+            <td>ksffc_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-09 17:18:15</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>148</td>
+            <td>北京PK10信用</td>
+            <td>北京PK10信用</td>
+            <td>game</td>
+            <td>bjpks_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-29 21:25:34</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>164</td>
+            <td>腾讯分分彩</td>
+            <td>腾讯分分彩</td>
+            <td>game</td>
+            <td>qqffc</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-08-12 02:53:49</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>165</td>
+            <td>极速六合彩</td>
+            <td>极速六合彩</td>
+            <td>game</td>
+            <td>jslhc</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-08-21 22:01:54</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>166</td>
+            <td>极速六合彩信用</td>
+            <td>极速六合彩信用</td>
+            <td>game</td>
+            <td>jslhc_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-08-21 22:02:50</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>186</td>
+            <td>幸运飞艇</td>
+            <td>幸运飞艇</td>
+            <td>game</td>
+            <td>xyft_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:04:23</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>188</td>
+            <td>重庆时时彩信用</td>
+            <td>CQSSC_X</td>
+            <td>game</td>
+            <td>cqssc_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:05:13</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>191</td>
+            <td>山东十一选5信用</td>
+            <td>山东十一选5信用</td>
+            <td>game</td>
+            <td>sd11y_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:06:40</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>192</td>
+            <td>新疆时时彩信用</td>
+            <td>新疆时时彩信用</td>
+            <td>game</td>
+            <td>xjssc_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:07:07</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>194</td>
+            <td>江苏11选5信用</td>
+            <td>江苏11选5信用</td>
+            <td>game</td>
+            <td>js115_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:07:27</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>196</td>
+            <td>江西11选5信用</td>
+            <td>江西11选5信用</td>
+            <td>game</td>
+            <td>jx115_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:07:46</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>197</td>
+            <td>广东11选5信用</td>
+            <td>广东11选5信用</td>
+            <td>game</td>
+            <td>gd115_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:08:08</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>198</td>
+            <td>天津时时彩信用</td>
+            <td>天津时时彩信用</td>
+            <td>game</td>
+            <td>tjssc_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" name="sort_ids[198]" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:08:35</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>199</td>
+            <td>3D信用</td>
+            <td>3D信用</td>
+            <td>game</td>
+            <td>low3D_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:09:17</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>200</td>
+            <td>P3P5信用</td>
+            <td>P3P5信用</td>
+            <td>game</td>
+            <td>P3P5_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:09:40</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>201</td>
+            <td>yzffc	信用</td>
+            <td>yzffc	信用</td>
+            <td>game</td>
+            <td>yzffc_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input  type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-30 01:44:39</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>203</td>
+            <td>快乐扑克信用</td>
+            <td>快乐扑克信用</td>
+            <td>game</td>
+            <td>klpk_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:10:25</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>204</td>
+            <td>秒秒彩信用</td>
+            <td>秒秒彩信用</td>
+            <td>game</td>
+            <td>yzmmc_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:10:47</td>
+            <td>
+                
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>205</td>
+            <td>11选5分分彩信用</td>
+            <td>11选5分分彩信用</td>
+            <td>game</td>
+            <td>ffc115_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:11:09</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>206</td>
+            <td>东京1.5分彩信用</td>
+            <td>东京1.5分彩信用</td>
+            <td>game</td>
+            <td>dj15_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:11:28</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>208</td>
+            <td>双色球信用</td>
+            <td>双色球信用</td>
+            <td>game</td>
+            <td>ssq_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-30 01:39:28</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>209</td>
+            <td>幸运28信用</td>
+            <td>幸运28信用</td>
+            <td>game</td>
+            <td>xy28_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:12:23</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>210</td>
+            <td>QQ分分彩信用</td>
+            <td>QQ分分彩信用</td>
+            <td>game</td>
+            <td>qqffc_x</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 19:12:40</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>267</td>
+            <td>获取中奖提示信息</td>
+            <td>获取中奖提示信息</td>
+            <td>game</td>
+            <td>fetchWinDialog</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="255" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-02-21 17:40:47</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew save">保存</button>
+            </td>
+            <td>
+                <!--<button class="layui-btn layui-btn-sm layui-btn-btnnew">上级</button>-->
+            </td>
+            <td colspan="2"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="./../../../plugins/layui/layui.js"></script>
+<script src="./../../../js/userJurisdictionManage.js"></script>
+</body>
+</html>

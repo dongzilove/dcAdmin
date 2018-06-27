@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>游戏记录</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list" style="padding: 15px 0;">
+			<div class="layui-row">
+				<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    <div class="layui-form-item">
+					    <label class="layui-form-label">用  户  名</label>
+					    <div class="layui-form-mid layui-word-aux">12345444</div>
+					</div>
+			    </div>
+			    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+			      	<div class="layui-form-item">
+					    <label class="layui-form-label">金       额</label>
+					    <div class="layui-form-mid layui-word-aux">12345444</div>
+					</div>
+			    </div>
+			    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+			      	<div class="layui-form-item">
+					    <label class="layui-form-label">收款 银行</label>
+					    <div class="layui-form-mid layui-word-aux">12345444</div>
+					</div>
+			    </div>
+			</div>
+			<div class="layui-row">
+				<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    <div class="layui-form-item">
+					    <label class="layui-form-label">收  款  卡</label>
+					    <div class="layui-form-mid layui-word-aux">12345444</div>
+					</div>
+			    </div>
+			    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+			      	<div class="layui-form-item">
+					    <label class="layui-form-label">网站 订单</label>
+					    <div class="layui-form-mid layui-word-aux">12345444</div>
+					</div>
+			    </div>
+			</div>
+			<div class="layui-inline" style="margin: auto;display: table;">
+				<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-btnnew" style="width: 100px;">确认</a>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					$ = layui.jquery;
+					laydate = layui.laydate;
+//				$("#close_btn").on('click',function(){
+//					window.parent.location.reload();
+////					layer.closeAll('iframe'); //关闭弹出层
+//				})
+				$("#search").on('click',function(){
+					window.parent.location.reload();
+					layer.closeAll('iframe'); //关闭弹出层
+				})
+			});
+		</script>
+	</body>
+
+</html>

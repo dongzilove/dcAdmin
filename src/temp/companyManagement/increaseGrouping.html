@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加分组</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/companyManagement.css">
+    <link rel="stylesheet" href="../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div class="grouping_title">
+        <p>注：最多支持3级人事结构。如CFO->资金部经理->出纳</p>
+        <div>
+            <table class="layui-table">
+                <thead>
+                <tr>
+                    <th colspan="2">增加分组</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>所属层级</td>
+                    <td>
+                        <form class="layui-form" action="">
+                            <select>
+                                <option value="">作为顶级</option>
+                                <option value="0">全权限组</option>
+                                <option value="1">客服主管</option>
+                                <option value="2">&nbsp;&nbsp;客服专员</option>
+                                <option value="3">&nbsp;&nbsp;统计</option>
+                                <option value="4">&nbsp;&nbsp;风控专员</option>
+                                <option value="5">财务主管</option>
+                                <option value="6">&nbsp;&nbsp;出款财务</option>
+                                <option value="7">&nbsp;&nbsp;收款财务</option>
+                                <option value="8">推广主管</option>
+                                <option value="9">&nbsp;&nbsp;推广专员</option>
+                                <option value="10">测试组</option>
+                                <option value="11">CEO</option>
+                            </select>
+                        </form>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>分组名称</td>
+                    <td>
+                        <input type="text" class="layui-input" placeholder="请输入分组名称">
+                    </td>
+                </tr>
+                <tr>
+                    <td>描述</td>
+                    <td>
+                        <input type="text" class="layui-input" placeholder="请填写描述">
+                    </td>
+                </tr>
+                <tr>
+                    <td>排序(越小越靠前)</td>
+                    <td>
+                        <input type="text" class="layui-input" placeholder="请填写排序">
+                    </td>
+                </tr>
+                <tr>
+                    <td>启用?</td>
+                    <td>
+                        <form class="layui-form" action="">
+                            <input type="checkbox" name="switch" lay-skin="switch" lay-text="是|否">
+                        </form>
+                    </td>
+                </tr>
+                <tr style="text-align: center">
+                    <td colspan="2" id="layerDemo">
+                        <button data-method="confirmTrans" class="layui-btn layui-btn-btnnew">提交</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="../../plugins/layui/layui.js"></script>
+<script>
+    layui.use(['form', 'layer'], function () {
+        var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+        //触发事件
+        var active = {
+            confirmTrans: function () {
+                //配置一个透明的询问框
+                layer.msg('提交成功', {
+                    time: 5000, //20s后自动关闭
+                    btn: '知道了'
+                });
+            },
+        }
+        $('#layerDemo .layui-btn').on('click', function () {
+            var othis = $(this), method = othis.data('method');
+            active[method] ? active[method].call(this, othis) : '';
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>配置管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+    .delete_affirm{
+        padding: 10px;
+        text-align: center;
+    }
+    .admin-list .admin-title .addAdmin{
+        color: #fff;
+        margin-top: 4px;
+    }
+    .admin-list .admin-title .addAdmin:hover{color: #fff;}
+</style>
+<body>
+<div class="admin-list">
+    <div class="layui-row admin-title">
+        <span class="left title-T">配置管理</span>
+        <button class="layui-btn increase layui-btn-btnnew modifyAllocation right addAdmin">增加配置</button>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>配置id</td>
+            <td>配置标题</td>
+            <td>说明</td>
+            <td>配置key</td>
+            <td>配置value（0禁用 1启用）</td>
+            <td>下级菜单</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>基本设置</td>
+            <td>基本设置</td>
+            <td>base</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td>
+                <button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>号源网站参数</td>
+            <td>号源网站参数</td>
+            <td>draw_source</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>运营参数</td>
+            <td>业务流程方面的参数</td>
+            <td>run</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>优惠设置</td>
+            <td>对各种优惠进行配置</td>
+            <td>promo</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>财务相关</td>
+            <td>财务相关参数</td>
+            <td>fin</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>53</td>
+            <td>网络加速维护</td>
+            <td>长期运行后的维护设置，图片CDN加速等</td>
+            <td>maintenance</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>99</td>
+            <td>彩票杀率配置</td>
+            <td>彩票杀率配置</td>
+            <td>lottery</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>112</td>
+            <td>微信服务号</td>
+            <td>微信服务号相关</td>
+            <td></td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>134</td>
+            <td>CDN配置</td>
+            <td>CDN配置</td>
+            <td>cdncnf</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>142</td>
+            <td>第三方支付接口地址</td>
+            <td>第三方支付接口地址</td>
+            <td>pay_api</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>150</td>
+            <td>注册信息显示控制</td>
+            <td>控制注册信息是否显示</td>
+            <td>register</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>185</td>
+            <td>活动配置</td>
+            <td>活动配置</td>
+            <td>activity</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>196</td>
+            <td>开奖直播</td>
+            <td>六合彩开奖直播</td>
+            <td>live_streaming</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>200</td>
+            <td>电子游戏配置</td>
+            <td>电子游戏配置</td>
+            <td>egame</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>202</td>
+            <td>阿里云Oss配置</td>
+            <td>阿里云Oss配置</td>
+            <td>aliyunOss</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>228</td>
+            <td>系统维护设置</td>
+            <td>系统维护设置</td>
+            <td>maintainlist</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px">0</td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>258</td>
+            <td>基础设置</td>
+            <td>基础设置字段设置</td>
+            <td>setting_col</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px"></td>
+            <td><button class="layui-btn layui-btn-sm subordinate">查看下级</button>
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use('layer', function () {
+        var $ = layui.jquery;
+        //删除按钮
+        $('.delete').on('click', function() {
+                layer.open({
+                    type: 1,
+                    title: '删除确认',
+                    skin: 'layui-layer-rim', //加上边框
+                    area: ['420px', '140px'], //宽高
+                    btn:['确定','返回'],
+                    content: '<div class="delete_affirm">\n' +
+                    '    <p>真的删除？该操作不可恢复！</p>\n' +
+                    '</div>'
+                })
+            })
+        $('.modifyAllocation').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '修改配置'
+                , area: ['80%', '90%']
+                , shade: 0
+                , maxmin: true
+                , content: 'modifyAllocation.html'
+                ,zIndex: layer.zIndex //重点1
+            })
+        })
+        $('.subordinate').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '查看下级'
+                , area: ['100%', '100%']
+                , shade: 0
+                , maxmin: true
+                , content: 'subordinate.html'
+                ,zIndex: layer.zIndex //重点1
+            })
+        })
+    })
+</script>
+</body>
+</html>

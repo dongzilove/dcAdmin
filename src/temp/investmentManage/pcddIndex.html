@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>PC蛋蛋</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+			.layui-tab-title .layui-this{background: #fff;}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list">
+			<!--<div class="layui-row admin-title">
+				<span class="left title-T">数字型开奖</span>
+			</div>-->
+			<div class="layui-tab">
+			  <ul class="layui-tab-title" style="background: #ddd;">
+			    <li class="layui-this">幸运28</li>
+			    <!--<li>江苏11选5</li>
+			    <li>江西11选5</li>
+			    <li>广东11选5</li>
+			    <li>11选5分分彩</li>-->
+			  </ul>
+			  <div class="layui-tab-content">
+			    <!--<div class="layui-tab-item layui-show">-->
+			    	<!--列表展示(山东11选5)-->
+			    	<!--<table class="layui-hide" id="test"></table>
+			    </div>
+			    <div class="layui-tab-item">-->
+			    	<!--列表展示(江苏11选5)-->
+			    	<!--<table class="layui-hide" id="test2"></table>
+			    </div>
+			    <div class="layui-tab-item">-->
+			    	<!--列表展示(江西11选5)-->
+			    	<!--<table class="layui-hide" id="test3"></table>
+			    </div>-->
+			    <div class="layui-tab-item layui-show">
+			    	<!--列表展示(广东11选5)-->
+			    	<table class="layui-hide" id="test"></table>
+			    </div>
+			    <!--<div class="layui-tab-item">-->
+			    	<!--列表展示(11选5分分彩)-->
+			    	<!--<table class="layui-hide" id="test5"></table>
+			    </div>-->
+			  </div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['element','form'],function(){
+				var element = layui.element;
+				var $ = layui.jquery;
+			  	var form = layui.form;
+			});
+			layui.use('table', function(){
+			  var table = layui.table;
+			  //山东11选5
+			  table.render({
+			    elem: '#test'
+			    ,url:'/datas/data_list.json'
+			    ,cols: [[
+			      {field:'id',width: 125, title: '奖期'}
+			      ,{field:'username',width: 115,  title: '销售截止时间'}
+			      ,{field:'sex', width: 115, title: '最早录号时间'}
+			      ,{field:'city',title: '开奖号码'}
+			      ,{field:'sign', title: '录号时间'}
+			      ,{field:'experience', title: '审核者'}
+			      ,{field:'score',title: '审核时间'}
+			      ,{field:'classify', title: '权值'}
+			      ,{field:'wealth',maxWidth: 87,title: '开奖状态'}
+			      ,{field:'wealth',title: '返点'}
+			      ,{field:'wealth', title: '中奖'}
+			      ,{field:'wealth', title: '派奖'}
+			    ]]
+			    ,page: true
+			  });
+			});
+			
+		
+		</script>
+	</body>
+
+</html>

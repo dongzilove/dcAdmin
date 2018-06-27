@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动收款列表</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+
+    .select {
+        height: 38px;
+        line-height: 1.3;
+        border-width: 1px;
+        border-style: solid;
+        background-color: #fff;
+        border-radius: 2px;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div class="layui-row admin-title">
+        <span class="left title-T">自动收款列表</span>
+    </div>
+    <div class="layui-field-box layui-form">
+        <div class="layui-inline" style="padding-top: 10px">
+            <label class="layui-form-label">账变时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test6" placeholder=" 请选择日期区间 ">
+            </div>
+            <label>所属银行：</label>
+            <div class="layui-input-inline">
+                <select class="select">
+                    <option value="0">请选择</option>
+                    <option value="20001">通源微信公众号</option>
+                    <option value="20002">通源微信扫码支付</option>
+                    <option value="20003">通源支付宝扫码支付</option>
+                    <option value="20004">通源支付宝手机</option>
+                </select>
+            </div>
+            <label>收款卡：</label>
+            <div class="layui-input-inline">
+                <select class="select">
+                    <option value="0">请选择</option>
+                    <option value="6024">智慧通QQ</option>
+                    <option value="6025">智慧通京东</option>
+                    <option value="6026">智慧通百度</option>
+                    <option value="6027">智慧通支付宝WAP</option>
+                    <option value="6028">智慧通微信WAP</option>
+                    <option value="6029">智慧通QQWAP</option>
+                </select>
+            </div>
+            <button class="layui-btn layui-btn-btnnew" style="margin-left:20px; " lay-submit="" lay-filter="demo1">查询</button>
+        </div>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>auto_id</td>
+            <td>充值姓名</td>
+            <td>付款时间</td>
+            <td>付款方式</td>
+            <td>金额</td>
+            <td>手续费</td>
+            <td>流水号</td>
+            <td>收款卡</td>
+            <td>所属银行</td>
+            <td>交易地点</td>
+            <td>当时余额</td>
+            <td>标记</td>
+            <td>入库时间</td>
+        </tr>
+        </thead>
+    </table>
+    <div id="demo7"></div>
+</div>
+<script src="../../plugins/layui/layui.js"></script>
+<script>
+    layui.define(['layer', 'laypage', 'laydate','form'], function () {
+        var laypage = layui.laypage;
+        //完整功能(分页)
+        laypage.render({
+            elem: 'demo7'
+            , count: 100
+            , layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+        //日期范围
+        var laydate = layui.laydate;
+        laydate.render({
+            elem: '#test6'
+            , range: true
+        });
+        var form = layui.form;
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            layer.alert('提交成功', {
+                title: '操作信息'
+            })
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

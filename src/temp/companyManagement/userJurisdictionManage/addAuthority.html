@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加权限</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/companyManagement.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th colspan="2">增加权限</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>所属上级</td>
+            <td>
+                <form class="layui-form" action="">
+                    <select name="city" lay-verify="required">
+                        <option value="">作为顶级</option>
+                        <option value="1">&nbsp;&nbsp;参与游戏</option>
+                        <option value="2">&nbsp;&nbsp;&nbsp;&nbsp;重庆时时彩</option>
+                        <option value="55">&nbsp;&nbsp;&nbsp;&nbsp;黑龙江时时彩</option>
+                        <option value="56">&nbsp;&nbsp;&nbsp;&nbsp;新疆时时彩</option>
+                        <option value="61">&nbsp;&nbsp;&nbsp;&nbsp;天津时时彩</option>
+                        <option value="3">&nbsp;&nbsp;&nbsp;&nbsp;山东十一运</option>
+                        <option value="58">&nbsp;&nbsp;&nbsp;&nbsp;江苏11选5</option>
+                        <option value="59">&nbsp;&nbsp;&nbsp;&nbsp;江西11选5</option>
+                        <option value="60">&nbsp;&nbsp;&nbsp;&nbsp;广东11选5</option>
+                        <option value="62">&nbsp;&nbsp;&nbsp;&nbsp;3D</option>
+                        <option value="63">&nbsp;&nbsp;&nbsp;&nbsp;P3P5</option>
+                        <option value="72">&nbsp;&nbsp;&nbsp;&nbsp;时时彩</option>
+                        <option value="83">&nbsp;&nbsp;&nbsp;&nbsp;江苏快三</option>
+                        <option value="85">&nbsp;&nbsp;&nbsp;&nbsp;快乐扑克</option>
+                        <option value="86">&nbsp;&nbsp;&nbsp;&nbsp;11选5分分彩</option>
+                        <option value="87">&nbsp;&nbsp;&nbsp;&nbsp;秒秒彩</option>
+                        <option value="106">&nbsp;&nbsp;&nbsp;&nbsp;北京PK拾</option>
+                        <option value="107">&nbsp;&nbsp;&nbsp;&nbsp;北京PK拾Iframe</option>
+                        <option value="366">&nbsp;&nbsp;&nbsp;&nbsp;甘肃快三信用</option>
+                        <option value="367">&nbsp;&nbsp;&nbsp;&nbsp;甘肃快三</option>
+                        <option value="120">&nbsp;&nbsp;&nbsp;&nbsp;东京1.5分彩</option>
+                        <option value="121">&nbsp;&nbsp;&nbsp;&nbsp;安徽快三</option>
+                        <option value="122">&nbsp;&nbsp;&nbsp;&nbsp;北京快三</option>
+                        <option value="123">&nbsp;&nbsp;&nbsp;&nbsp;游戏大厅</option>
+                        <option value="124">&nbsp;&nbsp;&nbsp;&nbsp;香港六合彩</option>
+                        <option value="4">&nbsp;&nbsp;财务管理</option>
+                        <option value="5">&nbsp;&nbsp;&nbsp;&nbsp;我要充值</option>
+                        <option value="51">&nbsp;&nbsp;&nbsp;&nbsp;户内转帐</option>
+                        <option value="6">&nbsp;&nbsp;&nbsp;&nbsp;我要提现</option>
+                        <option value="7">&nbsp;&nbsp;&nbsp;&nbsp;卡号绑定</option>
+                        <option value="27">&nbsp;&nbsp;&nbsp;&nbsp;优惠记录</option>
+                        <option value="41">&nbsp;&nbsp;&nbsp;&nbsp;资金明细</option>
+                        <option value="54">&nbsp;&nbsp;&nbsp;&nbsp;转帐记录</option>
+                        <option value="98">&nbsp;&nbsp;&nbsp;&nbsp;团队资金明细</option>
+                        <option value="10">&nbsp;&nbsp;游戏记录</option>
+                        <option value="11">&nbsp;&nbsp;&nbsp;&nbsp;订单查询</option>
+                        <option value="12">&nbsp;&nbsp;&nbsp;&nbsp;追号记录</option>
+                        <option value="95">&nbsp;&nbsp;&nbsp;&nbsp;团队游戏记录</option>
+                        <option value="13">&nbsp;&nbsp;消息管理</option>
+                        <option value="14">&nbsp;&nbsp;&nbsp;&nbsp;收件箱</option>
+                        <option value="25">&nbsp;&nbsp;&nbsp;&nbsp;发件箱</option>
+                        <option value="15">&nbsp;&nbsp;&nbsp;&nbsp;发送消息</option>
+                        <option value="16">&nbsp;&nbsp;代理管理</option>
+                        <option value="18">&nbsp;&nbsp;&nbsp;&nbsp;会员管理</option>
+                        <option value="31">&nbsp;&nbsp;&nbsp;&nbsp;会员报表</option>
+                        <option value="52">&nbsp;&nbsp;&nbsp;&nbsp;真人报表</option>
+                        <option value="8">&nbsp;&nbsp;&nbsp;&nbsp;充值记录</option>
+                        <option value="9">&nbsp;&nbsp;&nbsp;&nbsp;提现记录</option>
+                        <option value="17">&nbsp;&nbsp;&nbsp;&nbsp;注册下级</option>
+                        <option value="19">&nbsp;&nbsp;&nbsp;&nbsp;佣金明细</option>
+                        <option value="49">&nbsp;&nbsp;&nbsp;&nbsp;下级订单查询</option>
+                        <option value="94">&nbsp;&nbsp;&nbsp;&nbsp;团队即时报表</option>
+                        <option value="96">&nbsp;&nbsp;&nbsp;&nbsp;团队日度报表</option>
+                        <option value="97">&nbsp;&nbsp;&nbsp;&nbsp;团队盈亏报表</option>
+                        <option value="108">&nbsp;&nbsp;&nbsp;&nbsp;团队活动报表</option>
+                        <option value="20">&nbsp;&nbsp;帐户设定</option>
+                        <option value="21">&nbsp;&nbsp;&nbsp;&nbsp;基本资料</option>
+                        <option value="23">&nbsp;&nbsp;&nbsp;&nbsp;安全资料</option>
+                        <option value="22">&nbsp;&nbsp;&nbsp;&nbsp;修改密码</option>
+                        <option value="43">&nbsp;&nbsp;&nbsp;&nbsp;玩法奖金查询</option>
+                        <option value="67">&nbsp;&nbsp;&nbsp;&nbsp;个性设置</option>
+                        <option value="88">&nbsp;&nbsp;&nbsp;&nbsp;修改资金密码</option>
+                        <option value="89">&nbsp;&nbsp;&nbsp;&nbsp;修改安全码</option>
+                        <option value="99">&nbsp;&nbsp;&nbsp;&nbsp;发送配额</option>
+                        <option value="394">&nbsp;&nbsp;&nbsp;&nbsp;日工资</option>
+                        <option value="39">&nbsp;&nbsp;帮助中心</option>
+                        <option value="109">&nbsp;&nbsp;&nbsp;&nbsp;聊天室用户入口</option>
+                        <option value="44">&nbsp;&nbsp;&nbsp;&nbsp;充值问题</option>
+                        <option value="45">&nbsp;&nbsp;&nbsp;&nbsp;提现问题</option>
+                        <option value="46">&nbsp;&nbsp;&nbsp;&nbsp;帐号相关</option>
+                        <option value="47">&nbsp;&nbsp;&nbsp;&nbsp;彩种介绍</option>
+                        <option value="101">&nbsp;&nbsp;&nbsp;&nbsp;平台活动</option>
+                        <option value="102">&nbsp;&nbsp;&nbsp;&nbsp;最新公告</option>
+                        <option value="64">&nbsp;&nbsp;默认菜单</option>
+                        <option value="65">&nbsp;&nbsp;&nbsp;&nbsp;欢迎界面</option>
+                        <option value="369">&nbsp;&nbsp;视讯游戏</option>
+                        <option value="376">&nbsp;&nbsp;体育游戏</option>
+                        <option value="137">&nbsp;&nbsp;第三方支付</option>
+                        <option value="180">&nbsp;&nbsp;参与电子游戏</option>
+                    </select>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>菜单名称</td>
+            <td>
+                <input type="text" class="layui-input" placeholder="请输入菜单名称">
+            </td>
+        </tr>
+        <tr>
+            <td>描述</td>
+            <td>
+                <input type="text" class="layui-input" placeholder="请输入描述">
+            </td>
+        </tr>
+        <tr>
+            <td>控制器</td>
+            <td>
+                <input type="text" class="layui-input" placeholder="请输入控制器">
+            </td>
+        </tr>
+        <tr>
+            <td>动作</td>
+            <td>
+                <input type="text" class="layui-input" placeholder="请输入动作">
+            </td>
+        </tr>
+        <tr>
+            <td>表现形式</td>
+            <td>
+                <form class="layui-form" action="">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="显示为菜单">
+                    <input type="checkbox" name="like1[read]" lay-skin="primary" title="显示为链接">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>是否记录日志</td>
+            <td>
+                <form class="layui-form" action="">
+                    <input type="checkbox" name="close" lay-skin="switch" lay-text="是|否">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                排序(越小越靠前)
+            </td>
+            <td>
+                <input type="text" class="layui-input" placeholder="请输入排序">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                启用？
+            </td>
+            <td>
+                <form class="layui-form" action="">
+                    <input type="checkbox" name="close" lay-skin="switch" lay-text="是|否">
+                </form>
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td colspan="2" id="layerDemo">
+                <button data-method="confirmTrans" class="layui-btn layui-btn-btnnew">提交</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use(['form', 'layer'], function () {
+        var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+        var active = {
+            confirmTrans: function () {
+                //配置一个透明的询问框
+                layer.msg('提交成功', {
+                    time: 5000, //20s后自动关闭
+                    btn: '知道了'
+                });
+            },
+        }
+        $('#layerDemo .layui-btn').on('click', function () {
+            var othis = $(this), method = othis.data('method');
+            active[method] ? active[method].call(this, othis) : '';
+        });
+    });
+</script>
+</body>
+</html>

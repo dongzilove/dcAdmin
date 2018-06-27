@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>财务管理下级菜单</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/companyManagement.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+    .layui-table td, .layui-table th{
+        font-size: 12px;
+    }
+</style>
+<body>
+<div class="user_jurisdiction_manage">
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>menu id</td>
+            <td>名称</td>
+            <td>说明</td>
+            <td>控制器</td>
+            <td>行为</td>
+            <td>是否启用</td>
+            <td>是否记录日志</td>
+            <td>排序</td>
+            <td>下级菜单</td>
+            <td>更新时间</td>
+            <td style="padding: 0">操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>5</td>
+            <td>我要充值</td>
+            <td>我要充值</td>
+            <td>fin</td>
+            <td>deposit</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="80" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-xs FinancialDetailsSubordinate">下级菜单</button>
+            </td>
+            <td>2013-05-01 02:10:18</td>
+            <td style="padding: 0">
+                <button class="layui-btn layui-btn-normal layui-btn-xs add_authority">增加</button>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>51</td>
+            <td>户内转帐</td>
+            <td>户内转帐</td>
+            <td>fin</td>
+            <td>transfer</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="90" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-xs FinancialDetailsSubordinate">下级菜单</button>
+            </td>
+            <td>2013-05-01 02:10:18</td>
+            <td style="padding: 0">
+                <button class="layui-btn layui-btn-normal layui-btn-xs add_authority">增加</button>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>我要提现</td>
+            <td>我要提现</td>
+            <td>fin</td>
+            <td>withdraw</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-xs FinancialDetailsSubordinate">下级菜单</button>
+            </td>
+            <td>2013-01-15 20:09:07</td>
+            <td style="padding: 0">
+                <button class="layui-btn layui-btn-normal layui-btn-xs add_authority">增加</button>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>卡号绑定</td>
+            <td>卡号绑定</td>
+            <td>fin</td>
+            <td>bindCard</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-xs FinancialDetailsSubordinate">下级菜单</button>
+            </td>
+            <td>2013-01-15 20:09:16</td>
+            <td style="padding: 0">
+                <button class="layui-btn layui-btn-normal layui-btn-xs add_authority">增加</button>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td>优惠记录</td>
+            <td>优惠记录</td>
+            <td>fin</td>
+            <td>promoList</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-xs FinancialDetailsSubordinate">下级菜单</button>
+            </td>
+            <td>2016-06-08 12:10:08</td>
+            <td style="padding: 0">
+                <button class="layui-btn layui-btn-normal layui-btn-xs add_authority">增加</button>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>41</td>
+            <td>资金明细</td>
+            <td>资金明细</td>
+            <td>fin</td>
+            <td>orderList</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-xs FinancialDetailsSubordinate">下级菜单</button>
+            </td>
+            <td>2013-03-08 18:54:17</td>
+            <td style="padding: 0">
+                <button class="layui-btn layui-btn-normal layui-btn-xs add_authority">增加</button>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>297</td>
+            <td>刷新</td>
+            <td>刷新</td>
+            <td>fin</td>
+            <td>refresh</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-04-24 16:35:20</td>
+            <td>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>54</td>
+            <td>转帐记录</td>
+            <td>转帐记录</td>
+            <td>fin</td>
+            <td>transferList</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-xs FinancialDetailsSubordinate">下级菜单</button>
+            </td>
+            <td>2016-06-08 12:10:17</td>
+            <td style="padding: 0">
+                <button class="layui-btn layui-btn-normal layui-btn-xs add_authority">增加</button>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>79</td>
+            <td>tranMoney</td>
+            <td>tranMoney</td>
+            <td>fin</td>
+            <td>tranMoney</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2015-01-15 22:45:27</td>
+            <td>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>92</td>
+            <td>解锁</td>
+            <td>银行卡解锁</td>
+            <td>fin</td>
+            <td>unBindCard</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2016-06-01 10:14:59</td>
+            <td>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>93</td>
+            <td>锁定</td>
+            <td>银行卡锁定</td>
+            <td>fin</td>
+            <td>lockCard</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2016-06-01 10:15:48</td>
+            <td>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>98</td>
+            <td>团队资金明细</td>
+            <td>团队资金明细</td>
+            <td>fin</td>
+            <td>teamOrderList</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-xs FinancialDetailsSubordinate">下级菜单</button>
+            </td>
+            <td>2016-06-29 16:09:23</td>
+            <td style="padding: 0">
+                <button class="layui-btn layui-btn-normal layui-btn-xs add_authority">增加</button>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>110</td>
+            <td>检查用户是否绑定银行卡</td>
+            <td>检查用户是否绑定银行卡</td>
+            <td>fin</td>
+            <td>checkHasCard</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2016-08-26 15:15:49</td>
+            <td>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>131</td>
+            <td>充值选择界面</td>
+            <td>充值选择界面</td>
+            <td>fin</td>
+            <td>pay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-06-28 20:14:14</td>
+            <td>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>142</td>
+            <td>银行卡充值</td>
+            <td>银行卡充值</td>
+            <td>fin</td>
+            <td>bankPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-09 15:21:02</td>
+            <td>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>219</td>
+            <td>个人充提</td>
+            <td>个人充提</td>
+            <td>fin</td>
+            <td>rechargeWithdraw</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-10 00:20:33</td>
+            <td>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>220</td>
+            <td>个人充提菜单</td>
+            <td>个人充提菜单</td>
+            <td>fin</td>
+            <td>rechargeWithdrawMenu</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-10 00:21:10</td>
+            <td>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">&nbsp;</td>
+            <td>
+                <button class="layui-btn layui-btn-xs layui-btn-btnnew save">保存</button>
+            </td>
+            <td>
+                <!--<button class="layui-btn layui-btn-xs layui-btn-btnnew">上级</button>-->
+            </td>
+            <td colspan="2"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="./../../../plugins/layui/layui.js"></script>
+<script src="./../../../js/userJurisdictionManage.js"></script>
+</body>
+</html>

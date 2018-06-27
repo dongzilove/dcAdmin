@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>出/入款账号管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+
+        background: #F2F5F4;
+    }
+
+    .layui-btn + .layui-btn {
+        margin: 0;
+    }
+
+    .delete_affirm {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .delete_affirm button {
+        margin-top: 20px;
+    !important;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div class="layui-row admin-title">
+        <span class="left title-T">出/入款账号管理</span>
+    </div>
+    <div class="layui-field-box layui-form">
+        <div style="margin-bottom: 10px">
+            <input type="checkbox" name="like[write]" title="默认层" checked="">
+            <input type="checkbox" name="like[write]" title="内层">
+            <input type="checkbox" name="like[write]" title="小黑屋">
+            <input type="checkbox" name="like[write]" title="测试层级">
+            <input type="checkbox" name="like[write]" title="中间层">
+            <input type="checkbox" name="like[write]" title="过渡内层">
+            <input type="checkbox" name="like[write]" title="过渡层">
+            <input type="checkbox" name="like[write]" title="阿萨德付">
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">银行卡类型</label>
+            <div class="layui-input-inline">
+                <select name="quiz1">
+                    <option value="0">请选择</option>
+                    <option value="1">收款卡</option>
+                    <option value="2">付款卡</option>
+                    <option value="3">备用金卡</option>
+                </select>
+            </div>
+            <label class="layui-form-label">银行</label>
+            <div class="layui-input-inline">
+                <select name="quiz2">
+                    <option value="">请选择…</option>
+                    <option value="20001">通源微信公众号-TYWXGZH</option>
+                    <option value="20002">通源微信扫码支付-TYWXSMZF</option>
+                    <option value="20003">通源支付宝扫码支付-TYZFBSMZF</option>
+                    <option value="20004">通源支付宝手机-TYZFBSJ</option>
+                    <option value="20005">通源QQ手机支付-TYQQSJZF</option>
+                    <option value="20006">通源网银支付-TYWYZF</option>
+                    <option value="20007">通源QQ扫码支付-TYQQSMZF</option>
+                    <option value="20008">通源百度钱包-TYBDQB</option>
+                    <option value="20009">通源京东支付-TYJDZF</option>
+                </select>
+            </div>
+            <label class="layui-form-label">充值类别:</label>
+            <div class="layui-input-inline">
+                <select name="quiz3">
+                    <option value="0">请选择</option>
+                    <option value="2">在线支付</option>
+                    <option value="1">公司入款</option>
+                    <option value="3">扫码支付</option>
+                    <option value="4">微信支付</option>
+                    <option value="5">支付宝支付</option>
+                </select>
+            </div>
+            <label class="layui-form-label">使用场景:</label>
+            <div class="layui-input-inline">
+                <select name="quiz3">
+                    <option selected="selected" value="">请选择</option>
+                    <option value="1,3,5,7">电脑</option>
+                    <option value="2,3,6,7">手机</option>
+                    <option value="4,5,6,7">App</option>
+                </select>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">户名</label>
+                <div class="layui-input-inline">
+                    <input class="layui-input" type="text" name="card_name" size="12" placeholder="请输入户名">
+                </div>
+            </div>
+            <label class="layui-form-label">状态:</label>
+            <div class="layui-input-inline">
+                <select name="quiz3">
+                    <option value="-2">请选择</option>
+                    <option value="1">启用</option>
+                    <option value="2">使用中</option>
+                    <option value="3">收款超额下线</option>
+                    <option value="4">付款余额不足下线</option>
+                    <option value="5">超过当日支付上限下线</option>
+                    <option value="0">禁用</option>
+                    <option value="-1">已删除</option>
+                </select>
+            </div>
+        </div>
+        <div style="text-align: center">
+            <button class="layui-btn layui-btn-btnnew">查询</button>
+            <button class="layui-btn layui-btn-btnnew add_bankCard">新增银行卡</button>
+        </div>
+        <div style="color: red;padding: 10px">
+            <h4>注一：卡状态为“使用中”时，前台才会显示相应的收款卡号。</h4>
+            <h4>注二：为了便捷操作状态修改确认之后直接生效，无需点击保存按钮。</h4>
+            <h4>注三：因程序需要，需要手动设置一张虚拟卡作为付款卡,设置成启用或使用中状态,在出款时方可选用。</h4>
+        </div>
+    </div>
+    <div class="layui-field-box layui-form">
+        <table class="layui-table">
+            <thead>
+            <tr>
+                <!---------------------------------------------------添加 批量删除   ------------------------------------------->
+                <td style="padding: 0">
+                    <button class="layui-btn layui-btn-danger layui-btn-xs">批量删除</button>
+                </td>
+                <!---------------------------------------------------添加 批量删除   ------------------------------------------->
+                <td>card_id</td>
+                <td>层级</td>
+                <td>户名</td>
+                <td>卡号</td>
+                <td>所属银行</td>
+                <td>类型</td>
+                <td>充值类别</td>
+                <td>余额</td>
+                <td>省份</td>
+                <td>城市</td>
+                <td>顺序</td>
+                <td>状态</td>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <!---------------------------------------------------添加 批量删除   ------------------------------------------->
+                <td>
+                    <input type="checkbox" name="like1[write]" lay-skin="primary">
+                </td>
+                <!---------------------------------------------------添加 批量删除   ------------------------------------------->
+                <td>1369</td>
+                <td>默认层,内层,小黑屋,测试层级,中间层,过渡内层</td>
+                <td>信兑支付宝WAP</td>
+                <td class="pr10">**********1713</td>
+                <!--------------- auhtor snow    修改取值方式------------->
+                <td>信兑支付宝WAP</td>
+                <td>收款</td>
+                <td>
+                    支付宝支付
+                </td>
+                <td>0.00</td>
+                <td>深圳</td>
+                <td>罗湖区</td>
+                <td><input class="layui-input" type="text" name="sort_ids[1369]" value="0" size="3"></td>
+                <td>
+                    <select>
+                        <option value="-1">请选择</option>
+                        <option value="1">启用</option>
+                        <option value="2" selected="">使用中</option>
+                        <option value="3">收款超额下线</option>
+                        <option value="4">付款余额不足下线</option>
+                        <option value="5">超过当日支付上限下线</option>
+                        <option value="0">禁用</option>
+                    </select>
+                </td>
+                <td>
+                    <button class="layui-btn layui-btn-btnnew layui-btn-xs pay_redact">编辑</button>
+                    <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+                </td>
+            </tr>
+            <tr>
+                <!---------------------------------------------------添加 批量删除   ------------------------------------------->
+                <td><input type="checkbox" name="like1[write]" lay-skin="primary"></td>
+                <!---------------------------------------------------添加 批量删除   ------------------------------------------->
+                <td>1360</td>
+                <td>默认层,内层,小黑屋,测试层级,中间层,过渡内层</td>
+                <td>51付QQ</td>
+                <td class="pr10">**********1022</td>
+                <!--------------- auhtor snow    修改取值方式------------->
+                <td>51付QQ</td>
+                <td>收款</td>
+                <td>
+                    在线支付
+                </td>
+                <td>2.70</td>
+                <td>深圳</td>
+                <td>罗湖区</td>
+                <td><input class="layui-input" type="text" name="sort_ids[1360]" value="0" size="3"></td>
+                <td>
+                    <select>
+                        <option value="-1">请选择</option>
+                        <option value="1">启用</option>
+                        <option value="2" selected="">使用中</option>
+                        <option value="3">收款超额下线</option>
+                        <option value="4">付款余额不足下线</option>
+                        <option value="5">超过当日支付上限下线</option>
+                        <option value="0">禁用</option>
+                    </select>
+                </td>
+                <td>
+                    <button class="layui-btn layui-btn-btnnew layui-btn-xs pay_redact">编辑</button>
+                    <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+                </td>
+            </tr>
+            <tr>
+                <!---------------------------------------------------添加 批量删除   ------------------------------------------->
+                <td><input type="checkbox" name="like1[write]" lay-skin="primary"></td>
+                <!---------------------------------------------------添加 批量删除   ------------------------------------------->
+                <td>1359</td>
+                <td>默认层,内层,小黑屋,测试层级,中间层,过渡内层</td>
+                <td>51付微信</td>
+                <td class="pr10">**********0015</td>
+                <!--------------- auhtor snow    修改取值方式------------->
+                <td>51付微信</td>
+                <td>收款</td>
+                <td>
+                    微信支付
+                </td>
+                <td>0.00</td>
+                <td>深圳</td>
+                <td>罗湖区</td>
+                <td><input class="layui-input" type="text" name="sort_ids[1359]" value="0" size="3"></td>
+                <td>
+                    <select>
+                        <option value="-1">请选择</option>
+                        <option value="1">启用</option>
+                        <option value="2" selected="">使用中</option>
+                        <option value="3">收款超额下线</option>
+                        <option value="4">付款余额不足下线</option>
+                        <option value="5">超过当日支付上限下线</option>
+                        <option value="0">禁用</option>
+                    </select>
+                </td>
+                <td>
+                    <button class="layui-btn layui-btn-btnnew layui-btn-xs pay_redact">编辑</button>
+                    <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+                </td>
+            </tr>
+            <tr>
+                <!---------------------------------------------------添加 批量删除   ------------------------------------------->
+                <td><input type="checkbox" name="like1[write]" lay-skin="primary"></td>
+                <!---------------------------------------------------添加 批量删除   ------------------------------------------->
+                <td>1159</td>
+                <td>默认层,测试层级</td>
+                <td>密付网银</td>
+                <td class="pr10">**********4334</td>
+                <!--------------- auhtor snow    修改取值方式------------->
+                <td>密付网银</td>
+                <td>收款</td>
+                <td>
+                    在线支付
+                </td>
+                <td>2885.50</td>
+                <td>深圳</td>
+                <td>罗湖区</td>
+                <td><input class="layui-input" type="text" name="sort_ids[1159]" value="0" size="3"></td>
+                <td>
+                    <select>
+                        <option value="-1">请选择</option>
+                        <option value="1">启用</option>
+                        <option value="2">使用中</option>
+                        <option value="3">收款超额下线</option>
+                        <option value="4">付款余额不足下线</option>
+                        <option value="5">超过当日支付上限下线</option>
+                        <option value="0" selected="">禁用</option>
+                    </select>
+                </td>
+                <td style="width:10%;padding: 0">
+                    <button class="layui-btn layui-btn-btnnew layui-btn-xs adversion">内转</button>
+                    <button class="layui-btn layui-btn-btnnew layui-btn-xs pay_redact">编辑</button>
+                    <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+                </td>
+            </tr>
+            <tr>
+                <!---------------------------------------------------添加 批量删除   ------------------------------------------->
+                <td><input type="checkbox" name="like1[write]" lay-skin="primary"></td>
+                <!---------------------------------------------------添加 批量删除   ------------------------------------------->
+                <td>1158</td>
+                <td>默认层,内层,测试层级,中间层,过渡内层</td>
+                <td>密付QQ</td>
+                <td class="pr10">**********4249</td>
+                <!--------------- auhtor snow    修改取值方式------------->
+                <td>密付QQ</td>
+                <td>收款</td>
+                <td>
+                    在线支付
+                </td>
+                <td>61378.67</td>
+                <td>深圳</td>
+                <td>罗湖区</td>
+                <td><input class="layui-input" type="text" name="sort_ids[1158]" value="0" size="3"></td>
+                <td>
+                    <select>
+                        <option value="-1">请选择</option>
+                        <option value="1">启用</option>
+                        <option value="2">使用中</option>
+                        <option value="3">收款超额下线</option>
+                        <option value="4">付款余额不足下线</option>
+                        <option value="5">超过当日支付上限下线</option>
+                        <option value="0" selected="">禁用</option>
+                    </select>
+                </td>
+                <td style="width:10%;padding: 0">
+                    <button class="layui-btn layui-btn-btnnew layui-btn-xs adversion">内转</button>
+                    <button class="layui-btn layui-btn-btnnew layui-btn-xs pay_redact">编辑</button>
+                    <button class="layui-btn layui-btn-danger layui-btn-xs delete">删除</button>
+                </td>
+            </tr>
+            <tr style="text-align: center">
+                <td colspan="14">
+                    <button class="layui-btn layui-btn-btnnew">保存</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="demo7"></div>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.define(['layer', 'laypage', 'form'], function () {
+        var laypage = layui.laypage;
+        //完整功能(分页)
+        laypage.render({
+            elem: 'demo7'
+            , count: 100
+            , layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+        var $ = layui.jquery;
+        $('.add_bankCard').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '新增银行卡'
+                , area: ['70%', '90%']
+                , shade: 0
+                , maxmin: true
+                , content: 'add_bankCard.html'
+                , zIndex: layer.zIndex //重点1
+            })
+        })
+        $('.pay_redact').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '编辑'
+                , area: ['70%', '90%']
+                , shade: 0
+                , maxmin: true
+                , content: 'pay_redact.html'
+                , zIndex: layer.zIndex //重点1
+            })
+        })
+        $('.adversion').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '内转'
+                , area: ['70%', '90%']
+                , shade: 0
+                , maxmin: true
+                , content: 'adversion.html'
+                , zIndex: layer.zIndex //重点1
+            })
+        })
+        //删除按钮
+        $('.delete').each(function () {
+            var $that = $(this);
+            $that.on('click', function () {
+                layer.open({
+                    type: 1,
+                    title: '删除确认',
+                    skin: 'layui-layer-rim', //加上边框
+                    area: ['420px', '140px'], //宽高
+                    btn: ['确定', '返回'],
+                    content: '<div class="delete_affirm">\n' +
+                    '    <p>真的删除？该操作不可恢复！</p>\n' +
+                    '</div>'
+                })
+            })
+        })
+    })
+</script>
+
+</body>
+</html>

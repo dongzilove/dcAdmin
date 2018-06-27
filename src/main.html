@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/highcharts.js" type="text/javascript" ></script> 
+		<script src="js/jquery.scrollLoading.js" type="text/javascript" ></script>  
+		<style> 
+
+        #report_table{
+            width:100%; 
+			height:100%;
+			overflow:auto;
+
+        }
+        #report_table .chart{
+            margin:auto;
+            border-bottom:1px solid #A4BED4;
+            width: 100%;
+            height:400px;
+        } 
+        .layui-col-space1>*{    padding: .5px 10.5px;}
+
+    </style>
+    <script>
+
+		$(function(){ 
+			$(".chart").each(function(index,elem ){ 
+				$(elem ).scrollLoading({ 
+					container: $("#report_table"), //滚动对象，监听该对象的滚动事件，很关键。
+					callback: function(){ //加载到可见范围的回调事件
+						loadChart($(elem )); 
+					},
+					preloadHeight:400 //预加载高度
+				}); 
+			});
+			
+			function loadChart(obj){
+				var options = {
+					title: {
+						text: $(obj).attr("id")
+					},
+					subtitle: {
+						text: '数据来源：测试数据'
+					},
+					yAxis: {
+						title: {
+							text: '就业人数'
+						}
+					},
+					legend: {
+						layout: 'vertical',
+						align: 'right',
+						verticalAlign: 'middle'
+					},
+					plotOptions: {
+						series: {
+							label: {
+								connectorAllowed: false
+							},
+							pointStart: 2010
+						}
+					},
+					series: [{
+						name: '安装，实施人员',
+						data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+					}, {
+						name: '工人',
+						data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+					}],
+					responsive: {
+						rules: [{
+							condition: {
+								maxWidth: 500
+							},
+							chartOptions: {
+								legend: {
+									layout: 'horizontal',
+									align: 'center',
+									verticalAlign: 'bottom'
+								}
+							}
+						}]
+					}
+				};
+
+				
+				setTimeout(function(){
+					obj.highcharts(options);
+				},0);
+				
+			} 
+		});
+	</script>
+<!--		<link rel="stylesheet" href="../../layuiadmin/style/admin.css" media="all">-->
+	</head>
+
+	<body>
+		<div class="layui-container admin-main">  
+		   
+		  <!--移动设备、平板、桌面端的不同表现：-->
+		  <div class="layui-row main-row">
+		  	<!--统计记录-->
+		    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4 row-one">
+		     	<div class="layui-col-xs4 layui-col-sm4 layui-col-md4 rowone-margin">
+		     		<span class="ont-title">在线人数</span>
+		     		<span class="ont-centent">60000</span>
+		    	</div>
+		    	<div class="layui-col-xs4 layui-col-sm4 layui-col-md4 rowone-margin">
+		     		<span class="ont-title">今日新增用户数</span>
+		     		<span class="ont-centent">21000</span>
+		    	</div>
+		    	<div class="layui-col-xs4 layui-col-sm4 layui-col-md4 rowone-margin">
+		     		<span class="ont-title">今日用户</span>
+		     		<span class="ont-centent">4000</span>
+		    	</div>
+		    </div>
+		    <div class="layui-col-xs8 layui-col-sm8 layui-col-md8 row-one">
+		      	<div class="layui-col-xs3 layui-col-sm3 layui-col-md3 rowone-margin">
+		     		<span class="ont-title">今日入款(￥)</span>
+		     		<span class="ont-centent two-centent">245600000</span>
+		    	</div>
+		    	<div class="layui-col-xs3 layui-col-sm3 layui-col-md3 rowone-margin">
+		     		<span class="ont-title">今日出款(￥)</span>
+		     		<span class="ont-centent two-centent">268700000</span>
+		    	</div>
+		    	<div class="layui-col-xs3 layui-col-sm3 layui-col-md3 rowone-margin">
+		     		<span class="ont-title">总投注</span>
+		     		<span class="ont-centent">110000000</span>
+		    	</div>
+		    	<div class="layui-col-xs3 layui-col-sm3 layui-col-md3 rowone-margin">
+		     		<span class="ont-title">总中奖</span>
+		     		<span class="ont-centent">800000000</span>
+		    	</div>
+		    </div>
+		  </div>
+		  <!--快捷入口-->
+		  <div class="layui-row  layui-col-space1" style="margin-top: 15px;">
+		    <div class="layui-col-xs5 layui-col-sm5 layui-col-md5" style="background: #fff;border-radius: 4px;    padding-bottom: 20px;">
+		     	<div class="layui-row" style="margin: 15px 15px;font-size: 16px;"><span>快捷应用</span></div>
+		     	<a class="kjColor" href="../temp/userManage/auditManagement.html">
+		     		<div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="text-align: center;margin: 15px 0 10px 0;display: inline-block;">
+			      		<div><img src="images/homeMain/userMag.png" /></div>
+			      		<span>用户管理工具</span>
+			    	</div>
+		     	</a>
+		     	<a href="#" class="kjColor">
+			    	<div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="text-align: center;margin: 15px 0 10px 0;display: inline-block;">
+			      		<div><img src="images/homeMain/caiwu.png" /></div>
+			      		<span>财务管理工具</span>
+			    	</div>
+			    </a>
+		     	<a href="#" class="kjColor">
+			    	<div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="text-align: center;margin: 15px 0 10px 0;display: inline-block;">
+			      		<div><img src="images/homeMain/baobiao.png" /></div>
+			      		<span>报表管理工具</span>
+			    	</div>
+			    </a>
+		     	<a href="#" class="kjColor">
+			    	<div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="text-align: center;margin: 15px 0 10px 0;display: inline-block;">
+			      		<div><img src="images/homeMain/caizhong.png" /></div>
+			      		<span>彩种管理工具</span>
+			    	</div>
+			    </a>
+		     	<a href="#" class="kjColor">
+			    	<div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="text-align: center;margin: 15px 0 10px 0;display: inline-block;">
+			      		<div><img src="images/homeMain/shichang.png" /></div>
+			      		<span>市场管理工具</span>
+			    	</div>
+			    </a>
+		     	<a href="#" class="kjColor">
+			    	<div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="text-align: center;margin: 15px 0 10px 0;display: inline-block;">
+			      		<div><img src="images/homeMain/sjtj.png" /></div>
+			      		<span>数据统计概览</span>
+			    	</div>
+			    </a>
+		     	<a href="#" class="kjColor">
+			    	<div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="text-align: center;margin: 15px 0 10px 0;display: inline-block;">
+			      		<div><img src="images/homeMain/youhui.png" /></div>
+			      		<span>优惠管理</span>
+			    	</div>
+			    </a>
+		    </div>
+		    <div class="layui-col-xs7 layui-col-sm7 layui-col-md7"  >
+		    	  	<div id="report_table">
+						<div class="chart" id="chart1"></div>
+						<div class="chart" id="chart2"></div>  
+						<!--<div class="chart" id="chart3"></div>
+						<div class="chart" id="chart4"></div>
+						<div class="chart" id="chart5"></div>
+						<div class="chart" id="chart6"></div>
+						<div class="chart" id="chart7"></div>
+						<div class="chart" id="chart8"></div>
+						<div class="chart" id="chart9"></div>
+						<div class="chart" id="chart10"></div> 
+						<div class="chart" id="chart11"></div>
+						<div class="chart" id="chart12"></div>  
+						<div class="chart" id="chart13"></div>
+						<div class="chart" id="chart14"></div>  
+						<div class="chart" id="chart15"></div>
+						<div class="chart" id="chart16"></div>
+						<div class="chart" id="chart17"></div>  -->
+				 
+					</div> 
+		      	<!--<img src="images/homeMain/photo_2018.jpg" style="    width: 99%;margin-left: 1%;"/>-->
+		    </div>
+		  </div>
+		</div>
+
+
+		<script type="text/javascript" src="plugins/layui/layui.js" ></script>
+	</body>
+
+</html>

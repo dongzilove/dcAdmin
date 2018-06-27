@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第三方支付下级菜单</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/companyManagement.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+    .layui-table td, .layui-table th{
+        font-size: 12px;
+    }
+</style>
+<body>
+<div class="user_jurisdiction_manage">
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>menuid</td>
+            <td>名称</td>
+            <td>说明</td>
+            <td>控制器</td>
+            <td>行为</td>
+            <td>是否启用</td>
+            <td>是否记录日志</td>
+            <td>排序</td>
+            <td>下级菜单</td>
+            <td>更新时间</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>258</td>
+            <td>SafePay支付</td>
+            <td>SafePay支付</td>
+            <td>pay</td>
+            <td>safePay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-12-12 20:56:54</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>259</td>
+            <td>雅付支付</td>
+            <td>雅付支付</td>
+            <td>pay</td>
+            <td>yafuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-12-18 15:04:10</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>264</td>
+            <td>根据订单号查询订单状态</td>
+            <td>根据订单号查询订单状态</td>
+            <td>pay</td>
+            <td>lookOrder</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-01-03 00:10:56</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>265</td>
+            <td>金银宝支付</td>
+            <td>金银宝支付</td>
+            <td>pay</td>
+            <td>jinyinbaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2018-01-09 11:14:58</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>133</td>
+            <td>仁信支付</td>
+            <td>仁信支付</td>
+            <td>pay</td>
+            <td>renxinPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-01 16:51:21</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>134</td>
+            <td>瞬付支付</td>
+            <td>瞬付支付</td>
+            <td>pay</td>
+            <td>shunfuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-01 16:51:45</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>135</td>
+            <td>顺宝支付</td>
+            <td>顺宝支付</td>
+            <td>pay</td>
+            <td>shunbaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-01 16:52:00</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>136</td>
+            <td>熊猫支付</td>
+            <td>熊猫支付</td>
+            <td>pay</td>
+            <td>xiongmaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-01 16:52:13</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>137</td>
+            <td>幸运支付</td>
+            <td>幸运支付</td>
+            <td>pay</td>
+            <td>xingyunPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-01 16:52:27</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>138</td>
+            <td>高通支付</td>
+            <td>高通支付</td>
+            <td>pay</td>
+            <td>gaotongPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-02 17:17:45</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>139</td>
+            <td>萝卜支付</td>
+            <td>萝卜支付</td>
+            <td>pay</td>
+            <td>luoboPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-02 17:18:08</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>146</td>
+            <td>金付卡</td>
+            <td>金付卡</td>
+            <td>pay</td>
+            <td>jinfukaPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-11 17:53:01</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>147</td>
+            <td>智付</td>
+            <td>智付</td>
+            <td>pay</td>
+            <td>zhifuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-12 19:31:56</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>149</td>
+            <td>多得宝</td>
+            <td>多得宝</td>
+            <td>pay</td>
+            <td>duodebaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-13 18:54:17</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>150</td>
+            <td>路德</td>
+            <td>路德</td>
+            <td>pay</td>
+            <td>ludePay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-14 13:41:16</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>151</td>
+            <td>七彩</td>
+            <td>七彩</td>
+            <td>pay</td>
+            <td>qicaiPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-14 21:07:58</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>152</td>
+            <td>易付</td>
+            <td>易付</td>
+            <td>pay</td>
+            <td>yifuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-17 16:20:08</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>153</td>
+            <td>易付通道</td>
+            <td>易付通道</td>
+            <td>pay</td>
+            <td>yifutongdaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-19 20:47:32</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>154</td>
+            <td>考拉</td>
+            <td>考拉</td>
+            <td>pay</td>
+            <td>kaolaPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-22 19:40:51</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>155</td>
+            <td>旺付通</td>
+            <td>旺付通</td>
+            <td>pay</td>
+            <td>wangfutongPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-24 22:03:51</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>156</td>
+            <td>万众云</td>
+            <td>万众云</td>
+            <td>pay</td>
+            <td>wanzhongyunPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-24 22:05:32</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>157</td>
+            <td>YFT</td>
+            <td>YFT</td>
+            <td>pay</td>
+            <td>yftPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-27 16:54:43</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>158</td>
+            <td>汇宝通</td>
+            <td>汇宝通</td>
+            <td>pay</td>
+            <td>huibaotongPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-28 20:24:18</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>159</td>
+            <td>香蕉</td>
+            <td>香蕉</td>
+            <td>pay</td>
+            <td>xiangjiaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-07-29 15:35:36</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>160</td>
+            <td>易宝支付</td>
+            <td>易宝支付</td>
+            <td>pay</td>
+            <td>yibaozhifuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-08-01 18:21:41</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>161</td>
+            <td>海鸥</td>
+            <td>海鸥</td>
+            <td>pay</td>
+            <td>haiouPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-08-05 14:55:13</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>162</td>
+            <td>3K</td>
+            <td>3K</td>
+            <td>pay</td>
+            <td>sankPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-08-06 21:21:20</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>163</td>
+            <td>轻易付</td>
+            <td>轻易付</td>
+            <td>pay</td>
+            <td>qingyifuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-08-08 00:12:00</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>167</td>
+            <td>YZ支付</td>
+            <td>YZ支付</td>
+            <td>pay</td>
+            <td>yzPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-08-28 22:14:38</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>169</td>
+            <td>U付</td>
+            <td>U付支付</td>
+            <td>pay</td>
+            <td>ufuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-04 15:26:31</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>170</td>
+            <td>钰盈</td>
+            <td>钰盈</td>
+            <td>pay</td>
+            <td>yuyingPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-07 18:23:58</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>171</td>
+            <td>鼎峰支付</td>
+            <td>鼎峰支付</td>
+            <td>pay</td>
+            <td>dingfengPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-10 19:08:05</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>172</td>
+            <td>易爱支付</td>
+            <td>易爱支付</td>
+            <td>pay</td>
+            <td>yiaiPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-11 15:46:16</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>173</td>
+            <td>鼎易</td>
+            <td>鼎易支付</td>
+            <td>pay</td>
+            <td>dingyiPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-11 16:31:27</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>174</td>
+            <td>泽圣支付</td>
+            <td>泽圣支付</td>
+            <td>pay</td>
+            <td>zshPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-11 17:56:06</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>175</td>
+            <td>新鼎峰支付</td>
+            <td>新鼎峰支付</td>
+            <td>pay</td>
+            <td>xdfPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-18 14:46:46</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>176</td>
+            <td>捷安付支付</td>
+            <td>捷安付支付</td>
+            <td>pay</td>
+            <td>jieanfuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-18 16:15:23</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>177</td>
+            <td>E宝支付</td>
+            <td>E宝支付</td>
+            <td>pay</td>
+            <td>ebaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-18 16:19:00</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>178</td>
+            <td>在线宝支付</td>
+            <td>在线宝支付</td>
+            <td>pay</td>
+            <td>zaixianbaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-18 16:23:16</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>179</td>
+            <td>天付宝支付</td>
+            <td>天付宝支付</td>
+            <td>pay</td>
+            <td>tianfubaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-23 17:49:52</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>180</td>
+            <td>芒果支付</td>
+            <td>芒果支付</td>
+            <td>pay</td>
+            <td>mgPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-23 17:56:52</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>181</td>
+            <td>熙大科技支付</td>
+            <td>熙大科技支付</td>
+            <td>pay</td>
+            <td>xidakejiPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-23 19:54:04</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>182</td>
+            <td>云讯</td>
+            <td>云讯支付</td>
+            <td>pay</td>
+            <td>yunxunPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-24 20:24:05</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>183</td>
+            <td>长城付支付</td>
+            <td>长城付支付</td>
+            <td>pay</td>
+            <td>changchengfuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-26 20:48:56</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>184</td>
+            <td>易宝通支付</td>
+            <td>易宝通支付</td>
+            <td>pay</td>
+            <td>yibaotongPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-09-28 18:51:29</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>211</td>
+            <td>讯宝商务</td>
+            <td>讯宝商务</td>
+            <td>pay</td>
+            <td>xbswPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-09 20:11:41</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>212</td>
+            <td>财猫支付</td>
+            <td>财猫支付</td>
+            <td>pay</td>
+            <td>caimaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-09 18:25:43</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>213</td>
+            <td>彩富宝支付</td>
+            <td>彩富宝支付</td>
+            <td>pay</td>
+            <td>caifubaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-09 18:26:49</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>214</td>
+            <td>汇通支付</td>
+            <td>汇通支付</td>
+            <td>pay</td>
+            <td>huitongPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-09 18:28:30</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>215</td>
+            <td>博士支付</td>
+            <td>博士支付</td>
+            <td>pay</td>
+            <td>boshiPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-09 18:29:47</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>216</td>
+            <td>信付宝支付</td>
+            <td>信付宝支付</td>
+            <td>pay</td>
+            <td>xinfubaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-09 20:55:56</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>217</td>
+            <td>元宝支付</td>
+            <td>元宝支付</td>
+            <td>pay</td>
+            <td>yuanbaoPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-09 22:26:47</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>218</td>
+            <td>盈华讯方</td>
+            <td>盈华讯方</td>
+            <td>pay</td>
+            <td>yhxfPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-09 22:52:10</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>221</td>
+            <td>嘉联支付</td>
+            <td>嘉联支付</td>
+            <td>pay</td>
+            <td>jlPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-12-08 20:22:21</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>223</td>
+            <td>时光付支付</td>
+            <td>时光付支付</td>
+            <td>pay</td>
+            <td>shiguangfuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-12 21:16:58</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>224</td>
+            <td>密付支付</td>
+            <td>密付支付</td>
+            <td>pay</td>
+            <td>mifuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-12 21:29:41</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>225</td>
+            <td>尊支付</td>
+            <td>尊支付</td>
+            <td>Pay</td>
+            <td>zunPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-16 21:33:45</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>226</td>
+            <td>啊啦支付</td>
+            <td>啊啦支付</td>
+            <td>Pay</td>
+            <td>alaPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-16 21:35:08</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>227</td>
+            <td>讯付</td>
+            <td>讯付</td>
+            <td>Pay</td>
+            <td>xunPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-16 21:41:08</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>228</td>
+            <td>钱宝聚合</td>
+            <td>钱宝聚合</td>
+            <td>pay</td>
+            <td>qbjhPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-20 13:23:07</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>229</td>
+            <td>北京海富</td>
+            <td>北京海富支付</td>
+            <td>pay</td>
+            <td>bjhfPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-21 14:22:52</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>230</td>
+            <td>微支汇</td>
+            <td>微支汇支付</td>
+            <td>pay</td>
+            <td>wzhPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-30 19:41:27</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>231</td>
+            <td>32支付</td>
+            <td>32支付</td>
+            <td>pay</td>
+            <td>zf32Pay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-30 19:42:08</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>232</td>
+            <td>彩虹支付</td>
+            <td>彩虹支付</td>
+            <td>pay</td>
+            <td>caihonPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-10-30 19:43:10</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>233</td>
+            <td>乾恩支付</td>
+            <td>乾恩支付</td>
+            <td>pay</td>
+            <td>qianenPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-11-06 20:56:58</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>234</td>
+            <td>汇合支付</td>
+            <td>汇合支付</td>
+            <td>pay</td>
+            <td>huihePay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-11-13 15:12:39</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>235</td>
+            <td>百时支付</td>
+            <td>百时支付</td>
+            <td>pay</td>
+            <td>baishiPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-11-13 15:13:14</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>237</td>
+            <td>泽圣WAP</td>
+            <td>泽圣WAP</td>
+            <td>pay</td>
+            <td>zshwappay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-11-13 16:06:47</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>239</td>
+            <td>利盈支付</td>
+            <td>利盈支付</td>
+            <td>pay</td>
+            <td>lyPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-11-20 21:35:03</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>240</td>
+            <td>金阳支付</td>
+            <td>金阳支付</td>
+            <td>pay</td>
+            <td>jinyangPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-11-21 19:00:49</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>241</td>
+            <td>多多支付</td>
+            <td>多多支付</td>
+            <td>pay</td>
+            <td>ddPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-11-25 13:04:26</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>242</td>
+            <td>顺付通支付</td>
+            <td>顺付通支付</td>
+            <td>pay</td>
+            <td>sftPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-11-25 13:08:10</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>243</td>
+            <td>F86支付</td>
+            <td>F86支付</td>
+            <td>pay</td>
+            <td>F86Pay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-11-25 13:08:48</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>244</td>
+            <td>通扫支付</td>
+            <td>通扫支付</td>
+            <td>pay</td>
+            <td>tsPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-12-07 18:59:52</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>245</td>
+            <td>全宇支付</td>
+            <td>全宇支付</td>
+            <td>pay</td>
+            <td>quanyuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-12-07 19:00:27</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>247</td>
+            <td>琥付支付</td>
+            <td>琥付支付</td>
+            <td>pay</td>
+            <td>hufuPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-12-08 20:28:16</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>248</td>
+            <td>福卡通支付</td>
+            <td>福卡通支付</td>
+            <td>pay</td>
+            <td>fukatongPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-12-08 20:28:56</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>253</td>
+            <td>支付</td>
+            <td>支付</td>
+            <td>pay</td>
+            <td>pay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-12-09 22:40:21</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>254</td>
+            <td>支付回调</td>
+            <td>支付回调</td>
+            <td>pay</td>
+            <td>backPay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-12-09 22:41:49</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>255</td>
+            <td>银行卡下单</td>
+            <td>银行卡下单</td>
+            <td>pay</td>
+            <td>offlinePay</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2017-12-11 17:06:31</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">&nbsp;</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew save">保存</button>
+            </td>
+            <td>
+                <!--<button class="layui-btn layui-btn-sm layui-btn-btnnew">上级</button>-->
+            </td>
+            <td colspan="2"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="./../../../plugins/layui/layui.js"></script>
+<script src="./../../../js/userJurisdictionManage.js"></script>
+</body>
+</html>

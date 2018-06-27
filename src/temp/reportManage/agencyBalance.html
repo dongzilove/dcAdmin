@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>代理余额</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list">
+			<div class="layui-row admin-title">
+				<span class="left title-T">代理余额</span>
+			</div>
+			<form class="layui-form" action="" style="margin: 0 15px;">
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+						<div class="layui-form-item">
+							<label class="layui-form-label">用户名</label>
+							<div class="layui-input-block">
+								<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+							</div>
+						</div>
+					</div>
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+						<div class="layui-form-item">
+							<label class="layui-form-label">状态</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">已删除</option>
+									<option value="2">冻结</option>
+									<option value="3">正常</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+						<div class="layui-form-item">
+							<label class="layui-form-label">帐号类型</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">正式账号</option>
+									<option value="2">测试账号</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layui-inline" style="margin: auto;display: table;">
+					<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-btnnew" style="width: 100px;">搜索</a>
+					<button type="reset" class="layui-btn layui-btn-primary" style="width: 100px;">重置</button>
+				</div>
+			</form>
+			<!--温馨提示-->
+			<!--<fieldset class="layui-elem-field layui-field-title" style="margin: 15px 15px;line-height: 25px;">
+			  <legend style="font-size: 16px;">温馨提示</legend>
+			  <div class="layui-field-box" style="font-size: 13px;margin-left: 30px;">
+			  	 <div>注1：第一个帐户的信息指其自己的购买量、自己的总返点（含下级对他的返点），自己的中奖金额，下级则为团队汇总信息。</div>
+			  	 <div>注2：勾选”忽略查询时间区间条件“后，查询会员数据从会员注册时间开始到当前查询时间</div>
+			  	 <div style="color: red;">注3：点击用户名可以查看自己与直属下级</div>
+			  </div>
+			</fieldset>-->
+			<!--列表展示-->
+			<div class="layui-field-box layui-form">
+				<table class="layui-table admin-table">
+					<thead>
+						<tr>
+							<!--<th style="width: 30px;"><input type="checkbox" lay-filter="allselector" lay-skin="primary"></th>-->
+							<th>用户名</th>
+							<th>所属组</th>
+							<th>团队余额</th>
+						</tr>
+					</thead>
+					<tbody id="content">
+					</tbody>
+				</table>
+			</div>
+			<div id="demo7"></div>
+			<!--<div class="admin-table-page">
+				<div id="paged" class="page">
+				</div>
+			</div>-->
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate,
+					$ = layui.jquery;
+				//监听提交
+				form.on('submit(demo1)', function(data) {
+					layer.alert(JSON.stringify(data.field), {
+						title: '最终的提交信息'
+					})
+					return false;
+				});
+				//日期时间范围
+//			    laydate.render({
+//			    	elem: '#test17'
+//			    	,calendar: true
+//			  	});
+ 
+
+			});
+		</script>
+		<!--数据展示-->
+		<script type="text/html" id="tpl">
+			{{# layui.each(d.list, function(index, item){ }}
+			<tr>
+				<!--<td><input type="checkbox" lay-skin="primary"></td>-->
+				<td>{{ item.name }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+			</tr>
+			{{# }); }}
+		</script>
+		<script>
+			layui.config({
+				base: '../../js/'
+			});
+
+			layui.use(['paging', 'form'], function() {
+				var $ = layui.jquery,
+					paging = layui.paging(),
+					layerTips = parent.layer === undefined ? layui.layer : parent.layer, //获取父窗口的layer对象
+					layer = layui.layer, //获取当前窗口的layer对象
+					form = layui.form;
+
+                paging.init({
+                    openWait: true,
+                    url: '../../datas/laytpl_laypage_data.json?v=' + new Date().getTime(), //地址
+					elem: '#content', //内容容器
+					params: { //发送到服务端的参数
+					},
+					type: 'GET',
+					tempElem: '#tpl', //模块容器
+					pageConfig: { //分页参数配置
+						elem: '#paged', //分页容器
+						pageSize: 3 //分页大小
+					},
+					success: function() { //渲染成功的回调
+						//alert('渲染成功');
+					},
+					fail: function(msg) { //获取数据失败的回调
+						//alert('获取数据失败')
+					},
+					complate: function() { //完成的回调
+						//alert('处理完成');
+						//重新渲染复选框
+						form.render('checkbox');
+						form.on('checkbox(allselector)', function(data) {
+							var elem = data.elem;
+
+							$('#content').children('tr').each(function() {
+								var $that = $(this);
+								//全选或反选
+								$that.children('td').eq(0).children('input[type=checkbox]')[0].checked = elem.checked;
+								form.render('checkbox');
+							});
+						});
+
+						
+
+					},
+				});
+				$('#search').on('click', function() {
+//					parent.layer.alert('你点击了搜索按钮')
+					layer.msg('搜索成功！', {
+					  offset: 't',
+					  anim: 1
+					});
+					
+				});
+
+				var addBoxIndex = -1;
+				
+
+				$('#import').on('click', function() {
+					var that = this;
+					var index = layer.tips('只想提示地精准些', that, { tips: [1, 'white'] });
+					$('#layui-layer' + index).children('div.layui-layer-content').css('color', '#000000');
+				});
+			});
+		</script>
+	</body>
+
+</html>

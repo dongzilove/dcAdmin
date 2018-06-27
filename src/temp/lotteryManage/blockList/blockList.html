@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>封锁列表</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div class="layui-row admin-title">
+        <span class="left title-T">封锁列表</span>
+    </div>
+    <div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">3D</li>
+            <li>P3P5</li>
+            <li>LHC</li>
+            <li>SSQ</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <td>lock_id</td>
+                        <td>玩法简称</td>
+                        <td>中文名</td>
+                        <td>封锁值</td>
+                        <td>创建时间</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>3D</td>
+                        <td>3D低频</td>
+                        <td><input type="text" class="layui-input" maxlength="19" value="100000"></td>
+                        <td></td>
+                    </tr>
+                    <tr style="text-align: center">
+                        <td colspan="5">
+                            <button class="layui-btn increase layui-btn-btnnew">保存</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="layui-tab-item">
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <td>lock_id</td>
+                        <td>玩法简称</td>
+                        <td>中文名</td>
+                        <td>封锁值</td>
+                        <td>创建时间</td>
+                    </tr>
+
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2</td>
+                        <td>P3P5</td>
+                        <td>P3P5低频</td>
+                        <td><input type="text" class="layui-input" maxlength="19" value="3000"></td>
+                        <td></td>
+                    </tr>
+                    <tr style="text-align: center">
+                        <td colspan="5">
+                            <button class="layui-btn increase layui-btn-btnnew">保存</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="layui-tab-item">
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <td>lock_id</td>
+                        <td>玩法简称</td>
+                        <td>中文名</td>
+                        <td>封锁值</td>
+                        <td>创建时间</td>
+                    </tr>
+
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2</td>
+                        <td>LHC</td>
+                        <td>LHC低频</td>
+                        <td><input type="text" class="layui-input" maxlength="19" value="3000"></td>
+                        <td></td>
+                    </tr>
+                    <tr style="text-align: center">
+                        <td colspan="5">
+                            <button class="layui-btn increase layui-btn-btnnew">保存</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="layui-tab-item">
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <td>lock_id</td>
+                        <td>玩法简称</td>
+                        <td>中文名</td>
+                        <td>封锁值</td>
+                        <td>创建时间</td>
+                    </tr>
+
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2</td>
+                        <td>SSQ</td>
+                        <td>SSQ低频</td>
+                        <td><input type="text" class="layui-input" maxlength="19" value="3000"></td>
+                        <td></td>
+                    </tr>
+                    <tr style="text-align: center">
+                        <td colspan="5">
+                            <button class="layui-btn increase layui-btn-btnnew">保存</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use('element', function () {
+        var $ = layui.jquery
+            , element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+    })
+</script>
+</body>
+</html>

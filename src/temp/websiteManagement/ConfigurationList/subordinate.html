@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看下级</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+    .delete_affirm{
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div style="padding: 10px 0 0 10px">
+        <button class="layui-btn increase layui-btn-btnnew modifyAllocation">增加配置</button>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>配置id</td>
+            <td>配置标题</td>
+            <td>说明</td>
+            <td>配置key</td>
+            <td>配置value（0禁用 1启用）</td>
+            <td>下级菜单</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>6</td>
+            <td>自动抓号达标权值</td>
+            <td>自动抓号达标权值</td>
+            <td>least_rank</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px">100</td>
+            <td> 无
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>人工录号权重值</td>
+            <td>人工录号权重值</td>
+            <td>person_rank</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px">101</td>
+            <td> 无
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>延迟抓号期数</td>
+            <td>延迟抓号期数</td>
+            <td>delay_issues</td>
+            <td style="overflow: hidden;white-space:nowrap;max-width: 100px">4</td>
+            <td> 无
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew modifyAllocation">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use('layer', function () {
+        var $ = layui.jquery;
+        //删除按钮
+        $('.delete').on('click', function() {
+            layer.open({
+                type: 1,
+                title: '删除确认',
+                skin: 'layui-layer-rim', //加上边框
+                area: ['420px', '140px'], //宽高
+                btn:['确定','返回'],
+                content: '<div class="delete_affirm">\n' +
+                '    <p>真的删除？该操作不可恢复！</p>\n' +
+                '</div>'
+            })
+        })
+        $('.modifyAllocation').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '修改配置'
+                , area: ['80%', '90%']
+                , shade: 0
+                , maxmin: true
+                , content: 'modifyAllocation.html'
+                ,zIndex: layer.zIndex //重点1
+            })
+        })
+    })
+</script>
+</body>
+</html>

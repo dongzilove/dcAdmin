@@ -1,0 +1,6 @@
+.admin-list{margin: 15px;background: #FFFFFF;border-radius:4px;}
+.admin-list .admin-title{height: 45px;line-height: 45px;width: 100%;display: inline-block;border-bottom: 1px solid #F2F5F4;margin-bottom: 20px;}
+.admin-list .admin-title .title-T{color: #303133;font-size: 16px;font-weight: 500;padding-left: 15px;}
+.admin-list .admin-title .addAdmin{color: #1CD67C;float: right;margin-right: 15px;}
+.admin-list .admin-title .addAdmin:hover{color: #3BE8B0;cursor:pointer;}
+.admin-list .admin-title .powerExplain{font-size: 14px;font-weight: 0;color: #666;}

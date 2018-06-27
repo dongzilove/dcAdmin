@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>app版本控制</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list">
+			<div class="layui-row admin-title" style="margin-bottom: 0px;">
+				<span class="left title-T">app版本控制</span>
+				<span class="right addAdmin">增加新版本</span>
+			</div>
+			<!--列表展示-->
+			<div class="layui-field-box layui-form">
+				<table class="layui-table admin-table">
+					<thead>
+						<tr>
+							<!--<th style="width: 30px;"><input type="checkbox" lay-filter="allselector" lay-skin="primary"></th>-->
+							<th>ios版本号</th>
+							<th>ios是否强制更新	</th>
+							<th>安卓版本号</th>
+							<th>安卓是否强制更新</th>
+							<th>ios版本描述</th>
+							<th>安卓版本描述</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="content">
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate;
+				//监听提交
+				form.on('submit(demo1)', function(data) {
+					layer.alert(JSON.stringify(data.field), {
+						title: '最终的提交信息'
+					})
+					return false;
+				});
+			});
+		</script>
+		<!--数据展示-->
+		<script type="text/html" id="tpl">
+			{{# layui.each(d.list, function(index, item){ }}
+			<tr>
+				<!--<td><input type="checkbox" lay-skin="primary"></td>-->
+				<td>{{ item.age }}</td>
+				<td>{{ item.name }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.name }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.name }}</td>
+				<td>
+					<a href="javascript:;" data-name="{{ item }}" data-opt="search" class="layui-btn layui-btn-normal layui-btn-mini">版本更新推送</a>
+					<a href="javascript:;" data-name="{{ item }}" data-opt="edit" class="layui-btn layui-btn-mini layui-btn-btnnew">编辑</a>
+					<a href="javascript:;" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+				</td>
+			</tr>
+			{{# }); }}
+		</script>
+		<script>
+			layui.config({
+				base: '../../js/'
+			});
+
+			layui.use(['paging', 'form'], function() {
+				var $ = layui.jquery,
+					paging = layui.paging(),
+					layerTips = parent.layer === undefined ? layui.layer : parent.layer, //获取父窗口的layer对象
+					layer = layui.layer, //获取当前窗口的layer对象
+					form = layui.form;
+
+                paging.init({
+                    openWait: true,
+                    url: '../../datas/laytpl_laypage_data.json?v=' + new Date().getTime(), //地址
+					elem: '#content', //内容容器
+					params: { //发送到服务端的参数
+					},
+					type: 'GET',
+					tempElem: '#tpl', //模块容器
+					pageConfig: { //分页参数配置
+						elem: '#paged', //分页容器
+						pageSize: 3 //分页大小
+					},
+					success: function() { //渲染成功的回调
+						//alert('渲染成功');
+					},
+					fail: function(msg) { //获取数据失败的回调
+						//alert('获取数据失败')
+					},
+					complate: function() { //完成的回调
+						//alert('处理完成');
+						//重新渲染复选框
+						form.render('checkbox');
+						form.on('checkbox(allselector)', function(data) {
+							var elem = data.elem;
+
+							$('#content').children('tr').each(function() {
+								var $that = $(this);
+								//全选或反选
+								$that.children('td').eq(0).children('input[type=checkbox]')[0].checked = elem.checked;
+								form.render('checkbox');
+							});
+						});
+
+						//绑定所有编辑按钮事件						
+						$('#content').children('tr').each(function() {
+							var $that = $(this);
+							//编辑
+							$that.children('td:last-child').children('a[data-opt=edit]').on('click', function() {
+								layer.msg($(this).data('name'));
+								layer.open({
+							        type: 2 //此处以iframe举例
+							        ,title: 'app编辑版本'
+							        ,area: ['100%', '100%']
+							        ,shade: 0
+							        ,maxmin: true
+							        ,content: 'updateVersion.html'
+							        ,btn2: function(){
+							          layer.closeAll();
+							        }
+							        
+							        ,zIndex: layer.zIndex //重点1
+							        ,success: function(layero){
+							          layer.setTop(layero); //添加成功刷新列表
+							        }
+							      });
+							});
+							//预览
+							$that.children('td:last-child').children('a[data-opt=search]').on('click', function() {
+								layer.msg($(this).data('name'));
+								layer.open({
+							        type: 2 //此处以iframe举例
+							        ,title: '版本更新推送'
+							        ,area: ['100%', '100%']
+							        ,shade: 0
+							        ,maxmin: true
+							        ,content: 'versionUpdate.html'
+							        ,btn2: function(){
+							          layer.closeAll();
+							        }
+							        
+							      });
+							});
+
+						});
+
+					},
+				});
+
+				$('.addAdmin').on('click', function() {
+					layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: 'app添加版本'
+				        ,area: ['100%', '100%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'addVeresion.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				    });
+				});
+
+				var addBoxIndex = -1;
+
+				$('#import').on('click', function() {
+					var that = this;
+					var index = layer.tips('只想提示地精准些', that, { tips: [1, 'white'] });
+					$('#layui-layer' + index).children('div.layui-layer-content').css('color', '#000000');
+				});
+			});
+		</script>
+	</body>
+
+</html>

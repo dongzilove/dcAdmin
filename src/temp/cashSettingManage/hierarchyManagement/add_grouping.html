@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新建分组</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div class="layui-field-box layui-form">
+    <table class="layui-table">
+        <tbody>
+        <tr>
+            <td>卡组 ID</td>
+            <td>
+                <input class="layui-input" name="ref_group_id" maxlength="19" placeholder="请输入卡组ID">
+            </td>
+        </tr>
+        <tr>
+            <td>卡组名称</td>
+            <td><input class="layui-input" name="name" maxlength="19" placeholder="请输入卡组名称"></td>
+        </tr>
+        <tr>
+            <td>金额</td>
+            <td><input class="layui-input" name="level_amount" placeholder="请输入金额"></td>
+        </tr>
+        <tr>
+            <td>存款次数</td>
+            <td><input class="layui-input" name="deposit_count" placeholder="请输入存款次数"></td>
+        </tr>
+        <tr>
+            <td>返水</td>
+            <td><input class="layui-input" name="commission_percentage" placeholder="请输入返水"></td>
+        </tr>
+        <tr>
+            <td>电子返水</td>
+            <td><input class="layui-input" name="egame_commission_percentage" placeholder="请输入电子返水"></td>
+        </tr>
+        <tr>
+            <td>OG真人返水</td>
+            <td><input class="layui-input" name="og_livegame_commission_percentage" placeholder="请输入OG真人返水"></td>
+        </tr>
+        <tr>
+            <td>启用</td>
+            <td><input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest"
+                       lay-text="是|否"></td>
+        </tr>
+
+        <tr>
+            <td>是否固定</td>
+            <td><input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest"
+                       lay-text="是|否"></td>
+        </tr>
+        <tr>
+            <td>排序（越小越靠前）</td>
+            <td><input class="layui-input" name="sort" placeholder="请输入排序"></td>
+        </tr>
+        <tr style="text-align: center">
+            <td colspan="2">
+                <button class="layui-btn  layui-btn-btnnew" lay-submit="" lay-filter="demo1">更新</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.define(['layer', 'form'], function () {
+        var form = layui.form;
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            layer.alert('提交成功', {
+                title: '操作信息'
+            })
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

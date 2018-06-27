@@ -1,0 +1,12 @@
+html{background-color: #f2f2f2;}
+
+.admin-main{width: 100%;}
+.admin-main .main-row{background: #fff;margin-top: 10px;border-radius: 4px;}
+.admin-main .main-row .row-one{border-right: 1px solid #ddd;margin: 15px 0;}
+.admin-main .main-row .rowone-margin{margin: 15px 0;}
+.main-row .ont-title{color: #C0C4CC;width: 100%;display: block;text-align: center;}
+.main-row .ont-centent{font-size: 24px; margin: 10px 0;display: block;text-align: center;}
+.two-centent{color: #FF5958;}
+.kjColor span{color:#909399}
+.kjColor:hover span{color: #303133;}
+

@@ -1,0 +1,43 @@
+
+/*权限分配*/
+.jurisdictionAllocation{
+    background: #fff;
+}
+.allocation_title{
+    padding: 10px;
+}
+.allocation_title div{
+    display: inline-block;
+    position: relative;
+}
+.allocation_title div .increase{
+    position: absolute;
+    top: -35px;
+    left: 700px;
+}
+.grouping_title{
+    padding: 10px;
+}
+.delete_affirm{
+    padding: 10px;
+    text-align: center;
+}
+.delete_affirm button{
+    margin-top: 20px;
+}
+
+/*用户权限管理*/
+.user_jurisdiction_manage tr input{
+    width:50px;
+}
+.user_title{
+    padding: 10px;
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+}
+.user_title button{
+    position: absolute;
+    top: 10px;
+    right: 45px;
+}

@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员日志</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+
+    .inquire {
+        padding: 10px;
+    }
+
+    .inquire input {
+        border: 1px solid #ccc;
+        width: 180px;
+        margin-left: 10px;
+    }
+
+    .inquire div {
+        display: inline-block;
+    }
+
+    .layui-input, .layui-textarea {
+        display: inline-block;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div class="layui-row admin-title">
+        <span class="left title-T">管理员日志</span>
+    </div>
+    <div class="inquire">
+        <div>
+            选择日期区间<input type="text" class="layui-input" id="test6" placeholder="请选择日期区间">
+        </div>
+        <div style="margin-left: 15px">
+            <span>管理员<input type="text" class="layui-input" placeholder="请输入管理员"></span>
+        </div>
+        <div>
+            <form class="layui-form" action="">
+                <span>权限名</span>
+                <select style="height: 38px">
+                    <option value="default">default</option>
+                    <option value="adminUser">adminUser</option>
+                    <option value="user">user</option>
+                    <option value="draw">draw</option>
+                    <option value="market">market</option>
+                    <option value="game">game</option>
+                    <option value="config">config</option>
+                    <option value="domains">domains</option>
+                    <option value="adminMenu">adminMenu</option>
+                    <option value="notice">notice</option>
+                    <option value="withdraw">withdraw</option>
+                    <option value="adminGroup">adminGroup</option>
+                    <option value="article">article</option>
+                    <option value="userMenu">userMenu</option>
+                    <option value="domain">domain</option>
+                    <option value="userGroup">userGroup</option>
+                    <option value="lottery">lottery</option>
+                    <option value="method">method</option>
+                    <option value="prize">prize</option>
+                    <option value="data">data</option>
+                    <option value="lock">lock</option>
+                    <option value="test">test</option>
+                    <option value="card">card</option>
+                    <option value="deposit">deposit</option>
+                    <option value="promo">promo</option>
+                    <option value="guestBook">guestBook</option>
+                    <option value="liveInt">liveInt</option>
+                    <option value=""></option>
+                    <option value="userAlert">userAlert</option>
+                    <option value="float">float</option>
+                    <option value="egame">egame</option>
+                    <option value="app">app</option>
+                    <option value="livegame">livegame</option>
+                    <option value="threeSingSport">threeSingSport</option>
+                    <option value="setting">setting</option>
+                </select>
+                <select style="height: 38px">
+                    <option value="0">请选择</option>
+                    <option value="" style="color:#cccccc;font-style:italic;">封锁</option>
+                </select>
+            </form>
+        </div>
+        <div>
+            <span>IP<input input type="text" class="layui-input" placeholder="请输入IP"></span>
+        </div>
+        <button class="layui-btn layui-btn-mini layui-btn-btnnew">查询</button>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>log_id</td>
+            <td width="5%">用户名</td>
+            <td width="5%">控制器</td>
+            <td width="5%">动作</td>
+            <td width="5%">权限名</td>
+            <td width="7%">操作日期</td>
+            <td>IP</td>
+            <td>数据详情</td>
+            <td>备注</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="odd1">
+            <td>115927</td>
+            <td>csshitou</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-15 22:29:36</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.78</span></td>
+            <td>Array
+                (
+                [username] =&gt; csshitou
+                [password] =&gt; 3edf87bce4f5dd21020011731a82d7da
+                [verifyCode] =&gt; 2305
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115924</td>
+            <td>csshitou</td>
+            <td>config</td>
+            <td>maintainlist</td>
+            <td></td>
+            <td>2018-06-15 21:32:42</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.78</span></td>
+            <td>Array
+                (
+                [info] =&gt; initialize
+                )
+            </td>
+            <td>访问失败：无权限</td>
+        </tr>
+        <tr class="odd1">
+            <td>115921</td>
+            <td>csshitou</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-15 16:18:14</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.78</span></td>
+            <td>Array
+                (
+                [username] =&gt; csshitou
+                [password] =&gt; 3edf87bce4f5dd21020011731a82d7da
+                [verifyCode] =&gt; 5189
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115918</td>
+            <td></td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-15 16:18:00</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.78</span></td>
+            <td>Array
+                (
+                [username] =&gt; ctrl123456
+                [password] =&gt; 4174baea0337de1539c7f6f63eb50744
+                [verifyCode] =&gt; 9994
+                [verify] =&gt; login
+                )
+            </td>
+            <td>ctrl123456登录失败：无此用户</td>
+        </tr>
+        <tr class="odd1">
+            <td>115915</td>
+            <td>jack</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-14 20:56:10</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [username] =&gt; jack
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 3705
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115912</td>
+            <td></td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-14 20:56:01</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [username] =&gt; jack
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 3287
+                [verify] =&gt; login
+                )
+            </td>
+            <td>jack登录失败：验证码错误</td>
+        </tr>
+        <tr class="odd1">
+            <td>115909</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-14 15:08:01</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [username] =&gt; ctrl
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 0085
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115906</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-14 15:07:54</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [username] =&gt; ctrl
+                [password] =&gt; e10adc3949ba59abbe56e057f20f883e
+                [verifyCode] =&gt; 5523
+                [verify] =&gt; login
+                )
+            </td>
+            <td>ctrl登录失败：密码不对</td>
+        </tr>
+        <tr class="odd1">
+            <td>115903</td>
+            <td>testaz</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-13 15:22:36</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.82</span></td>
+            <td>Array
+                (
+                [username] =&gt; testaz
+                [password] =&gt; dc483e80a7a0bd9ef71d8cf973673924
+                [verifyCode] =&gt; 1091
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115900</td>
+            <td>testaz</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-13 15:09:26</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.82</span></td>
+            <td>Array
+                (
+                [username] =&gt; testaz
+                [password] =&gt; dc483e80a7a0bd9ef71d8cf973673924
+                [verifyCode] =&gt; 4346
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="odd1">
+            <td>115897</td>
+            <td>testaz</td>
+            <td>config</td>
+            <td>maintainlist</td>
+            <td></td>
+            <td>2018-06-13 13:14:08</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.82</span></td>
+            <td>Array
+                (
+                [info] =&gt; initialize
+                )
+            </td>
+            <td>访问失败：无权限</td>
+        </tr>
+        <tr class="even1">
+            <td>115894</td>
+            <td>testaz</td>
+            <td>config</td>
+            <td>maintainlist</td>
+            <td></td>
+            <td>2018-06-13 13:14:03</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.82</span></td>
+            <td>Array
+                (
+                [info] =&gt; initialize
+                )
+            </td>
+            <td>访问失败：无权限</td>
+        </tr>
+        <tr class="odd1">
+            <td>115891</td>
+            <td>testaz</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-13 13:13:58</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.82</span></td>
+            <td>Array
+                (
+                [username] =&gt; testaz
+                [password] =&gt; dc483e80a7a0bd9ef71d8cf973673924
+                [verifyCode] =&gt; 2513
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115890</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-12 23:12:04</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.82</span></td>
+            <td>Array
+                (
+                [username] =&gt; ctrl
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 4529
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="odd1">
+            <td>115889</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-12 23:11:55</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.82</span></td>
+            <td>Array
+                (
+                [username] =&gt; ctrl
+                [password] =&gt; e10adc3949ba59abbe56e057f20f883e
+                [verifyCode] =&gt; 3223
+                [verify] =&gt; login
+                )
+            </td>
+            <td>ctrl登录失败：密码不对</td>
+        </tr>
+        <tr class="even1">
+            <td>115888</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-11 14:55:45</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.82</span></td>
+            <td>Array
+                (
+                [username] =&gt; ctrl
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 8526
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="odd1">
+            <td>115886</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-11 14:55:35</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.82</span></td>
+            <td>Array
+                (
+                [username] =&gt; ctrl
+                [password] =&gt; e10adc3949ba59abbe56e057f20f883e
+                [verifyCode] =&gt; 6824
+                [verify] =&gt; login
+                )
+            </td>
+            <td>ctrl登录失败：密码不对</td>
+        </tr>
+        <tr class="even1">
+            <td>115884</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>siteTool</td>
+            <td>站长工具</td>
+            <td>2018-06-11 14:21:50</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [op] =&gt; flushRedis
+                [submitBtn] =&gt; 清除redis缓存
+                )
+            </td>
+            <td>访问成功</td>
+        </tr>
+        <tr class="odd1">
+            <td>115883</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>siteTool</td>
+            <td>站长工具</td>
+            <td>2018-06-11 14:21:48</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [op] =&gt; flush
+                [submitBtn] =&gt; 清除memcache缓存
+                )
+            </td>
+            <td>访问成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115880</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-11 14:11:14</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [username] =&gt; ctrl
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 4211
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="odd1">
+            <td>115878</td>
+            <td>jack</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-11 13:12:44</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [username] =&gt; jack
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 3775
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115876</td>
+            <td>ctrl</td>
+            <td>user</td>
+            <td>userRebateEveryDay</td>
+            <td>天天返水</td>
+            <td>2018-06-11 13:03:29</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [users] =&gt; dlfh03
+                [is_post] =&gt; true
+                [action] =&gt; backlist_confirm
+                )
+            </td>
+            <td>访问成功</td>
+        </tr>
+        <tr class="odd1">
+            <td>115873</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-11 12:13:40</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [username] =&gt; ctrl
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 4218
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115872</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-11 12:13:31</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [username] =&gt; ctrl
+                [password] =&gt; e10adc3949ba59abbe56e057f20f883e
+                [verifyCode] =&gt; 5739
+                [verify] =&gt; login
+                )
+            </td>
+            <td>ctrl登录失败：密码不对</td>
+        </tr>
+        <tr class="odd1">
+            <td>115869</td>
+            <td>jack</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-11 12:10:06</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [username] =&gt; jack
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 4758
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115868</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>siteTool</td>
+            <td>站长工具</td>
+            <td>2018-06-09 23:19:55</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.85</span></td>
+            <td>Array
+                (
+                [op] =&gt; flushAppRedis
+                [submitBtn] =&gt; 清除App redis缓存
+                )
+            </td>
+            <td>访问成功</td>
+        </tr>
+        <tr class="odd1">
+            <td>115865</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>siteTool</td>
+            <td>站长工具</td>
+            <td>2018-06-09 23:19:53</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.85</span></td>
+            <td>Array
+                (
+                [op] =&gt; flushRedis
+                [submitBtn] =&gt; 清除redis缓存
+                )
+            </td>
+            <td>访问成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115864</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>siteTool</td>
+            <td>站长工具</td>
+            <td>2018-06-09 23:19:52</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.85</span></td>
+            <td>Array
+                (
+                [op] =&gt; flush
+                [submitBtn] =&gt; 清除memcache缓存
+                )
+            </td>
+            <td>访问成功</td>
+        </tr>
+        <tr class="odd1">
+            <td>115863</td>
+            <td>ctrl</td>
+            <td>prize</td>
+            <td>setBaseGroup</td>
+            <td>设置基本组</td>
+            <td>2018-06-09 22:59:23</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.85</span></td>
+            <td>Array
+                (
+                [name] =&gt; 极速六合彩
+                [description] =&gt; 基本组
+                [max_top_rebate] =&gt; 0.128
+                [prize] =&gt; Array
+                (
+                [1327] =&gt; Array
+                (
+                [1] =&gt; 3.4708
+                [2] =&gt; 3.3320
+                )
+
+                [1272] =&gt; Array
+                (
+                [1] =&gt; 83.3000
+                )
+
+                [1273] =&gt; Array
+                (
+                [1] =&gt; 6.8000
+                )
+
+                [1274] =&gt; Array
+                (
+                [1] =&gt; 6.8000
+                )
+
+                [1275] =&gt; Array
+                (
+                [1] =&gt; 6.8000
+                )
+
+                [1276] =&gt; Array
+                (
+                [1] =&gt; 3.4708
+                [2] =&gt; 3.3320
+                )
+
+                [1223] =&gt; Array
+                (
+                [1] =&gt; 6.9416
+                [2] =&gt; 6.4076
+                )
+
+                [975] =&gt; Array
+                (
+                [1] =&gt; 3.4000
+                [2] =&gt; 3.4000
+                )
+
+                [1284] =&gt; Array
+                (
+                [1] =&gt; 20.7400
+                [2] =&gt; 16.6600
+                )
+
+                [1285] =&gt; Array
+                (
+                [1] =&gt; 5.1000
+                [2] =&gt; 4.7600
+                )
+
+                [1325] =&gt; Array
+                (
+                [1] =&gt; 8.3300
+                [2] =&gt; 9.2555
+                [3] =&gt; 10.4125
+                [4] =&gt; 11.9000
+                )
+
+                [1286] =&gt; Array
+                (
+                [1] =&gt; 3.8107
+                )
+
+                [1287] =&gt; Array
+                (
+                [1] =&gt; 4.5316
+                )
+
+                [1288] =&gt; Array
+                (
+                [1] =&gt; 5.4128
+                )
+
+                [1289] =&gt; Array
+                (
+                [1] =&gt; 6.4954
+                )
+
+                [1290] =&gt; Array
+                (
+                [1] =&gt; 7.8327
+                )
+
+                [1291] =&gt; Array
+                (
+                [1] =&gt; 9.4942
+                )
+
+                [1292] =&gt; Array
+                (
+                [1] =&gt; 11.5711
+                )
+
+                [1293] =&gt; Array
+                (
+                [1] =&gt; 14.1840
+                )
+
+                [1294] =&gt; Array
+                (
+                [1] =&gt; 3.6038
+                [2] =&gt; 3.0691
+                )
+
+                [1295] =&gt; Array
+                (
+                [1] =&gt; 10.2000
+                [2] =&gt; 6.8000
+                [3] =&gt; 5.1000
+                [4] =&gt; 4.0800
+                [5] =&gt; 3.4000
+                [6] =&gt; 2.9143
+                [7] =&gt; 2.5500
+                [8] =&gt; 2.2667
+                [9] =&gt; 2.0400
+                [10] =&gt; 1.8545
+                [11] =&gt; 2.0000
+                )
+
+                [1296] =&gt; Array
+                (
+                [1] =&gt; 2.0400
+                [2] =&gt; 2.2667
+                [3] =&gt; 2.5500
+                [4] =&gt; 2.9143
+                [5] =&gt; 3.4000
+                [6] =&gt; 4.0800
+                [7] =&gt; 5.1000
+                [8] =&gt; 6.8000
+                [9] =&gt; 10.2000
+                [10] =&gt; 20.4000
+                [11] =&gt; 2.0000
+                )
+
+                [1297] =&gt; Array
+                (
+                [1] =&gt; 4.0714
+                [2] =&gt; 3.4329
+                )
+
+                [1298] =&gt; Array
+                (
+                [1] =&gt; 6.8000
+                [2] =&gt; 6.8000
+                )
+
+                [1299] =&gt; Array
+                (
+                [1] =&gt; 6.8000
+                [2] =&gt; 6.8000
+                )
+
+                [1300] =&gt; Array
+                (
+                [1] =&gt; 6.8000
+                [2] =&gt; 6.8000
+                )
+
+                [1301] =&gt; Array
+                (
+                [1] =&gt; 6.8000
+                [2] =&gt; 6.8000
+                )
+
+                [1302] =&gt; Array
+                (
+                [1] =&gt; 6.8000
+                [2] =&gt; 6.8000
+                )
+
+                [1303] =&gt; Array
+                (
+                [1] =&gt; 6.8000
+                [2] =&gt; 6.8000
+                )
+
+                [1304] =&gt; Array
+                (
+                [1] =&gt; 5.2063
+                [2] =&gt; 4.8999
+                )
+
+                [1305] =&gt; Array
+                (
+                [1] =&gt; 5.2063
+                [2] =&gt; 4.8999
+                )
+
+                [1306] =&gt; Array
+                (
+                [1] =&gt; 5.2063
+                [2] =&gt; 4.8999
+                )
+
+                [1307] =&gt; Array
+                (
+                [1] =&gt; 5.2063
+                [2] =&gt; 4.8999
+                )
+
+                [1308] =&gt; Array
+                (
+                [1] =&gt; 5.2063
+                [2] =&gt; 4.8999
+                )
+
+                [1309] =&gt; Array
+                (
+                [1] =&gt; 5.2063
+                [2] =&gt; 4.8999
+                )
+
+                [1310] =&gt; Array
+                (
+                [1] =&gt; 1566.0400
+                )
+
+                [1311] =&gt; Array
+                (
+                [1] =&gt; 48.5593
+                [2] =&gt; 522.0133
+                )
+
+                [1312] =&gt; Array
+                (
+                [1] =&gt; 133.2800
+                )
+
+                [1313] =&gt; Array
+                (
+                [1] =&gt; 124.9500
+                [2] =&gt; 333.2000
+                )
+
+                [1314] =&gt; Array
+                (
+                [1] =&gt; 333.2000
+                )
+
+                [1315] =&gt; Array
+                (
+                [1] =&gt; 8.1600
+                [2] =&gt; 6.9700
+                )
+
+                [1316] =&gt; Array
+                (
+                [1] =&gt; 21.0800
+                [2] =&gt; 17.6800
+                )
+
+                [1317] =&gt; Array
+                (
+                [1] =&gt; 61.7100
+                [2] =&gt; 51.1700
+                )
+
+                [1318] =&gt; Array
+                (
+                [1] =&gt; 218.9600
+                [2] =&gt; 180.0300
+                )
+
+                [1319] =&gt; Array
+                (
+                [1] =&gt; 6.9700
+                [2] =&gt; 5.7800
+                )
+
+                [1320] =&gt; Array
+                (
+                [1] =&gt; 14.7900
+                [2] =&gt; 12.4100
+                )
+
+                [1321] =&gt; Array
+                (
+                [1] =&gt; 35.3600
+                [2] =&gt; 29.4100
+                )
+
+                [808] =&gt; Array
+                (
+                [1] =&gt; 3.4000
+                [2] =&gt; 3.3000
+                )
+
+                [799] =&gt; Array
+                (
+                [1] =&gt; 83.3000
+                )
+
+                [800] =&gt; Array
+                (
+                [1] =&gt; 20.7400
+                [2] =&gt; 16.6600
+                )
+
+                [806] =&gt; Array
+                (
+                [1] =&gt; 3.5700
+                [2] =&gt; 3.0600
+                )
+
+                [807] =&gt; Array
+                (
+                [1] =&gt; 5.1000
+                [2] =&gt; 4.7600
+                )
+
+                [1278] =&gt; Array
+                (
+                [1] =&gt; 83.3000
+                )
+
+                [1279] =&gt; Array
+                (
+                [1] =&gt; 83.3000
+                )
+
+                [1280] =&gt; Array
+                (
+                [1] =&gt; 83.3000
+                )
+
+                [1281] =&gt; Array
+                (
+                [1] =&gt; 83.3000
+                )
+
+                [1282] =&gt; Array
+                (
+                [1] =&gt; 83.3000
+                )
+
+                [1283] =&gt; Array
+                (
+                [1] =&gt; 83.3000
+                )
+
+                [801] =&gt; Array
+                (
+                [1] =&gt; 3.5700
+                [2] =&gt; 3.0600
+                )
+
+                [802] =&gt; Array
+                (
+                [1] =&gt; 3.5700
+                [2] =&gt; 3.0600
+                )
+
+                [803] =&gt; Array
+                (
+                [1] =&gt; 8.1600
+                [2] =&gt; 6.9700
+                )
+
+                [809] =&gt; Array
+                (
+                [1] =&gt; 21.0800
+                [2] =&gt; 17.6800
+                )
+
+                [810] =&gt; Array
+                (
+                [1] =&gt; 61.7100
+                [2] =&gt; 51.1700
+                )
+
+                [804] =&gt; Array
+                (
+                [1] =&gt; 1566.0400
+                )
+
+                [811] =&gt; Array
+                (
+                [1] =&gt; 133.2800
+                )
+
+                [812] =&gt; Array
+                (
+                [1] =&gt; 48.5593
+                [2] =&gt; 522.0133
+                )
+
+                [805] =&gt; Array
+                (
+                [1] =&gt; 11.9000
+                )
+
+                [893] =&gt; Array
+                (
+                [1] =&gt; 3.4116
+                [2] =&gt; 3.3885
+                )
+
+                [894] =&gt; Array
+                (
+                [1] =&gt; 3.4708
+                [2] =&gt; 3.3320
+                )
+
+                [895] =&gt; Array
+                (
+                [1] =&gt; 3.4708
+                [2] =&gt; 3.3320
+                )
+
+                [1277] =&gt; Array
+                (
+                [1] =&gt; 13.8832
+                )
+
+                )
+
+                [top_rebate] =&gt; Array
+                (
+                [1327] =&gt; 0.128
+                [1272] =&gt; 0.128
+                [1273] =&gt; 0.128
+                [1274] =&gt; 0
+                [1275] =&gt; 0
+                [1276] =&gt; 0.128
+                [1223] =&gt; 0.128
+                [975] =&gt; 0.128
+                [1284] =&gt; 0.128
+                [1285] =&gt; 0.128
+                [1325] =&gt; 0.128
+                [1286] =&gt; 0.128
+                [1287] =&gt; 0.128
+                [1288] =&gt; 0.128
+                [1289] =&gt; 0.128
+                [1290] =&gt; 0.128
+                [1291] =&gt; 0.128
+                [1292] =&gt; 0.128
+                [1293] =&gt; 0.128
+                [1294] =&gt; 0
+                [1295] =&gt; 0.128
+                [1296] =&gt; 0.128
+                [1297] =&gt; 0.128
+                [1298] =&gt; 0.128
+                [1299] =&gt; 0.128
+                [1300] =&gt; 0.128
+                [1301] =&gt; 0.128
+                [1302] =&gt; 0.128
+                [1303] =&gt; 0.128
+                [1304] =&gt; 0.128
+                [1305] =&gt; 0.128
+                [1306] =&gt; 0.128
+                [1307] =&gt; 0.128
+                [1308] =&gt; 0.128
+                [1309] =&gt; 0.128
+                [1310] =&gt; 0.128
+                [1311] =&gt; 0.128
+                [1312] =&gt; 0.128
+                [1313] =&gt; 0.128
+                [1314] =&gt; 0.128
+                [1315] =&gt; 0.128
+                [1316] =&gt; 0.128
+                [1317] =&gt; 0.128
+                [1318] =&gt; 0.128
+                [1319] =&gt; 0.128
+                [1320] =&gt; 0.128
+                [1321] =&gt; 0.128
+                [808] =&gt; 0.128
+                [799] =&gt; 0.128
+                [800] =&gt; 0.128
+                [806] =&gt; 0.128
+                [807] =&gt; 0.128
+                [1278] =&gt; 0.128
+                [1279] =&gt; 0.128
+                [1280] =&gt; 0.128
+                [1281] =&gt; 0.128
+                [1282] =&gt; 0.128
+                [1283] =&gt; 0.128
+                [801] =&gt; 0.128
+                [802] =&gt; 0.128
+                [803] =&gt; 0.128
+                [809] =&gt; 0.128
+                [810] =&gt; 0.128
+                [804] =&gt; 0.128
+                [811] =&gt; 0.128
+                [812] =&gt; 0.128
+                [805] =&gt; 0.128
+                [893] =&gt; 0.128
+                [894] =&gt; 0.128
+                [895] =&gt; 0.128
+                [1277] =&gt; 0.128
+                )
+
+                [submit] =&gt; 更新
+                [pg_id] =&gt; 29
+                )
+            </td>
+            <td>访问成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115860</td>
+            <td>ctrl</td>
+            <td>method</td>
+            <td>editMethod</td>
+            <td>修改玩法</td>
+            <td>2018-06-09 22:58:55</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.85</span></td>
+            <td>Array
+                (
+                [mg_id] =&gt; 467
+                [cname] =&gt; 平特肖
+                [name] =&gt; JS-PTX
+                [description] =&gt; 平特肖又为一肖,指开奖正码及特码７个号码当中含有所下注生肖内的一个或多个号码则视为中奖，但派彩只派一次，即不论同生肖号码出现一个或多个号码都只派彩一次。
+                [max_comb] =&gt; 85900584
+                [max_money] =&gt; 171801168
+                [levels] =&gt; 2
+                [count] =&gt; Array
+                (
+                [1] =&gt; Array
+                (
+                [is_use] =&gt; 1
+                [expand_num] =&gt; 40520964
+                [name] =&gt; 普通肖
+                )
+
+                [2] =&gt; Array
+                (
+                [is_use] =&gt; 1
+                [expand_num] =&gt; 47580016
+                [name] =&gt; 本命肖
+                )
+
+                )
+
+                [is_lock] =&gt; 0
+                [status] =&gt; 8
+                [method_property] =&gt; 0
+                [sort] =&gt; 1
+                [field_num] =&gt; 1
+                [field] =&gt; Array
+                (
+                [1] =&gt; Array
+                (
+                [nums] =&gt; 鼠 牛 虎 兔 龙 蛇 马 羊 猴 鸡 狗 猪
+                [max_selected] =&gt; 12
+                [prompt] =&gt; 平特肖
+                )
+
+                )
+
+                [submit] =&gt; 更新
+                [method_id] =&gt; 1294
+                )
+            </td>
+            <td>访问成功</td>
+        </tr>
+        <tr class="odd1">
+            <td>115857</td>
+            <td>jack</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-09 22:54:47</td>
+            <td><span title="菲律宾-菲律宾">130.105.174.164</span></td>
+            <td>Array
+                (
+                [username] =&gt; jack
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 9914
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115855</td>
+            <td>jack</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-09 22:54:38</td>
+            <td><span title="菲律宾-菲律宾">130.105.174.164</span></td>
+            <td>Array
+                (
+                [username] =&gt; jack
+                [password] =&gt; 3edf87bce4f5dd21020011731a82d7da
+                [verifyCode] =&gt; 2339
+                [verify] =&gt; login
+                )
+            </td>
+            <td>jack登录失败：密码不对</td>
+        </tr>
+        <tr class="odd1">
+            <td>115853</td>
+            <td>testann</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-09 22:54:20</td>
+            <td><span title="菲律宾-菲律宾">130.105.174.164</span></td>
+            <td>Array
+                (
+                [username] =&gt; testann
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 0093
+                [verify] =&gt; login
+                )
+            </td>
+            <td>testann登录失败：密码不对</td>
+        </tr>
+        <tr class="even1">
+            <td>115850</td>
+            <td>awen</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-09 22:08:15</td>
+            <td><span title="中国-香港">47.52.152.28</span></td>
+            <td>Array
+                (
+                [username] =&gt; awen
+                [password] =&gt; af8f9dffa5d420fbc249141645b962ee
+                [verifyCode] =&gt; 9881
+                [verify] =&gt; login
+                )
+            </td>
+            <td>awen登录失败：密码不对</td>
+        </tr>
+        <tr class="odd1">
+            <td>115848</td>
+            <td></td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-09 22:08:08</td>
+            <td><span title="中国-香港">47.52.152.28</span></td>
+            <td>Array
+                (
+                [username] =&gt; testaxu
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 0433
+                [verify] =&gt; login
+                )
+            </td>
+            <td>testaxu登录失败：无此用户</td>
+        </tr>
+        <tr class="even1">
+            <td>115845</td>
+            <td>testann</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-09 22:07:50</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.75</span></td>
+            <td>Array
+                (
+                [username] =&gt; testann
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 0609
+                [verify] =&gt; login
+                )
+            </td>
+            <td>testann登录失败：密码不对</td>
+        </tr>
+        <tr class="odd1">
+            <td>115842</td>
+            <td>awen</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-09 22:07:43</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.75</span></td>
+            <td>Array
+                (
+                [username] =&gt; awen
+                [password] =&gt; dc483e80a7a0bd9ef71d8cf973673924
+                [verifyCode] =&gt; 4993
+                [verify] =&gt; login
+                )
+            </td>
+            <td>awen登录失败：密码不对</td>
+        </tr>
+        <tr class="even1">
+            <td>115841</td>
+            <td></td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-09 22:07:30</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.75</span></td>
+            <td>Array
+                (
+                [username] =&gt; testaxu
+                [password] =&gt; dc483e80a7a0bd9ef71d8cf973673924
+                [verifyCode] =&gt; 2022
+                [verify] =&gt; login
+                )
+            </td>
+            <td>testaxu登录失败：无此用户</td>
+        </tr>
+        <tr class="odd1">
+            <td>115838</td>
+            <td></td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-09 22:07:26</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.75</span></td>
+            <td>Array
+                (
+                [username] =&gt; testaxu
+                [password] =&gt; af8f9dffa5d420fbc249141645b962ee
+                [verifyCode] =&gt; 2022
+                [verify] =&gt; login
+                )
+            </td>
+            <td>testaxu登录失败：无此用户</td>
+        </tr>
+        <tr class="even1">
+            <td>115835</td>
+            <td>tonny</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-09 21:50:24</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.82</span></td>
+            <td>Array
+                (
+                [username] =&gt; tonny
+                [password] =&gt; dc483e80a7a0bd9ef71d8cf973673924
+                [verifyCode] =&gt; 5983
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="odd1">
+            <td>115834</td>
+            <td>ctrl</td>
+            <td>config</td>
+            <td>maintainlist</td>
+            <td></td>
+            <td>2018-06-09 21:35:34</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [info] =&gt; initialize
+                )
+            </td>
+            <td>访问失败：无权限</td>
+        </tr>
+        <tr class="even1">
+            <td>115831</td>
+            <td>ctrl</td>
+            <td>config</td>
+            <td>editConfig</td>
+            <td>编辑配置</td>
+            <td>2018-06-09 21:35:33</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [parent_id] =&gt; 23
+                [title] =&gt; 提现次数限制
+                [description] =&gt; 提现次数限制, 只对app和新的移动版生效，0为不限制
+                [cfg_key] =&gt; day_withdraw_num
+                [cfg_value] =&gt; 2
+                [submit] =&gt; 更新
+                [config_id] =&gt; 257
+                )
+            </td>
+            <td>访问成功</td>
+        </tr>
+        <tr class="odd1">
+            <td>115829</td>
+            <td>ctrl</td>
+            <td>config</td>
+            <td>maintainlist</td>
+            <td></td>
+            <td>2018-06-09 21:35:26</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [info] =&gt; initialize
+                )
+            </td>
+            <td>访问失败：无权限</td>
+        </tr>
+        <tr class="even1">
+            <td>115828</td>
+            <td>ctrl</td>
+            <td>config</td>
+            <td>maintainlist</td>
+            <td></td>
+            <td>2018-06-09 21:35:24</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [info] =&gt; initialize
+                )
+            </td>
+            <td>访问失败：无权限</td>
+        </tr>
+        <tr class="odd1">
+            <td>115826</td>
+            <td>ctrl</td>
+            <td>config</td>
+            <td>maintainlist</td>
+            <td></td>
+            <td>2018-06-09 21:28:23</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [info] =&gt; initialize
+                )
+            </td>
+            <td>访问失败：无权限</td>
+        </tr>
+        <tr class="even1">
+            <td>115824</td>
+            <td>ctrl</td>
+            <td>config</td>
+            <td>maintainlist</td>
+            <td></td>
+            <td>2018-06-09 21:28:20</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [info] =&gt; initialize
+                )
+            </td>
+            <td>访问失败：无权限</td>
+        </tr>
+        <tr class="odd1">
+            <td>115822</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>siteTool</td>
+            <td>站长工具</td>
+            <td>2018-06-09 21:15:04</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [op] =&gt; flushRedis
+                [submitBtn] =&gt; 清除redis缓存
+                )
+            </td>
+            <td>访问成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115820</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>siteTool</td>
+            <td>站长工具</td>
+            <td>2018-06-09 21:15:03</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [op] =&gt; flush
+                [submitBtn] =&gt; 清除memcache缓存
+                )
+            </td>
+            <td>访问成功</td>
+        </tr>
+        <tr class="odd1">
+            <td>115817</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-09 21:10:32</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.85</span></td>
+            <td>Array
+                (
+                [username] =&gt; ctrl
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 0596
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        <tr class="even1">
+            <td>115814</td>
+            <td>ctrl</td>
+            <td>default</td>
+            <td>login</td>
+            <td></td>
+            <td>2018-06-09 21:00:36</td>
+            <td><span title="菲律宾-菲律宾">113.61.50.83</span></td>
+            <td>Array
+                (
+                [username] =&gt; ctrl
+                [password] =&gt; f934ac120abba45c1430ed23e13b3635
+                [verifyCode] =&gt; 3458
+                [verify] =&gt; login
+                )
+            </td>
+            <td>登录成功</td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="demo7"></div>
+</div>
+<script src="./../../plugins/layui/layui.js"></script>
+<script>
+    layui.use(['form', 'laydate'], function () {
+        var laydate = layui.laydate;
+
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#test6' //指定元素
+            , range: true
+        });
+
+    });
+    layui.use('laypage', function () {
+        var laypage = layui.laypage;
+        //完整功能(分页)
+        laypage.render({
+            elem: 'demo7'
+            , count: 100
+            , layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+    });
+</script>
+</body>
+</html>

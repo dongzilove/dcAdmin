@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加弹窗</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div>
+        <h3>注意：仅支持jpg,png,gif格式,大小300K的图片。图片尺寸请商户根据自己实际页面设计规格上传。</h3>
+    </div>
+    <form class="layui-form" action="">
+        <table class="layui-table">
+            <tbody>
+            <tr>
+                <td style="width: 30%">弹窗标题:</td>
+                <td><input class="layui-input" placeholder="请输入弹窗标题"></td>
+            </tr>
+            <tr>
+                <td>域名:</td>
+                <td><input class="layui-input" placeholder="请输入域名"></td>
+            </tr>
+            <tr>
+                <td>所属总代</td>
+                <td>
+                    全选:<input type="checkbox" name="like1[write]" lay-skin="primary">
+                    <select>
+                        <option value="">请选择…</option>
+                        <option value="guanwang">guanwang</option>
+                        <option value="dongbei">dongbei</option>
+                        <option value="weijueye1">weijueye1</option>
+                        <option value="weijueye2">weijueye2</option>
+                        <option value="weijueye3">weijueye3</option>
+                        <option value="weijueye4">weijueye4</option>
+                        <option value="weijueye6">weijueye6</option>
+                        <option value="weijueye7">weijueye7</option>
+                        <option value="weijueye5">weijueye5</option>
+                        <option value="weijueye8">weijueye8</option>
+                        <option value="weijueye9">weijueye9</option>
+                        <option value="weijueye10">weijueye10</option>
+                        <option value="weijueye11">weijueye11</option>
+                        <option value="weijueye12">weijueye12</option>
+                        <option value="weijueye13">weijueye13</option>
+                        <option value="weijueye14">weijueye14</option>
+                        <option value="weijueye15">weijueye15</option>
+                        <option value="pengyouquan">pengyouquan</option>
+                        <option value="chuan1">chuan1</option>
+                        <option value="shouyou">shouyou</option>
+                        <option value="zlduanxin">zlduanxin</option>
+                        <option value="duanxzl">duanxzl</option>
+                        <option value="duanxin">duanxin</option>
+                        <option value="pingguotui">pingguotui</option>
+                        <option value="chuan2">chuan2</option>
+                        <option value="zhubogg">zhubogg</option>
+                        <option value="a317819394">a317819394</option>
+                        <option value="duanxin1">duanxin1</option>
+                        <option value="duanxin2">duanxin2</option>
+                        <option value="sapphire">sapphire</option>
+                        <option value="chuan3">chuan3</option>
+                        <option value="mailjqq">mailjqq</option>
+                        <option value="mailqq">mailqq</option>
+                        <option value="app2017">app2017</option>
+                        <option value="souhugg">souhugg</option>
+                        <option value="nezha1">nezha1</option>
+                        <option value="testlie11">testlie11</option>
+                        <option value="testlie12">testlie12</option>
+                        <option value="laochen">laochen</option>
+                        <option value="sisidaili">sisidaili</option>
+                        <option value="kapiantg">kapiantg</option>
+                        <option value="xyns2017">xyns2017</option>
+                        <option value="yyyxlm">yyyxlm</option>
+                        <option value="xqmomo">xqmomo</option>
+                        <option value="xqmomo1">xqmomo1</option>
+                        <option value="yiwanll">yiwanll</option>
+                        <option value="ceshi100">ceshi100</option>
+                        <option value="weijueye18">weijueye18</option>
+                        <option value="chuan4">chuan4</option>
+                        <option value="nezha2">nezha2</option>
+                        <option value="nezha3">nezha3</option>
+                        <option value="zhibo360">zhibo360</option>
+                        <option value="xyduanxin">xyduanxin</option>
+                        <option value="xyduanx">xyduanx</option>
+                        <option value="weijueye88">weijueye88</option>
+                        <option value="luntangg">luntangg</option>
+                        <option value="wangbatg">wangbatg</option>
+                        <option value="wangbattg">wangbattg</option>
+                        <option value="wangbatgg">wangbatgg</option>
+                        <option value="zongdai">zongdai</option>
+                        <option value="heigou1">heigou1</option>
+                        <option value="maxtest1">maxtest1</option>
+                        <option value="xy000001">xy000001</option>
+                        <option value="heigoutest">heigoutest</option>
+                        <option value="dcsite">dcsite</option>
+                        <option value="sanliuling">sanliuling</option>
+                        <option value="nazha5">nazha5</option>
+                        <option value="xiaoer123">xiaoer123</option>
+                        <option value="yumao123">yumao123</option>
+                        <option value="acheng123">acheng123</option>
+                        <option value="xiaojie123">xiaojie123</option>
+                        <option value="xiaotang123">xiaotang123</option>
+                        <option value="xiaoyu123_8">xiaoyu123_8</option>
+                        <option value="aliang123">aliang123</option>
+                        <option value="liulang123">liulang123</option>
+                        <option value="luyisi123">luyisi123</option>
+                        <option value="okok888">okok888</option>
+                        <option value="tg0001">tg0001</option>
+                        <option value="tg0002">tg0002</option>
+                        <option value="maga1166">maga1166</option>
+                        <option value="zongcai333">zongcai333</option>
+                        <option value="tg0003">tg0003</option>
+                        <option value="liuhao1">liuhao1</option>
+                        <option value="a435665">a435665</option>
+                        <option value="a66005">a66005</option>
+                        <option value="a23262">a23262</option>
+                        <option value="a745168">a745168</option>
+                        <option value="a38987">a38987</option>
+                        <option value="a49565">a49565</option>
+                        <option value="a643168">a643168</option>
+                        <option value="fh13666">fh13666</option>
+                        <option value="a88888888_8">a88888888_8</option>
+                        <option value="pepsi88">pepsi88</option>
+                        <option value="cai1588">cai1588</option>
+                        <option value="pepsi888">pepsi888</option>
+                        <option value="facai88">facai88</option>
+                        <option value="shitou">shitou</option>
+                        <option value="facia88">facia88</option>
+                        <option value="facai9948">facai9948</option>
+                        <option value="user_lon">user_lon</option>
+                        <option value="test00000">test00000</option>
+                        <option value="test00001">test00001</option>
+                        <option value="test00002">test00002</option>
+                        <option value="test00003">test00003</option>
+                        <option value="test00004">test00004</option>
+                        <option value="teststar">teststar</option>
+                        <option value="shitou_x">shitou_x</option>
+                        <option value="shitou_s">shitou_s</option>
+                        <option value="ert100">ert100</option>
+                        <option value="shitou100">shitou100</option>
+                        <option value="ctrl123456">ctrl123456</option>
+                        <option value="testpeie">testpeie</option>
+                        <option value="testpeie1">testpeie1</option>
+                        <option value="tonny1230">tonny1230</option>
+                        <option value="tonny123">tonny123</option>
+                        <option value="ctrl123">ctrl123</option>
+                        <option value="ouxiao111">ouxiao111</option>
+                        <option value="xiaoou0101">xiaoou0101</option>
+                        <option value="ctrlm111">ctrlm111</option>
+                        <option value="agent0">agent0</option>
+                        <option value="dlfh123">dlfh123</option>
+                        <option value="vipage">vipage</option>
+                        <option value="testaz">testaz</option>
+                        <option value="testaz1">testaz1</option>
+                        <option value="gongz01">gongz01</option>
+                        <option value="gongz001">gongz001</option>
+                        <option value="jiali01">jiali01</option>
+                    </select>
+                </td>
+            </tr>
+            <tr id="user_tree">
+                <td>选中的总代:<br><span style="color: blue">(手动输入的时候请注意:"总代名字之间以空格隔开")</span></td>
+                <td>
+                    <textarea placeholder="请输入总代名称" class="layui-textarea"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>文本内容(文本中禁止传图):</td>
+                <td>
+                    <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+                </td>
+
+            </tr>
+            <tr>
+                <td>PC弹窗图<br>(图片将以600px*354px显示,请注意上传图片尺寸比例.)</td>
+                <td>
+                    <button type="button" class="layui-btn" id="test3">
+                        <i class="layui-icon">&#xe67c;</i>上传图片
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>手机弹窗图<br>(640宽 320-440高)</td>
+                <td>
+                    <button type="button" class="layui-btn" id="test4">
+                        <i class="layui-icon">&#xe67c;</i>上传图片
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>弹出方式</td>
+                <td>
+                    <select title="类型" name="type">
+                        <option value="text">文本
+                        </option>
+                        <option value="image">图片
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>是否为未登录默认弹窗(只允许有一个)</td>
+                <td>
+                    <input type="checkbox" name="close" lay-skin="switch" lay-text="是|否">
+                </td>
+            </tr>
+            <tr style="text-align: center">
+                <td colspan="2">
+                    <button class="layui-btn  layui-btn-btnnew" lay-submit="" lay-filter="demo1">提交</button>
+                    <button class="layui-btn layui-btn-primary" type="reset">重置</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use(['layer','form','upload'], function () {
+        var $ = layui.jquery
+            ,upload = layui.upload,
+            form = layui.form;
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert('提交成功', {
+                title: '最终的提交信息'
+            })
+            return false;
+        });
+        upload.render({
+            elem: '#test3'
+            ,url: '/upload/'
+            ,accept: 'file' //普通文件
+            ,done: function(res){
+                console.log(res)
+            }
+        });
+        upload.render({
+            elem: '#test4'
+            ,url: '/upload/'
+            ,accept: 'file' //普通文件
+            ,done: function(res){
+                console.log(res)
+            }
+        });
+    })
+</script>
+</body>
+</html>

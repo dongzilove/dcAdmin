@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>推广域名手动分配</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <form class="layui-form" action="">
+        <table class="layui-table">
+            <tbody>
+            <tr>
+                <td colspan="2">
+                    <b>推广域名手动分配</b><b style="color:red">（仅供推广域名绑定推广用户使用，输入以后需要先检测才能提交）</b>
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">推广域名</td>
+                <td>
+                    <input class="layui-input" type="text" name="domain" placeholder="请输入域名">
+                    <button class="layui-btn  layui-btn-btnnew" style="margin-top: 10px" lay-submit="" lay-filter="demo1">检测域名是否可用</button>
+                </td>
+            </tr>
+            <tr>
+                <td>总代</td>
+                <td>
+                    <select style="height: 25px" name="top_id">
+                        <option value="1">guanwang[推广]</option>
+                        <option value="31">dongbei[推广]</option>
+                        <option value="34">weijueye1[推广]</option>
+                        <option value="40">weijueye2[推广]</option>
+                        <option value="41">weijueye3[推广]</option>
+                        <option value="12045">app2017[推广]</option>
+                        <option value="15441">souhugg[推广]</option>
+                    </select>
+                </td>
+            </tr>
+            <tr style="text-align: center">
+                <td colspan="2">
+                    <button class="layui-btn  layui-btn-btnnew" lay-submit="" lay-filter="demo1">提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use(['layer','form'], function () {
+        var $ = layui.jquery,form = layui.form;
+        form.on('submit(demo1)', function(data){
+            layer.alert('操作成功', {
+                title: '操作信息'
+            });
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

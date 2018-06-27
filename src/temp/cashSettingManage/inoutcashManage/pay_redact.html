@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+
+    .important-text {
+        color: red;
+    }
+</style>
+<body>
+<div class="layui-field-box layui-form">
+    <table class="layui-table">
+        <tbody>
+        <tr>
+            <td>户名:</td>
+            <td><input title="card_name" class="layui-input" name="card_name"></td>
+        </tr>
+        <tr>
+            <td>卡号:</td>
+            <td>
+                <input title="card_num" class="layui-input" name="card_num" maxlength="19" placeholder="请输入卡号">
+                <span class="important-text">第三方支付如果无特殊需要无需修改，银行卡填写银行卡号</span>
+            </td>
+        </tr>
+        <tr>
+            <td>最小额度:</td>
+            <td>
+                <input title="bind_email" class="layui-input" name="pay_small_input" placeholder="请输入最小额度">
+                <span class="important-text">此卡单笔充值时的最小充值额度</span>
+            </td>
+        </tr>
+        <tr>
+            <td>最大额度:</td>
+            <td>
+                <input title="bind_email" class="layui-input" name="pay_max_input" placeholder="请输入最大额度">
+                <span class="important-text">此卡单笔充值时的最大充值额度</span>
+            </td>
+        </tr>
+        <!-------------------- snow 添加折扣字段----------------------------------->
+        <tr>
+            <td>折扣:</td>
+            <td>
+                <input class="layui-input" name="discount" value="10" placeholder="请输入折扣">
+                <span class="important-text">折扣值介于0-10之间,默认为10 表示没有折扣. 格式:9.68</span>
+            </td>
+        </tr>
+        <!-------------------- snow 添加折扣字段----------------------------------->
+        <tr>
+            <td>支付使用场景:</td>
+            <td>
+                <input type="checkbox" name="like[write]" title="电脑端" checked="">
+                <input type="checkbox" name="like[write]" title="手机端">
+                <input type="checkbox" name="like[write]" title="APP端">
+            </td>
+        </tr>
+        <tr>
+            <td>是否填写支付账号:</td>
+            <td>
+                <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest"
+                       lay-text="是|否">
+            </td>
+        </tr>
+        <tr>
+            <td>所属银行:</td>
+            <td>
+                <select>
+                    <option value="">请选择…</option>
+                    <option value="20001">通源微信公众号-TYWXGZH</option>
+                    <option value="20002">通源微信扫码支付-TYWXSMZF</option>
+                    <option value="20003">通源支付宝扫码支付-TYZFBSMZF</option>
+                    <option value="20004">通源支付宝手机-TYZFBSJ</option>
+                    <option value="20005">通源QQ手机支付-TYQQSJZF</option>
+                    <option value="20006">通源网银支付-TYWYZF</option>
+                    <option value="20007">通源QQ扫码支付-TYQQSMZF</option>
+                    <option value="20008">通源百度钱包-TYBDQB</option>
+                </select>
+            </td>
+        </tr>
+        <!-------------------- snow 添加支付类名字段----------------------------------->
+        <tr>
+            <td>支付类名:</td>
+            <td>
+                <input class="layui-input" name="obj_name" value="" placeholder="请输入支付类名">
+                <span class="important-text">支付类名只能是英文字母,且不能大于64个字符小于3个字符.遵循小驼峰命名规则.如:yueBao</span>
+            </td>
+        </tr>
+        <tr>
+            <td>卡组:</td>
+            <td>
+                <input type="checkbox" name="like[write]" title="默认层" checked="">
+                <input type="checkbox" name="like[write]" title="内层" checked="">
+                <input type="checkbox" name="like[write]" title="小黑屋" checked="">
+                <input type="checkbox" name="like[write]" title="测试层级" checked="">
+                <input type="checkbox" name="like[write]" title="中间层" checked="">
+                <input type="checkbox" name="like[write]" title="过渡内层" checked="">
+            </td>
+        </tr>
+        <tr>
+            <td>状态:</td>
+            <td>
+                <select>
+                    <option value="-1">请选择</option>
+                    <option value="1">启用</option>
+                    <option value="2">使用中</option>
+                    <option value="3">收款超额下线</option>
+                    <option value="4">付款余额不足下线</option>
+                    <option value="5">超过当日支付上限下线</option>
+                    <option value="0" selected="">禁用</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>余额:</td>
+            <td>
+                <input title="" class="layui-input" name="balance" placeholder="请输入余额">
+            </td>
+        </tr>
+        <tr>
+            <td>收付方式:</td>
+            <td>
+                <div>
+                    <select>
+                        <option value="1">公司入款</option>
+                        <option value="2">线上支付</option>
+                        <option value="3">幸运支付</option>
+                        <option value="4">微信收款</option>
+                        <option value="5">支付宝收款</option>
+                        <option value="6">优惠彩金</option>
+                    </select>
+                    <span class="important-text">前台显示的位置</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>前台显示名称:</td>
+            <td>
+                <input title="login_name" class="layui-input" name="login_name" placeholder="请输入前台显示名称">
+                <span class="important-text">例如支付宝、微信、QQ、网银等</span>
+            </td>
+        </tr>
+        <tr>
+            <td>存款金额个位不能为 0:</td>
+            <td>
+                <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest"
+                       lay-text="是|否">
+                <span class="important-text">开启后，如果存款金额个位为 0，会随机扣减 1-4 元</span>
+            </td>
+        </tr>
+        <tr>
+            <td>存款金额必须带小数点:</td>
+            <td>
+                <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest"
+                       lay-text="是|否">
+                <span class="important-text">开启后，如果存款金额没有小数，会随机扣减 0.01-0.99 元</span>
+
+            </td>
+        </tr>
+        <tr>
+            <td>总收款限制:</td>
+            <td>
+                <input title="balance_limit" class="layui-input" name="balance_limit" placeholder="请输入总收款限制">
+                <span class="important-text">总收款大于这个值就自动下线</span>
+            </td>
+        </tr>
+        <tr>
+            <td>日收款限制:</td>
+            <td>
+                <input title="day_limit" class="layui-input" name="day_limit" placeholder="请输入日收款限制">
+                <span class="important-text">日收款大于这个值就自动下线</span>
+            </td>
+        </tr>
+        <tr>
+            <td>备注:</td>
+            <td>
+                <textarea title="remark" class="layui-textarea" name="remark"></textarea>
+                <span class="important-text">可在此填写金额限制的提示</span>
+            </td>
+        </tr>
+        <tr>
+            <td>第三方支付域名:</td>
+            <td>
+                <input title="shop_url" class="layui-input" name="shop_url">
+                <span id="shop_url_important_text" class="important-text">格式为 http://www.xxx.com 第三方没有提供就无需填写</span>
+            </td>
+        </tr>
+        <tr>
+            <td>第三方商户号:</td>
+            <td>
+                <input title="mer_no" class="layui-input" name="mer_no" placeholder="请输入第三方商户号">
+            </td>
+        </tr>
+        <tr>
+            <td>第三方平台公钥:</td>
+            <td>
+                <textarea title="平台公钥" class="layui-textarea" name="card_pass" placeholder="请输入第三方平台公钥"></textarea>
+                <span class="important-text">第三方没有提供就无需填写</span>
+            </td>
+        </tr>
+        <tr>
+            <td>第三方商户公钥:</td>
+            <td>
+                <textarea title="商户公钥" class="layui-textarea" name="ukeypwd" placeholder="请输入第三方商户公钥"></textarea>
+                <span class="important-text">第三方没有提供就无需填写</span>
+            </td>
+        </tr>
+        <tr>
+            <td>第三方商户密钥:</td>
+            <td>
+                <textarea title="商户密钥" class="layui-textarea" name="mer_key" placeholder="请输入第三方商户秘钥"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>是否在当前页面跳转</td>
+            <td>
+                <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest"
+                       lay-text="是|否">
+                <span class="important-text">开启后，支付的时候在当前页面跳转</span>
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td></td>
+            <td colspan="2">
+                <button class="layui-btn  layui-btn-btnnew" lay-submit="" lay-filter="demo1">更新</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.define(['layer', 'form'], function () {
+        var form = layui.form;
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            layer.alert('提交成功', {
+                title: '操作信息'
+            })
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

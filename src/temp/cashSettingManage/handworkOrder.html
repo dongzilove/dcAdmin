@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>银行入款补单</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+
+    .select {
+        height: 38px;
+        line-height: 1.3;
+        border-width: 1px;
+        border-style: solid;
+        background-color: #fff;
+        border-radius: 2px;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div class="layui-row admin-title">
+        <span class="left title-T">银行入款补单</span>
+    </div>
+    <div>
+        <p style="color:#FF5151;font-size:14px;margin-bottom: 10px">★ 什么情况下需要手工补单？——当工行自动收款因超限等原因下线时，
+            若有玩家继续汇入金额，这时必须补单（否则无法为玩家充值），
+            如果客户提交了存款提案，将自动审核执行提案，补单的意义在于使自动收款列表的记录时时保持最新，
+            保证机器自动收款的正常运行！</p>
+        <p style="color:#FF5151;font-size:14px;">★ 对于工行ATM、跨行等收款，是为了方便财务不需要登录网银而显示的，
+            这里只是纯粹显示，提案仍然是人工进行审核执行，所以不补单亦无影响。</p>
+    </div>
+    <div class="layui-field-box layui-form">
+        <table class="layui-table">
+            <tbody>
+            <tr>
+                <td>所属银行</td>
+                <td>
+                    <!------------------ author snow 修改成可搜索------------------------------>
+                    <div class="btn-group bootstrap-select bank_id">
+                        <select class="select">
+                            <option value="0">请选择…</option>
+                            <option value="20001">通源微信公众号-TYWXGZH</option>
+                            <option value="20002">通源微信扫码支付-TYWXSMZF</option>
+                            <option value="20003">通源支付宝扫码支付-TYZFBSMZF</option>
+                            <option value="20004">通源支付宝手机-TYZFBSJ</option>
+                        </select>
+                    </div>
+                    <!------------------ author snow 修改成可搜索------------------------------>
+                </td>
+            </tr>
+            <tr>
+                <td>收款卡</td>
+                <td>
+                    <select>
+                        <option value="0">请选择</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>交易类型</td>
+                <td>
+                    <div>
+                        <select>
+                            <option value="0">请选择</option>
+                            <option value="1">公司入款</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr style="text-align: center">
+                <td colspan="2">
+                    <button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="demo1">提交</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="../../plugins/layui/layui.js"></script>
+<script>
+    layui.define(['layer', 'form'], function () {
+        var form = layui.form;
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            layer.alert('提交成功', {
+                title: '操作信息'
+            })
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

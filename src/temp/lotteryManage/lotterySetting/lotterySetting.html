@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>彩种设定</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+    .admin-list .admin-title .addAdmin{
+        color: #fff;
+        margin-top: 4px;
+    }
+    .admin-list .admin-title .addAdmin:hover{color: #fff;}
+</style>
+<body>
+<div class="admin-list">
+    <div class="layui-row admin-title">
+        <span class="left title-T">彩种设定</span>
+        <button class="layui-btn increase layui-btn-btnnew add_lottery right addAdmin">增加彩种</button>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>lottery_id</td>
+            <td>名称</td>
+            <td>显示名称</td>
+            <td>类型</td>
+            <td>单期周期</td>
+            <td>允许录号时间</td>
+            <td>奖期规则</td>
+            <td>排序</td>
+            <td>状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>CQSSC</td>
+            <td>重庆时时彩</td>
+            <td>
+                数字类型
+            </td>
+            <td> 300&nbsp;
+                600&nbsp;
+                300&nbsp;
+            </td>
+            <td> 30&nbsp;
+                30&nbsp;
+                30&nbsp;
+            </td>
+            <td>Ymd-[n3]|1,1,0</td>
+            <td>2</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>SD11Y</td>
+            <td>山东11选5</td>
+            <td>
+                乐透同区型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 60&nbsp;
+            </td>
+            <td>Ymd-[n3]|0,0,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>HLJSSC</td>
+            <td>黑龙江时时彩</td>
+            <td>
+                数字类型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 30&nbsp;
+            </td>
+            <td>[n7]|1,1,1</td>
+            <td>50</td>
+            <td>
+                禁用
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>XJSSC</td>
+            <td>新疆时时彩</td>
+            <td>
+                数字类型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 30&nbsp;
+            </td>
+            <td>Ymd-[n2]|0,0,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>JS115</td>
+            <td>江苏11选5</td>
+            <td>
+                乐透同区型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 0&nbsp;
+            </td>
+            <td>Ymd-[n3]|0,0,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>JX115</td>
+            <td>江西11选5</td>
+            <td>
+                乐透同区型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 30&nbsp;
+            </td>
+            <td>Ymd-[n3]|0,0,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>GD115</td>
+            <td>广东11选5</td>
+            <td>
+                乐透同区型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 30&nbsp;
+            </td>
+            <td>Ymd-[n3]|0,0,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>TJSSC</td>
+            <td>天津时时彩</td>
+            <td>
+                数字类型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 30&nbsp;
+            </td>
+            <td>Ymd-[n3]|0,0,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>3D</td>
+            <td>福彩3D</td>
+            <td>
+                低频3D
+            </td>
+            <td> 36000&nbsp;
+            </td>
+            <td> 300&nbsp;
+            </td>
+            <td>[n7]|1,1,1</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>P3P5</td>
+            <td>体彩P3P5</td>
+            <td>
+                数字类型
+            </td>
+            <td> 36000&nbsp;
+            </td>
+            <td> 300&nbsp;
+            </td>
+            <td>[n7]|1,1,1</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>YZFFC</td>
+            <td>幸运分分彩</td>
+            <td>
+                数字类型
+            </td>
+            <td> 60&nbsp;
+                60&nbsp;
+            </td>
+            <td> 0&nbsp;
+                0&nbsp;
+            </td>
+            <td>Ymd-[n4]|1,1,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>JSKS</td>
+            <td>江苏快三</td>
+            <td>
+                快三型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 0&nbsp;
+            </td>
+            <td>Ymd-[n3]|1,1,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>KSFFC</td>
+            <td>快三分分彩</td>
+            <td>
+                快三型
+            </td>
+            <td> 60&nbsp;
+                60&nbsp;
+            </td>
+            <td> 0&nbsp;
+                0&nbsp;
+            </td>
+            <td>Ymd-[n4]|1,1,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>KLPK</td>
+            <td>山东快乐扑克3</td>
+            <td>
+                快乐扑克型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 30&nbsp;
+            </td>
+            <td>Ymd-[n3]|1,1,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>YZMMC</td>
+            <td>500万秒秒彩</td>
+            <td>
+                数字类型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 30&nbsp;
+            </td>
+            <td>Ymd-[n4]|0,0,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>FFC115</td>
+            <td>11选5分分彩</td>
+            <td>
+                乐透同区型
+            </td>
+            <td> 60&nbsp;
+                60&nbsp;
+            </td>
+            <td> 0&nbsp;
+                0&nbsp;
+            </td>
+            <td>Ymd-[n4]|1,1,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>BJPKS</td>
+            <td>北京PK拾</td>
+            <td>
+                pk拾
+            </td>
+            <td> 300&nbsp;
+            </td>
+            <td> 0&nbsp;
+            </td>
+            <td>[n6]|1,1,1</td>
+            <td>1</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>DJ15</td>
+            <td>东京1.5分彩</td>
+            <td>
+                数字类型
+            </td>
+            <td> 90&nbsp;
+                90&nbsp;
+            </td>
+            <td> 0&nbsp;
+                0&nbsp;
+            </td>
+            <td>Ymd[n3]|1,1,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>AHKS</td>
+            <td>安徽快三</td>
+            <td>
+                快三型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 5&nbsp;
+            </td>
+            <td>Ymd-[n3]|1,1,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>BJKS</td>
+            <td>北京快三</td>
+            <td>
+                快三型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 0&nbsp;
+            </td>
+            <td>[n6]|1,1,1</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>LHC</td>
+            <td>香港⑥合彩</td>
+            <td>
+                六合彩
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 300&nbsp;
+            </td>
+            <td>[n7]|1,1,1</td>
+            <td>5</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>SSQ</td>
+            <td>双色球</td>
+            <td>
+                乐透分区型(蓝红球)
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 30&nbsp;
+            </td>
+            <td>[n7]|1,1,1</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>XY28</td>
+            <td>幸运28</td>
+            <td>
+                PC蛋蛋
+            </td>
+            <td> 300&nbsp;
+            </td>
+            <td> 30&nbsp;
+            </td>
+            <td>[n6]|1,1,1</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>QQFFC</td>
+            <td>腾讯分分彩</td>
+            <td>
+                数字类型
+            </td>
+            <td> 60&nbsp;
+            </td>
+            <td> 0&nbsp;
+            </td>
+            <td>Ymd-[n4]|1,1,0</td>
+            <td>4</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>JSLHC</td>
+            <td>极速⑥合彩</td>
+            <td>
+                六合彩
+            </td>
+            <td> 300&nbsp;
+            </td>
+            <td> 0&nbsp;
+            </td>
+            <td>Ymd-[n3]|1,1,0</td>
+            <td>6</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>XYFT</td>
+            <td>幸运飞艇</td>
+            <td>
+                pk拾
+            </td>
+            <td> 300&nbsp;
+                300&nbsp;
+            </td>
+            <td> 0&nbsp;
+                0&nbsp;
+            </td>
+            <td>Ymd[n3]|1,1,0</td>
+            <td>3</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td>GXKS</td>
+            <td>广西快三</td>
+            <td>
+                快三型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 5&nbsp;
+            </td>
+            <td>Ymd[n3]|1,1,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>HBKS</td>
+            <td>湖北快三</td>
+            <td>
+                快三型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 0&nbsp;
+            </td>
+            <td>Ymd[n3]|1,1,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>HEBEIKS</td>
+            <td>河北快三</td>
+            <td>
+                快三型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 0&nbsp;
+            </td>
+            <td>Ymd[n3]|1,1,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>GSKS</td>
+            <td>甘肃快三</td>
+            <td>
+                快三型
+            </td>
+            <td> 600&nbsp;
+            </td>
+            <td> 0&nbsp;
+            </td>
+            <td>Ymd[n3]|1,1,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>JSSC</td>
+            <td>极速赛车</td>
+            <td>
+                pk拾
+            </td>
+            <td> 180&nbsp;
+            </td>
+            <td> 0&nbsp;
+            </td>
+            <td>Ymd-[n3]|1,1,0</td>
+            <td>100</td>
+            <td>
+                使用中
+            </td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_lottery">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew usage_list">玩法组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew bonus_list">奖金组</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew periods_list">奖期</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use('layer', function () {
+        var $ = layui.jquery;
+        $('.add_lottery').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '增加彩种'
+                , area: ['100%', '100%']
+                , shade: 0
+                , maxmin: true
+                , content: 'add_lottery.html'
+                , zIndex: layer.zIndex //重点1
+            })
+        });
+        $('.usage_list').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '玩法组列表'
+                , area: ['100%', '100%']
+                , shade: 0
+                , maxmin: true
+                , content: 'usage_list.html'
+                , zIndex: layer.zIndex //重点1
+            });
+        });
+            //奖金组
+            $('.bonus_list').on('click', function () {
+                layer.open({
+                    type: 2,
+                    title: '奖金组列表'
+                    , area: ['100%', '100%']
+                    , shade: 0
+                    , maxmin: true
+                    , content: 'bonus_list.html'
+                    , zIndex: layer.zIndex //重点1periods_list
+                })
+            })
+        //奖期
+        $('.periods_list').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '奖期列表'
+                , area: ['100%', '100%']
+                , shade: 0
+                , maxmin: true
+                , content: 'periods_list.html'
+                , zIndex: layer.zIndex //重点1
+            })
+        })
+
+    })
+</script>
+</body>
+</html>

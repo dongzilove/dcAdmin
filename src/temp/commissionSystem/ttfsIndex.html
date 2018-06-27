@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>天天返水</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+			.layui-tab-title .layui-this{background: #fff;}
+			.layui-table-view{margin: 5px 15px;}
+			.laytable-cell-1-sign ,.laytable-cell-2-sign{width: 198px!important;}
+			.laytable-cell-3-1 {
+    width: 595px!important;
+}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list">
+			<div class="layui-row admin-title">
+				<span class="left title-T">天天返水</span>
+				<span class="right addAdmin addDl">新增代理天天返水</span>
+				<span class="right addAdmin addHy">新增会员天天返水</span>
+				<span class="right addAdmin addHmd">新增黑名单</span>
+			</div>
+			<fieldset class="layui-elem-field layui-field-title" style="margin: 0 15px;">
+			  <legend>代理天天返水</legend>
+			</fieldset> 
+			<table class="layui-table" lay-data="{ height:480, url:'/datas/data_list.json', page:true, id:'idTest'}" lay-filter="demo">
+			  <thead>
+			    <tr>
+			      <th lay-data="{field:'username'}">代理直属会员投注金额</th>
+			      <th lay-data="{field:'sex'}">分红比例</th>
+			      <th lay-data="{field:'city' }">返水最大金额</th>
+			      <th lay-data="{field:'sign'}">是否启用</th>
+			      <th lay-data="{fixed: 'right',  align:'center', toolbar: '#barDemo'}">操作</th>
+			    </tr>
+			  </thead>
+			</table>
+			 
+			<script type="text/html" id="barDemo">
+			  <!--<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>-->
+			  <a class="layui-btn layui-btn-mini layui-btn-btnnew" style="line-height: inherit;border: none;" lay-event="edit">编辑</a>
+			  <a class="layui-btn layui-btn-danger layui-btn-mini" style="line-height: inherit;border: none;" lay-event="del">删除</a>
+			</script>
+			
+			<fieldset class="layui-elem-field layui-field-title" style="margin: 0 15px;margin-top: 30px;">
+			  <legend>会员天天返水</legend>
+			</fieldset> 
+			<table class="layui-table" lay-data="{ height:480, url:'/datas/data_list.json', page:true, id:'idTest'}" lay-filter="demo">
+			  <thead>
+			    <tr>
+			      <th lay-data="{field:'username'}">会员投注金额</th>
+			      <th lay-data="{field:'sex'}">分红比例</th>
+			      <th lay-data="{field:'city' }">返水最大金额</th>
+			      <th lay-data="{field:'sign'}">是否启用</th>
+			      <th lay-data="{fixed: 'right',  align:'center', toolbar: '#barDemo2'}">操作</th>
+			    </tr>
+			  </thead>
+			</table>
+			 
+			<script type="text/html" id="barDemo2">
+			  <!--<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>-->
+			  <a class="layui-btn layui-btn-mini layui-btn-btnnew" style="line-height: inherit;border: none;" lay-event="edit2">编辑</a>
+			  <a class="layui-btn layui-btn-danger layui-btn-mini" style="line-height: inherit;border: none;" lay-event="del">删除</a>
+			</script>
+			          
+			<fieldset class="layui-elem-field layui-field-title" style="margin: 0 15px;margin-top: 30px;">
+			  <legend>天天返水黑名单</legend>
+			</fieldset> 
+			<table class="layui-table" lay-data="{ height:480, url:'/datas/data_list.json', page:true, id:'idTest'}" lay-filter="demo">
+			  <thead>
+			    <tr>
+			      <th lay-data="{field:'username'}">代理直属会员投注金额</th>
+			      <th lay-data="{fixed: 'right',  align:'center', toolbar: '#barDemo3'}">操作</th>
+			    </tr>
+			  </thead>
+			</table>
+			 
+			<script type="text/html" id="barDemo3">
+			  <a class="layui-btn layui-btn-danger layui-btn-mini" style="line-height: inherit;border: none;" lay-event="del">删除</a>
+			</script>
+			          
+			<script src="../../plugins/layui/layui.js" charset="utf-8"></script>
+			<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+			<script>
+			layui.use('table', function(){
+				
+				var $ =layui.jquery;
+			  	var layer =layui.layer;
+			  	var table = layui.table;
+			  //监听表格复选框选择
+			  table.on('checkbox(demo)', function(obj){
+			    console.log(obj)
+			  });
+			  //监听工具条
+			  table.on('tool(demo)', function(obj){
+			    var data = obj.data;
+			    if(obj.event === 'detail'){
+			      layer.msg('ID：'+ data.id + ' 的查看操作');
+			    } else if(obj.event === 'del'){
+			      layer.confirm('真的删除行么', function(index){
+			        obj.del();
+			        layer.close(index);
+			      });
+			    } else if(obj.event === 'edit'){
+			      	layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: '编辑代理天天返水'
+				        ,area: ['60%', '80%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'updateDl.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				        ,zIndex: layer.zIndex //重点1
+				        ,success: function(layero){
+				          layer.setTop(layero); //添加成功刷新列表
+				        }
+				     });
+			    } else if(obj.event === 'edit2'){
+			      	layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: '编辑会员天天返水'
+				        ,area: ['60%', '80%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'updateHy.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				        ,zIndex: layer.zIndex //重点1
+				        ,success: function(layero){
+				          layer.setTop(layero); //添加成功刷新列表
+				        }
+				     });
+			    }
+			  });
+			  
+			  var $ = layui.$, active = {
+			    getCheckData: function(){ //获取选中数据
+			      var checkStatus = table.checkStatus('idTest')
+			      ,data = checkStatus.data;
+			      layer.alert(JSON.stringify(data));
+			    }
+			    ,getCheckLength: function(){ //获取选中数目
+			      var checkStatus = table.checkStatus('idTest')
+			      ,data = checkStatus.data;
+			      layer.msg('选中了：'+ data.length + ' 个');
+			    }
+			    ,isAll: function(){ //验证是否全选
+			      var checkStatus = table.checkStatus('idTest');
+			      layer.msg(checkStatus.isAll ? '全选': '未全选')
+			    }
+			  };
+			  
+			  $('.demoTable .layui-btn').on('click', function(){
+			    var type = $(this).data('type');
+			    active[type] ? active[type].call(this) : '';
+			  });
+			  
+			  //新增黑名单addDl.html
+			  $(".addHmd").on('click',function(){
+			  		layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: '添加黑名单'
+				        ,area: ['60%', '80%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'addBlacklist.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				        ,zIndex: layer.zIndex //重点1
+				        ,success: function(layero){
+				          layer.setTop(layero); //添加成功刷新列表
+				        }
+				      });
+			  });
+			  //新增代理
+			  $(".addHy").on('click',function(){
+			  		layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: '添加会员天天返水'
+				        ,area: ['60%', '80%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'addHy.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				        ,zIndex: layer.zIndex //重点1
+				        ,success: function(layero){
+				          layer.setTop(layero); //添加成功刷新列表
+				        }
+				      });
+			  })
+			  //新增代理
+			  $(".addDl").on('click',function(){
+			  		layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: '添加代理天天返水'
+				        ,area: ['60%', '80%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'addDl.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				        ,zIndex: layer.zIndex //重点1
+				        ,success: function(layero){
+				          layer.setTop(layero); //添加成功刷新列表
+				        }
+				      });
+			  })
+			});
+			</script>
+			
+			</body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>推广管理-域名绑定</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+			.layui-layer-btn .layui-layer-btn0{border: 1px solid #48DD95!important;background-color: #48DD95!important;color: #FEFEFE!important;}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list">
+			<div class="layui-row admin-title">
+				<span class="left title-T">域名绑定<span style="font-size: 14px;color: red;">(仅支持单项精确查询 例如：域名：XX.com同时输入多项条件，会默认以最前面的一条为准)</span></span>
+				<span class="right addAdmin">绑定</span>
+			</div>
+			<form class="layui-form" action="" style="margin: 0 15px;">
+				<div class="layui-row">
+					<div class="layui-col-xs3 layui-col-sm3 layui-col-md3">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">域名</label>
+							<div class="layui-input-block">
+								<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入域名" class="layui-input">
+							</div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs3 layui-col-sm3 layui-col-md3">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">代理帐号</label>
+							<div class="layui-input-block">
+								<input type="text" name="cardNo" lay-verify="cardNo" autocomplete="off" placeholder="请输入代理帐号" class="layui-input">
+							</div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs3 layui-col-sm3 layui-col-md3">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">代理昵称</label>
+							<div class="layui-input-block">
+								<input type="text" name="cardName" lay-verify="cardName" autocomplete="off" placeholder="请输入代理昵称" class="layui-input">
+							</div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs3 layui-col-sm3 layui-col-md3	">
+				      	<div class="layui-form-item">
+						    <label class="layui-form-label">序号排序</label>
+						    <div class="layui-input-block">
+						      <select name="interest" lay-filter="aihao">
+						        <option value="0" selected="">正序</option>
+						        <option value="1">倒序</option>
+						      </select>
+						    </div>
+						</div>
+				    </div>
+				</div>
+				
+				<div class="layui-inline" style="margin: auto;display: table;">
+					<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-btnnew" style="width: 100px;">搜索</a>
+					<button type="reset" class="layui-btn layui-btn-primary" style="width: 100px;">重置</button>
+				</div>
+			</form>
+			<!--列表展示-->
+			<div class="layui-field-box layui-form">
+				<table class="layui-table admin-table">
+					<thead>
+						<tr>
+							<!--<th style="width: 30px;"><input type="checkbox" lay-filter="allselector" lay-skin="primary"></th>-->
+							<th>用户名</th>
+							<th>开户名</th>
+							<th>卡号</th>
+							<th>所属银行</th>
+							<th>省份</th>
+							<th>城市</th>
+							<th>添加时间</th>
+							<th>状态</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="content">
+					</tbody>
+				</table>
+			</div>
+			<div id="demo7"></div>
+			<!--<div class="admin-table-page">
+				<div id="paged" class="page">
+				</div>
+			</div>-->
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate,
+					$ = layui.jquery;
+				//监听提交
+				form.on('submit(demo1)', function(data) {
+					layer.alert(JSON.stringify(data.field), {
+						title: '最终的提交信息'
+					})
+					return false;
+				});
+				//日期时间范围
+			  laydate.render({
+			    elem: '#test10'
+			    ,type: 'datetime'
+			    ,range: true
+			  });
+			  form.on('radio(filter)', function(data){
+			  	if(data.value == 0){
+			  		$('#hideUser').addClass("layui-hide")
+			  		$('#hideZd').removeClass("layui-hide")
+			  	}else{
+			  		$('#hideUser').removeClass("layui-hide")
+			  		$('#hideZd').addClass("layui-hide")
+			  	}
+			  });  
+			});
+		</script>
+		<!--数据展示-->
+		<script type="text/html" id="tpl">
+			{{# layui.each(d.list, function(index, item){ }}
+			<tr>
+				<!--<td><input type="checkbox" lay-skin="primary"></td>-->
+				<td>{{ item.name }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.name }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+				<td>
+					<a href="javascript:;" data-name="{{ item }}" data-opt="edit" class="layui-btn layui-btn-mini layui-btn-btnnew">推广码</a>
+					<a href="javascript:;" data-name="{{ item }}" data-opt="edit1" class="layui-btn layui-btn-mini layui-btn-btnnew">编辑</a>
+					<a href="javascript:;" data-name="{{ item }}" data-opt="edit2" class="layui-btn layui-btn-danger layui-btn-mini">解绑</a>
+				</td>
+			</tr>
+			{{# }); }}
+		</script>
+		<script>
+			layui.config({
+				base: '../../js/'
+			});
+
+			layui.use(['paging', 'form'], function() {
+				var $ = layui.jquery,
+					paging = layui.paging(),
+					layerTips = parent.layer === undefined ? layui.layer : parent.layer, //获取父窗口的layer对象
+					layer = layui.layer, //获取当前窗口的layer对象
+					form = layui.form;
+
+                paging.init({
+                    openWait: true,
+                    url: '../../datas/laytpl_laypage_data.json?v=' + new Date().getTime(), //地址
+					elem: '#content', //内容容器
+					params: { //发送到服务端的参数
+					},
+					type: 'GET',
+					tempElem: '#tpl', //模块容器
+					pageConfig: { //分页参数配置
+						elem: '#paged', //分页容器
+						pageSize: 3 //分页大小
+					},
+					success: function() { //渲染成功的回调
+						//alert('渲染成功');
+					},
+					fail: function(msg) { //获取数据失败的回调
+						//alert('获取数据失败')
+					},
+					complate: function() { //完成的回调
+						//alert('处理完成');
+						//重新渲染复选框
+						form.render('checkbox');
+						form.on('checkbox(allselector)', function(data) {
+							var elem = data.elem;
+
+							$('#content').children('tr').each(function() {
+								var $that = $(this);
+								//全选或反选
+								$that.children('td').eq(0).children('input[type=checkbox]')[0].checked = elem.checked;
+								form.render('checkbox');
+							});
+						});
+
+						//绑定所有编辑按钮事件	
+						//list点击详情
+						$('#content').children('tr').each(function() {
+							var $that = $(this);
+//							//详情
+//							$that.children('td[data-opt=searchDel]').on('click', function() {
+//								layer.open({
+//							        type: 2 //此处以iframe举例
+//							        ,title: '返水层级人数'
+//							        ,area: ['100%', '100%']
+//							        ,shade: 0
+//							        ,maxmin: true
+//							        ,content: 'messageDetail.html'
+//							        ,btn2: function(){
+//							          layer.closeAll();
+//							        }
+//							        
+//							        ,zIndex: layer.zIndex //重点1
+//							      });
+//							});
+							//删除
+							$that.children('td:last-child').children('a[data-opt=edit1]').on('click', function() {
+								//layer.msg($(this).data('name'));
+								layer.open({
+							        type: 1
+							        ,title: '删除' //不显示标题栏
+							        ,closeBtn: false
+							        ,area: ['50%', '70%']
+							        ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+							        ,btn: ['确认', '取消']
+							        ,yes: function(index){
+									    layer.close(index);
+									    layer.msg('删除成功！', {
+										  offset: 't',
+										  anim: 1
+										});
+									  }
+							        ,btnAlign: 'c'
+							        ,moveType: 1 //拖拽模式，0或者1
+							        ,content: '<span style="display: block;text-align: left;font-size: 14px;padding: 15px;color: red;">注意：删除之后，可再次绑定!</span><div class="layui-form-item"><label class="layui-form-label">删除理由</label><div class="layui-input-block" style="margin-right: 15px;"><input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入删除理由" class="layui-input"></div></div>'
+							        ,success: function(layero){
+							        	//layer.msg($(this).data('name'));
+//							          var btn = layero.find('.layui-layer-btn');
+//							          btn.find('.layui-layer-btn0').attr({
+//							            href: 'http://www.layui.com/'
+//							            ,target: '_blank'
+//							          });
+							        }
+							      });
+							});
+							//解绑
+							$that.children('td:last-child').children('a[data-opt=edit2]').on('click', function() {
+								//layer.msg($(this).data('name'));
+								layer.open({
+							        type: 1
+							        ,title: '解绑' //不显示标题栏
+							        ,closeBtn: false
+							        ,area: ['30%', '40%']
+							        ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+							        ,btn: ['确认', '取消']
+							        ,yes: function(index){
+									    layer.close(index);
+									    layer.msg('解绑成功！', {
+										  offset: 't',
+										  anim: 1
+										});
+									  }
+							        ,btnAlign: 'c'
+							        ,moveType: 1 //拖拽模式，0或者1
+							        ,content: '<span style="display: block;text-align: center;font-size: 14px;padding:20px 15px;">真的要解除绑定吗？</span>'
+							        ,success: function(layero){
+							        	//layer.msg($(this).data('name'));
+//							          var btn = layero.find('.layui-layer-btn');
+//							          btn.find('.layui-layer-btn0').attr({
+//							            href: 'http://www.layui.com/'
+//							            ,target: '_blank'
+//							          });
+							        }
+							      });
+							});
+							//编辑
+							$that.children('td:last-child').children('a[data-opt=edit]').on('click', function() {
+								layer.open({
+							        type: 2 //此处以iframe举例
+							        ,title: '推广码'
+							        ,area: ['100%', '100%']
+							        ,shade: 0
+							        ,maxmin: true
+							        ,content: 'addDomain.html'
+							        ,btn2: function(){
+							          layer.closeAll();
+							        }
+							        
+							        ,zIndex: layer.zIndex //重点1
+							        ,success: function(layero){
+							          layer.setTop(layero); //添加成功刷新列表
+							        }
+							      });
+							});
+
+						});
+
+					},
+				});
+				$('.addAdmin').on('click', function() {
+					layer.msg('导出成功！', {
+					  offset: 't',
+					  anim: 1
+					});
+				});
+				$('#search').on('click', function() {
+//					parent.layer.alert('你点击了搜索按钮')
+					layer.msg('搜索成功！', {
+					  offset: 't',
+					  anim: 1
+					});
+					
+				});
+
+				var addBoxIndex = -1;
+				
+
+				$('#import').on('click', function() {
+					var that = this;
+					var index = layer.tips('只想提示地精准些', that, { tips: [1, 'white'] });
+					$('#layui-layer' + index).children('div.layui-layer-content').css('color', '#000000');
+				});
+			});
+		</script>
+	</body>
+
+</html>

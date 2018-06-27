@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+    .delete_affirm{
+        padding: 10px;
+        text-align: center;
+    }
+    .admin-list .admin-title .addAdmin{
+        color: #fff;
+        margin-top: 4px;
+    }
+    .admin-list .admin-title .addAdmin:hover{color: #fff;}
+</style>
+<body>
+<div  class="admin-list">
+    <div class="layui-row admin-title">
+        <span class="left title-T">文章管理</span>
+        <button class="layui-btn increase layui-btn-btnnew add_article right addAdmin">添加文章</button>
+        <button class="layui-btn increase layui-btn-btnnew article_classify right addAdmin">文章分类管理</button>
+    </div>
+    <div style="padding: 10px">
+
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>article_id</td>
+            <td>标题</td>
+            <td>所属分类</td>
+            <td>建立时间</td>
+            <td>状态</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>340</td>
+            <td>后中20万+191万+99万 大神领奖已轻车熟路</td>
+            <td>新闻资讯</td>
+            <td>2017-12-14 16:51:58</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>339</td>
+            <td>彩民乒乓球选号中545万 非常灵验已多次中大奖</td>
+            <td>新闻资讯</td>
+            <td>2017-12-14 16:50:06</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>338</td>
+            <td>购彩10年终修正果 淡定彩友领7星彩500万元</td>
+            <td>新闻资讯</td>
+            <td>2017-12-12 11:44:05</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>337</td>
+            <td>西安一地2年中出2注双色球头奖!投注站地址曝光!</td>
+            <td>新闻资讯</td>
+            <td>2017-12-12 11:43:07</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>336</td>
+            <td>日照570万大奖得主时隔一个月领奖：感谢幸运一投工作人员</td>
+            <td>新闻资讯</td>
+            <td>2017-12-05 19:17:33</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>335</td>
+            <td>汉中彩民机选票拿下双色球头奖 奖金604万元</td>
+            <td>新闻资讯</td>
+            <td>2017-12-05 19:16:11</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>334</td>
+            <td>卖菜大叔10元中奖1000万:激动手不停哆嗦</td>
+            <td>新闻资讯</td>
+            <td>2017-12-04 20:47:37</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>333</td>
+            <td>生意人10元中2976万 现身兑奖竟说是如此选号</td>
+            <td>新闻资讯</td>
+            <td>2017-12-04 20:46:41</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>330</td>
+            <td>36人合买 彩友一起兑走双色球737万奖金</td>
+            <td>新闻资讯</td>
+            <td>2017-11-27 16:55:40</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>329</td>
+            <td>一人56元小复式中奖783万 遗憾未赶上500万派奖</td>
+            <td>新闻资讯</td>
+            <td>2017-11-27 16:54:57</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>319</td>
+            <td>打工小伙中520万 称以后都不会再给别人打工！</td>
+            <td>新闻资讯</td>
+            <td>2017-11-26 11:39:21</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>318</td>
+            <td>牛人仅花4分钟研究号码中112注 金额116万元</td>
+            <td>新闻资讯</td>
+            <td>2017-11-26 11:38:54</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>317</td>
+            <td>大乐透爆13注头奖 福建一人只花20元中6550万</td>
+            <td>新闻资讯</td>
+            <td>2017-11-26 11:38:03</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>316</td>
+            <td>彩民三次击中双色球二等奖 玩彩一年盈100多万</td>
+            <td>新闻资讯</td>
+            <td>2017-11-23 18:18:33</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>315</td>
+            <td>昨晚 广东惠州一彩民独揽9630万 中奖投注站曝光</td>
+            <td>新闻资讯</td>
+            <td>2017-11-23 18:17:24</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>314</td>
+            <td>深圳男子半夜睡不着对彩票码 发现中了2976万</td>
+            <td>新闻资讯</td>
+            <td>2017-11-22 13:13:04</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>313</td>
+            <td>湖北9406万大奖得主火速领奖 庆幸没删掉号码</td>
+            <td>新闻资讯</td>
+            <td>2017-11-22 13:11:56</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>312</td>
+            <td>幸运一投~~深圳男子半夜睡不着对彩票码 发现中了2976万</td>
+            <td>新闻资讯</td>
+            <td>2017-11-21 11:07:24</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>311</td>
+            <td>幸运一投，，!无锡彩民3倍投注中得双色球1785万元</td>
+            <td>新闻资讯</td>
+            <td>2017-11-21 11:06:14</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>310</td>
+            <td>18人合买中1110万露脸领奖 投资40元回报40万</td>
+            <td>新闻资讯</td>
+            <td>2017-11-20 11:23:26</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>309</td>
+            <td>9亿派奖显威 上海彩民一票中双色球1336万</td>
+            <td>新闻资讯</td>
+            <td>2017-11-20 11:22:48</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>308</td>
+            <td>小伙99倍最高投注中奖超百万 号码从别人处听到</td>
+            <td>新闻资讯</td>
+            <td>2017-11-19 15:04:38</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>307</td>
+            <td>0元5注单式票中882万头奖 当地今年已斩获4头奖</td>
+            <td>新闻资讯</td>
+            <td>2017-11-19 15:03:33</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>306</td>
+            <td>常州彩民10元揽获双色球604万 中奖投注站曝光</td>
+            <td>新闻资讯</td>
+            <td>2017-11-17 11:37:49</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>305</td>
+            <td>仅有10元零钱拿下347328元大奖 兑奖前夜睡不着</td>
+            <td>新闻资讯</td>
+            <td>2017-11-17 11:36:45</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>304</td>
+            <td>上海彩民56元击中双色球1336万</td>
+            <td>新闻资讯</td>
+            <td>2017-11-15 13:53:31</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>303</td>
+            <td>刚刚 内蒙古20余人合买双色球 喜获1130万元巨奖</td>
+            <td>新闻资讯</td>
+            <td>2017-11-15 13:52:29</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>302</td>
+            <td>宣城喜庆2756万双色球巨奖 中奖彩站站主获奖励</td>
+            <td>新闻资讯</td>
+            <td>2017-11-14 14:03:06</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>301</td>
+            <td>593万大奖被领走 大奖得主称只高兴了一会</td>
+            <td>新闻资讯</td>
+            <td>2017-11-14 14:01:30</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>300</td>
+            <td>女子中奖509万 自称彩票铁杆粉丝选号靠灵感</td>
+            <td>新闻资讯</td>
+            <td>2017-11-13 14:25:22</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>299</td>
+            <td>用零钱购彩中奖1600万 得主自称是做小生意谋生</td>
+            <td>新闻资讯</td>
+            <td>2017-11-13 14:16:25</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>298</td>
+            <td>不找零随口说号码 彩民2元命中518万元头奖</td>
+            <td>新闻资讯</td>
+            <td>2017-11-12 16:09:11</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>297</td>
+            <td>彩民中大奖露脸领奖 两张相同胆拖票共擒1713万</td>
+            <td>新闻资讯</td>
+            <td>2017-11-12 16:08:30</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>296</td>
+            <td>业主组织20人团队合中518万 此前4次中二等奖</td>
+            <td>新闻资讯</td>
+            <td>2017-11-11 14:00:10</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>295</td>
+            <td>彩民中10元就中2966万 到现在还感觉不真实</td>
+            <td>新闻资讯</td>
+            <td>2017-11-11 13:58:12</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>294</td>
+            <td>广东一彩票站点中出1005万大奖 主任现身颁奖</td>
+            <td>新闻资讯</td>
+            <td>2017-11-10 14:14:21</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>293</td>
+            <td>露脸了!四川巴中大乐透1040万第二天就被领走</td>
+            <td>新闻资讯</td>
+            <td>2017-11-10 14:13:05</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>292</td>
+            <td>6名女护工合买中2.22亿 现身领奖后已集体辞职</td>
+            <td>新闻资讯</td>
+            <td>2017-11-09 12:29:44</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>291</td>
+            <td>河南彩民10元狂揽2966万 巨奖得主现身领奖</td>
+            <td>新闻资讯</td>
+            <td>2017-11-09 12:28:59</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>290</td>
+            <td>沈阳彩民8元揽1016万 此地近期频出大奖</td>
+            <td>新闻资讯</td>
+            <td>2017-11-08 13:56:50</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>289</td>
+            <td>彩民独揽双色球2756万 中奖投注站曝光</td>
+            <td>新闻资讯</td>
+            <td>2017-11-08 13:52:38</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>288</td>
+            <td>新昌县彩民花4元中体彩大乐透千万大奖!</td>
+            <td>新闻资讯</td>
+            <td>2017-11-07 11:18:55</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>287</td>
+            <td>男子中518万大奖 来不及换睡衣换就去领奖</td>
+            <td>新闻资讯</td>
+            <td>2017-11-07 11:18:01</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>286</td>
+            <td>彩民独揽1600万头奖 大乐透奖池42.69亿元</td>
+            <td>新闻资讯</td>
+            <td>2017-11-07 11:17:28</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>285</td>
+            <td>泰州彩民自选6元换回双色球一等奖937万多元</td>
+            <td>新闻资讯</td>
+            <td>2017-10-31 12:04:25</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>284</td>
+            <td>90后小伙半年只买了两回彩票 第二回就中574万</td>
+            <td>新闻资讯</td>
+            <td>2017-10-31 12:03:08</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>283</td>
+            <td>轮胎工婚礼上承诺中奖 买彩20年终揽1.3亿</td>
+            <td>新闻资讯</td>
+            <td>2017-10-29 20:18:55</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>282</td>
+            <td>姜还是老的辣 宿州老彩民百元夺福彩3D万余元</td>
+            <td>新闻资讯</td>
+            <td>2017-10-29 20:15:17</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>281</td>
+            <td>彩民一掷千金购福彩3D！揽获奖金高达124万元</td>
+            <td>新闻资讯</td>
+            <td>2017-10-29 20:14:07</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        <tr>
+            <td>280</td>
+            <td>918万中奖彩票差点被扔 襄阳得主自扇耳光</td>
+            <td>新闻资讯</td>
+            <td>2017-10-28 13:23:10</td>
+            <td>正常</td>
+            <td>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew add_article">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                <button class="layui-btn layui-btn-sm layui-btn-btnnew">置顶</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="demo7"></div>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.define(['layer', 'laypage'], function() {
+        var laypage = layui.laypage;
+        //完整功能(分页)
+        laypage.render({
+            elem: 'demo7'
+            ,count: 100
+            ,layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+            ,jump: function(obj){
+                console.log(obj)
+            }
+        });
+        var $ = layui.jquery;
+        $('.add_article').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '添加文章'
+                , area: ['70%', '90%']
+                , shade: 0
+                , maxmin: true
+                , content: 'add_article.html'
+                ,zIndex: layer.zIndex //重点1
+            })
+        });
+        $('.article_classify').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '文章分类管理'
+                , area: ['100%', '100%']
+                , shade: 0
+                , maxmin: true
+                , content: 'article_classify.html'
+                ,zIndex: layer.zIndex //重点1
+            })
+        })
+        //删除按钮
+        $('.delete').each(function() {
+            var $that = $(this);
+            $that.on('click', function() {
+                layer.open({
+                    type: 1,
+                    title: '删除确认',
+                    skin: 'layui-layer-rim', //加上边框
+                    area: ['420px', '140px'], //宽高
+                    btn:['确定','返回'],
+                    content: '<div class="delete_affirm">\n' +
+                    '    <p>真的删除？该操作不可恢复！</p>\n' +
+                    '</div>'
+                })
+            })
+        })
+    })
+</script>
+</body>
+</html>

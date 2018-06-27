@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>表单</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div style="margin: 15px;">
+			<form class="layui-form" action="">
+				<div class="layui-form-item">
+					<label class="layui-form-label">用户名</label>
+					<div class="layui-input-block">
+						<input type="text" name="userName" lay-verify="userName" autocomplete="off" placeholder="请输入标题" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">密码</label>
+					<div class="layui-input-block">
+						<input type="password" name="password" lay-verify="pass" placeholder="请填写至少六位密码" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">确认密码</label>
+					<div class="layui-input-block">
+						<input type="password" name="password" lay-verify="pass" placeholder="请确认密码" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+
+
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">所属组别</label>
+					<div class="layui-input-block">
+						<select name="quiz" lay-verify="zubie">
+							<option value="">请选择</option>
+							<optgroup label="城市记忆">
+								<option value="你工作的第一个城市">你工作的第一个城市</option>
+							</optgroup>
+							<optgroup label="学生时代">
+								<option value="你的工号">你的工号</option>
+								<option value="你最喜欢的老师">你最喜欢的老师</option>
+								
+							</optgroup>
+						</select>
+					</div>
+				</div>
+
+
+				<div class="layui-form-item">
+					<label class="layui-form-label">是否启用？</label>
+					<div class="layui-input-block">
+						<input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest" title="开关">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-input-block" style="margin-top: 35px;margin-left: 40%;">
+						<button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="addAdmin">更新</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate;
+
+				//创建一个编辑器
+				var editIndex = layedit.build('LAY_demo_editor');
+				//自定义验证规则
+				form.verify({
+					userName: function(value) {
+						if(value.length < 5) {
+							return '用户名长度4-21个字符不能为空且不能为纯数字!';
+						}
+					},
+					pass: [/(.+){6,12}$/, '密码必须6到12位'],
+					content: function(value) {
+						layedit.sync(editIndex);
+					},
+					zubie:function(value){
+						if(value.length <= 0) {
+							return '所属组别不能为空';
+						}
+					}
+				});
+
+				//监听提交
+				form.on('submit(addAdmin)', function(data) {
+//					layer.alert(JSON.stringify(data.field), {
+//						title: '最终的提交信息'
+//					})
+					window.parent.location.reload();
+					layer.closeAll('iframe');
+					layer.msg('添加成功！', {
+				  		offset: 't',
+					  	anim: 1
+					});
+					//return false;
+				});
+			});
+		</script>
+	</body>
+
+</html>

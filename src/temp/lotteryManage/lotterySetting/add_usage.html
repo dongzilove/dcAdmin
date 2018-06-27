@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>玩法组详情</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div style="padding: 10px 0 0 10px">
+        <button class="layui-btn increase layui-btn-btnnew add_playing_method">增加玩法</button>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>method_id</td>
+            <td>中文全称</td>
+            <td>玩法简写</td>
+            <td>所属彩种</td>
+            <td>所属玩法组</td>
+            <td>全包注数</td>
+            <td>全包金额</td>
+            <td>奖级</td>
+            <td>转直注数</td>
+            <td>说明</td>
+            <td>封锁</td>
+            <td>状态</td>
+            <td>排序</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>8</td>
+            <td>后二大小单双</td>
+            <td>EXDXDS</td>
+            <td>CQSSC</td>
+            <td>大小单双</td>
+            <td>16</td>
+            <td>2000</td>
+            <td> 1</td>
+            <td>
+                250&nbsp;
+            </td>
+
+            <td class="tl">在十位和个位上，各选择一种状态（大小单双）作为一注，当对应位置所选的状态与开奖号码相符，即中奖，奖金为@P@。<br>中奖实例:<br>开奖号码：***23 投注号码：十位：双 个位：单
+            </td>
+            <td>否</td>
+            <td><font color="red">禁用</font></td>
+            <td><input class="input-sm form-control" type="text" name="sort_ids[8]" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew layui-btn-sm add_playing_method">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>后三大小单双</td>
+            <td>SXDXDS</td>
+            <td>CQSSC</td>
+            <td>大小单双</td>
+            <td>64</td>
+            <td>2000</td>
+            <td> 1</td>
+            <td>
+                125&nbsp;
+            </td>
+
+            <td>在百位、十位和个位上，各选择一种状态（大小单双）作为一注，当对应位置所选的状态与开奖号码相符，即中奖，奖金为@P@。<br>中奖实例:<br>开奖号码：**123
+                投注号码：百位：小，十位：双，个位：单
+            </td>
+            <td>否</td>
+            <td><font color="red">禁用</font></td>
+            <td><input class="input-sm form-control" type="text" name="sort_ids[9]" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew layui-btn-sm add_playing_method">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew">保存</button>
+            </td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use('layer', function () {
+        var $ = layui.jquery;
+        $('.add_playing_method').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '增加玩法'
+                , area: ['100%', '100%']
+                , shade: 0
+                , maxmin: true
+                , content: 'add_playing_method.html'
+                , zIndex: layer.zIndex //重点1
+            })
+        });
+
+    })
+
+</script>
+</body>
+</html>

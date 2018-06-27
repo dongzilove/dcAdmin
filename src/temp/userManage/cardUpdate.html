@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>绑定卡列表-编辑</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+		</style>
+	</head>
+	<body>
+		<form class="layui-form" action="" style="border-radius: 4px;margin: 10px 15px;background: #fff;padding: 28px 15px 28px 0px;">
+			<div class="layui-row">
+				<div class="layui-form-item">
+					<label class="layui-form-label">开户姓名</label>
+					<div class="layui-input-inline">
+						 <input type="text" name="title1" lay-verify="title1" autocomplete="off" placeholder="请输入开户姓名" class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-row">
+				<div class="layui-form-item">
+				    <label class="layui-form-label">银行名称</label>
+				    <div class="layui-input-inline">
+				      <select name="interest" lay-filter="aihao">
+				        <option value=""></option>
+				        <option value="0">中国银行</option>
+				        <option value="1" selected="">招商银行</option>
+				        <option value="2">工商银行</option>
+				        <option value="3">中信银行</option>
+				        <option value="4">中国建设银行</option>
+				      </select>
+				    </div>
+				</div>
+			</div>
+			<div class="layui-row">
+				<div class="layui-form-item">
+	                <label class="layui-form-label">开户城市</label>
+	                <div class="layui-input-inline">
+	                    <select name="provid" id="provid" lay-filter="provid">
+	                        <option value="">请选择省</option>
+	                    </select>
+	                </div>
+	                <div class="layui-input-inline">
+	                    <select name="cityid" id="cityid" lay-filter="cityid">
+	                        <option value="">请选择市</option>
+	                    </select>
+	                </div>
+	            </div>
+			</div>
+			<div class="layui-row">
+				<div class="layui-form-item">
+					<label class="layui-form-label">支行名称</label>
+					<div class="layui-input-inline">
+						 <input type="text" name="title2" lay-verify="title2" autocomplete="off" placeholder="请输入支行名称" class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-row">
+				<div class="layui-form-item">
+					<label class="layui-form-label">银行卡号</label>
+					<div class="layui-input-inline">
+						 <input type="text" name="title3" lay-verify="title3" autocomplete="off" placeholder="请输入银行卡号" class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-inline" style="margin: auto;display: table;">
+				<button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="addAdmin">提交</button>
+				<!--<a id="addMsg" herf="javaScript(0);" class="layui-btn layui-btn-btnnew" style="width: 100px;">发送</a>-->
+				<button type="reset" class="layui-btn layui-btn-primary" style="width: 100px;">重置</button>
+			</div>
+		</form>
+		
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="../../js/data.js"></script>
+    	<script type="text/javascript" src="../../js/province.js"></script>
+    	<script type="text/javascript">
+	        var defaults = {
+	            s1: 'provid',
+	            s2: 'cityid',
+	            s3: 'areaid',
+	            v1: null,
+	            v2: null,
+	            v3: null
+	        };
+	
+	    </script>
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate;
+
+				//创建一个编辑器
+				var editIndex = layedit.build('LAY_demo_editor');
+				//自定义验证规则
+				form.verify({
+					title1: function(value) {
+						if(value.length <= 0) {
+							return '姓名不能为空';
+						}
+					},	
+					title2: function(value) {
+						if(value.length <= 0) {
+							return '支行名称不能为空';
+						}
+					},
+					title3: function(value) {
+						if(value.length <= 0) {
+							return '银行卡号不能为空';
+						}
+					},
+				});
+
+				//监听提交
+				form.on('submit(addAdmin)', function(data) {
+					layer.msg('发送成功！', {
+				  		offset: 't',
+					  	anim: 1
+					});
+					window.parent.location.reload();
+					layer.closeAll('iframe'); //关闭弹出层
+					
+					return false;
+				});
+			});
+		</script>
+	</body>
+</html>

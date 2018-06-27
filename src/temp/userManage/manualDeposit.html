@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>人工存入</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css"><link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list">
+			<div class="layui-row admin-title">
+				<span class="left title-T">人工存入</span>
+			</div>
+			
+			<fieldset class="layui-elem-field layui-field-title" style="margin: 0 15px;">
+			  <legend>温馨提示</legend>
+			  <span style="color: red;margin: 15px 0 15px 30px;display: inline-block;">人工存入不计入报表,无需稽核既可提款,请慎用.</span>
+			</fieldset>
+			<form class="layui-form" action="">
+				<div class="layui-form-item">
+					<label class="layui-form-label"><span style="color: red;">*</span>接收人</label>
+					<div class="layui-input-inline">
+						<input type="text" name="userName" lay-verify="userName" autocomplete="off" placeholder="请输入接收人" class="layui-input userName">
+					</div>
+					<a class="layui-btn layui-btn-btnnew" id="useUser" >检测用户</a>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">用户余额</label>
+					<div class="layui-input-inline layui-hide" id="userLog" style="line-height: 38px;color: red;">用户名输入不规范</div>
+					<div class="layui-input-inline layui-hide" id="userMoney" style="line-height: 38px;color: red;">1000.25</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label"><span style="color: red;">*</span>金额</label>
+					<div class="layui-input-inline">
+						<input type="text" name="bl" lay-verify="bl" autocomplete="off" placeholder="请输入扣除金额" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label"><span style="color: red;">*</span>备注</label>
+					<div class="layui-input-inline">
+						<input type="text" name="bl" lay-verify="bl" autocomplete="off" placeholder="请输入备注" class="layui-input">
+					</div>
+					<div style="line-height: 38px;color: red;">（此栏为必填，且最多不超过10个字)</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-input-block" style="margin-top: 35px;margin-left: 40%;">
+						<button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="addAdmin">立即提交</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+					</div>
+				</div>
+			</form>
+			
+			<div style="display: inline-block;height: 35px;"></div>
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					$ = layui.jquery,
+					laydate = layui.laydate;
+
+				//创建一个编辑器
+				var editIndex = layedit.build('LAY_demo_editor');
+				//自定义验证规则
+				form.verify({
+					money: function(value) {
+						if(value.length < 0) {
+							return '代理直属会员投注金额不能为空';
+						}
+					},bl: function(value) {
+						if(value.length < 0) {
+							return '分红比例不能为空';
+						}
+					},zdje: function(value) {
+						if(value.length < 0) {
+							return '返水最大金额不能为空';
+						}
+					},				
+				});
+
+				//监听提交
+				form.on('submit(addAdmin)', function(data) {
+					layer.msg('添加成功！', {
+				  		offset: 't',
+					  	anim: 1
+					});
+//					window.parent.location.reload();//刷新父层
+//					layer.closeAll('iframe'); //关闭弹出层
+					
+					return false;
+				});
+				
+				$('#useUser').on('click',function(){
+					var userNameMsg = $('.userName')[0].value;
+					if(userNameMsg.length < 1){
+						$("#userLog").removeClass('layui-hide');
+						$("#userMoney").addClass('layui-hide');
+					}else{
+						$("#userMoney").removeClass('layui-hide');
+						$("#userLog").addClass('layui-hide');
+					}
+					
+					
+				})
+				
+			});
+		</script>
+	</body>
+
+</html>

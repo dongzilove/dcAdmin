@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>系统撤单</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+			.layui-layer-btn0 {
+			    display: inline-block;
+			    height: 38px;
+			    line-height: 38px;
+			    padding: 0 18px;
+			    border: 1px solid #48DD95;
+			    background-color: #48DD95;
+			    color: #FEFEFE;
+			    white-space: nowrap;
+			    text-align: center;
+			    font-size: 14px;
+			    border: none;
+			    border-radius: 2px;
+			    cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list">
+			<div class="layui-row admin-title">
+				<span class="left title-T">系统撤单</span>
+			</div>
+			<form class="layui-form" action="">
+				<div class="layui-row">
+					<div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
+						<div class="layui-form-item">
+					      	<label class="layui-form-label">游戏名称</label>
+					      	<div class="layui-inline layui-form-item">
+					        	<div class="layui-input-inline">
+									<select name="gameName" lay-filter="aihao">
+										<option value="0" selected="">游戏时间</option>
+										<option value="1">派奖时间</option>
+									</select>
+								</div>
+					      		<div class="layui-input-inline">
+									<select name="gameTime" lay-filter="aihao">
+										<option value="0" selected="">游戏时间</option>
+										<option value="1">派奖时间</option>
+									</select>
+								</div>
+					    	</div>
+					    </div>
+					</div>
+					<div class="layui-col-xs6 layui-col-sm6 layui-col-md6">
+						<div class="layui-form-item" style="margin-right: 15px;">
+							<label class="layui-form-label">游戏奖期</label>
+							<div class="layui-input-block">
+								<select name="gameNo" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">是</option>
+									<option value="2">否</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layui-row">
+					<div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+						<div class="layui-form-item">
+							<label class="layui-form-label">处理原因</label>
+							<div class="layui-input-block">
+								<input type="radio" name="reason" value="0" title="提前开奖">
+								<input type="radio" name="reason" value="1" title="开奖号码错误 ">
+								<input type="radio" name="reason" value="2" title="官方未开奖 ">
+								<input type="radio" name="reason" value="3" title="重新判奖 ">
+								<input type="radio" name="reason" value="4" title="官网延时开奖 ">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layui-inline" style="margin: auto;display: table;">
+					<button class="layui-btn layui-btn-btnnew" lay-submit id="btnSave" lay-filter="btnSave" style="width: 100px;">提交</button>
+					<button type="reset" class="layui-btn layui-btn-primary" style="width: 100px;">重置</button>
+				</div>
+			</form>
+			<!--列表展示-->
+			<div class="layui-btn-group demoTable" style="margin-left: 15px;">
+			  <button class="layui-btn layui-btn-danger" data-type="getCheckData">多选删除</button>
+			</div>
+			<table class="layui-table" lay-data="{height:485, url:'/datas/data_list.json', page:true, id:'idTest'}" lay-filter="demo">
+			  <thead>
+			    <tr>
+			      <th lay-data="{type:'checkbox', fixed: 'left'}"></th>
+			      <th lay-data="{field:'id', width:180, fixed: true}">彩种</th>
+			      <th lay-data="{field:'username', width:140}">奖期</th>
+			      <th lay-data="{field:'sex', width:180}">错误类型</th>
+			      <th lay-data="{field:'city', width:80}">开奖时间</th>
+			      <th lay-data="{field:'sign', width:160}">登记时间</th>
+			      <th lay-data="{field:'experience', width:80}">登记人</th>
+			      <th lay-data="{field:'experience', width:80}">错误号</th>
+			      <th lay-data="{field:'experience', width:80}">旧状态</th>
+			      <th lay-data="{field:'experience', width:80}">旧返点</th>
+			      <th lay-data="{field:'experience', width:80}">旧中奖</th>
+			      <th lay-data="{field:'experience', width:80}">旧派奖</th>
+			      <th lay-data="{field:'experience', width:80}">正确号码</th>
+			      <th lay-data="{field:'experience', width:80}">新状态</th>
+			      <th lay-data="{field:'experience', width:80}">新返点</th>
+			      <th lay-data="{field:'experience', width:80}">新中奖</th>
+			      <th lay-data="{field:'classify', width:80}">新派奖</th>
+			      <th lay-data="{field:'wealth', width:135}">撤销派奖</th>
+			      <th lay-data="{field:'score', width:80,}">撤单状态</th>
+			      <th lay-data="{fixed: 'right', width:100, align:'center', toolbar: '#barDemo'}">操作</th>
+			    </tr>
+			  </thead>
+			</table>
+			 
+			<script type="text/html" id="barDemo">
+			  <a style="height: 30px;line-height: 30px;border-radius: 0;padding: 0 16px;" class="layui-btn layui-btn-danger layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
+			</script>
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<!--数据提交-->
+		<script>
+			layui.use('form',function(){
+				var $ = layui.jquery;
+			  	var form = layui.form;
+			  	form.on('submit(btnSave)', function (data) {
+			  		console.log(data.field.interst);
+			  		console.log(data.field.title);
+					console.log(data);
+					if(data.field.gameName == undefined || data.field.gameName == ''){
+						layer.msg('游戏名称不能为空！', {
+					  		offset: 't',
+						  	anim: 1
+						});
+						return false;
+					}
+					if(data.field.gameTime == undefined || data.field.gameTime == ''){
+						layer.msg('游戏名称不能为空！', {
+					  		offset: 't',
+						  	anim: 1
+						});
+						return false;
+					}
+					if(data.field.gameNo == undefined || data.field.gameNo == ''){
+						layer.msg('游戏奖期不能为空！', {
+					  		offset: 't',
+						  	anim: 1
+						});
+						return false;
+					}
+					if(data.field.reason == undefined || data.field.reason == ''){
+						layer.msg('处理原因不能为空！', {
+					  		offset: 't',
+						  	anim: 1
+						});
+						return false;
+					}
+
+					
+					// * 发起请求
+					$.ajax({
+					    data: formData,
+					    type: "POST",
+					    dataType: "JSON",
+					    url: url,
+					    beforeSend: function () {
+					        // 禁用
+					        $("#btnSave").addClass('layui-btn-disabled');
+					    },
+					    complete: function () {
+					        // 启用
+					        $("#btnSave").removeClass('layui-btn-disabled');
+					    },
+					    success: function (result) {
+					        console.info("保存数据成功，返回的数据为：↓ ");
+					        console.info(result);
+					
+					        if (result.Status) {                            
+					            // 刷新列表
+					            parent.$("#mainGrid").bootstrapTable("selectPage", 1);
+					
+					            // 确保在最后关闭窗体
+					            parent.layer.close(parent.layer.getFrameIndex(window.name));
+					        } else {
+					            // 提示失败
+					            layer.alert(result.StatusMessage, { title: '提示信息', icon: 5 });
+					        }
+					    }
+					}); // end ajax
+					
+					return false;
+					});
+			});
+		</script>
+		<script>
+			layui.use('table', function(){
+			  var table = layui.table;
+			  //监听表格复选框选择
+			  table.on('checkbox(demo)', function(obj){
+			    console.log(obj)
+			  });
+			  //监听工具条
+			  table.on('tool(demo)', function(obj){
+			    var data = obj.data;
+			    if(obj.event === 'detail'){
+			      layer.msg('ID：'+ data.id + ' 的查看操作');
+			    } else if(obj.event === 'del'){
+			      layer.confirm('真的删除行么', function(index){
+			        obj.del();
+			        layer.close(index);
+			      });
+			    } else if(obj.event === 'edit'){
+			      layer.alert('编辑行：<br>'+ JSON.stringify(data))
+			    }
+			  });
+			  
+			  var $ = layui.$, active = {
+			    getCheckData: function(){ //获取选中数据
+			      var checkStatus = table.checkStatus('idTest')
+			      ,data = checkStatus.data;
+			      layer.alert(JSON.stringify(data));
+			    }
+			  };
+			  
+			  $('.demoTable .layui-btn').on('click', function(){
+			    var type = $(this).data('type');
+			    active[type] ? active[type].call(this) : '';
+			  });
+			});
+			</script>
+	</body>
+
+</html>

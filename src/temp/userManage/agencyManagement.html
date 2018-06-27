@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>代理管理</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+			.layui-btn-minBtn{height: 25px;line-height: 25px;padding: 0 10px;}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list">
+			<div class="layui-row admin-title">
+				<span class="left title-T">代理管理<span style="font-size: 13px;color: red;">(选择“是否存过款”时查询的是历史上是否存款记录，不关联到“存款时间”和“起存金额”等条件)</span></span>
+				<span class="right addAdmin">批量导出会员数据</span>
+				<span class="right addAdmin" id="agencyInfo">批量发送信息</span>
+			</div>
+			<form class="layui-form" action="" style="margin: 0 15px;">
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4	">
+				      	<div class="layui-inline layui-form-item" style="width: 100%;">
+				        	<label class="layui-form-label">注册时间</label>
+				      		<div class="layui-input-block">
+				        		<input type="text" class="layui-input" id="test10" placeholder=" - ">
+				      		</div>
+				    	</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-inline layui-form-item" style="width: 100%;">
+				        	<label class="layui-form-label">存款时间</label>
+				      		<div class="layui-input-block">
+				        		<input type="text" class="layui-input" id="test10" placeholder=" - ">
+				      		</div>
+				    	</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">排序</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">注册时间升序</option>
+									<option value="2">注册时间降序</option>
+									<option value="3">会员级别升序</option>
+									<option value="4">会员级别降序</option>
+								</select>
+							</div>
+						</div>
+				    </div>
+				</div>
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+						    <label class="layui-form-label">起存金额</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="money" lay-verify="money" autocomplete="off" placeholder="请输入起存金额" class="layui-input">
+						    </div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">是否存过款</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">是</option>
+									<option value="2">否</option>
+								</select>
+							</div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">状态</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">正常</option>
+									<option value="2">冻结</option>
+									<option value="3">已删除</option>
+								</select>
+							</div>
+						</div>
+				    </div>
+				</div>
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+						    <label class="layui-form-label">使用的IP</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="ip" lay-verify="ip" autocomplete="off" placeholder="请输入使用的IP" class="layui-input">
+						    </div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+						    <label class="layui-form-label">真实姓名</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="zName" lay-verify="zName" autocomplete="off" placeholder="请输入真实姓名" class="layui-input">
+						    </div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+						    <label class="layui-form-label">手机</label>
+						    <div class="layui-input-block">
+						      <input type="text" name="phone" lay-verify="phone" autocomplete="off" placeholder="请输入手机号码" class="layui-input">
+						    </div>
+						</div>
+				    </div>
+				</div>
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				      	<div class="layui-form-item">
+						    <div class="layui-input-block">
+						      <input type="radio" name="zd" lay-filter="filter" value="0" title="所属总代">
+						      <input type="radio" name="zd" lay-filter="filter" value="1" title="用户名" checked="">
+						    </div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item layui-hide" id="hideZd">
+							<label class="layui-form-label">所属总代</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">11111</option>
+									<option value="2">22222</option>
+								</select>
+							</div>
+						</div>
+						<div class="layui-form-item" id="hideUser">
+							<label class="layui-form-label">用户名</label>
+							<div class="layui-input-block">
+								<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+							</div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">是否在线</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">在线</option>
+									<option value="2">不在线</option>
+								</select>
+							</div>
+						</div>
+				    </div>
+				</div>
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				      	<div class="layui-form-item">
+							<label class="layui-form-label">QQ</label>
+							<div class="layui-input-block">
+								<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入QQ" class="layui-input">
+							</div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">Email</label>
+							<div class="layui-input-block">
+								<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入Email" class="layui-input">
+							</div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">是否测试</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">非测试账号</option>
+									<option value="2">测试账号</option>
+								</select>
+							</div>
+						</div>
+				    </div>
+				</div>
+				<div class="layui-inline" style="margin: auto;display: table;">
+					<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-btnnew" style="width: 100px;">搜索</a>
+					<button type="reset" class="layui-btn layui-btn-primary" style="width: 100px;">重置</button>
+				</div>
+			</form>
+			<!--列表展示-->
+			<div class="layui-field-box layui-form">
+				<table class="layui-table admin-table">
+					<thead>
+						<tr>
+							<!--<th style="width: 30px;"><input type="checkbox" lay-filter="allselector" lay-skin="primary"></th>-->
+							<th>用户名</th>
+							<th>用户上级</th>
+							<th>类型</th>
+							<th>余额</th>
+							<th>充值</th>
+							<th>提款</th>
+							<th>注册时间</th>
+							<th>状态</th>
+							<th>在线状态</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="content">
+					</tbody>
+				</table>
+			</div>
+			<div id="demo7"></div>
+			<!--<div class="admin-table-page">
+				<div id="paged" class="page">
+				</div>
+			</div>-->
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate,
+					$ = layui.jquery;
+				//监听提交
+				form.on('submit(demo1)', function(data) {
+					layer.alert(JSON.stringify(data.field), {
+						title: '最终的提交信息'
+					})
+					return false;
+				});
+				//日期时间范围
+			  laydate.render({
+			    elem: '#test10'
+			    ,type: 'datetime'
+			    ,range: true
+			  });
+			  form.on('radio(filter)', function(data){
+			  	if(data.value == 0){
+			  		$('#hideUser').addClass("layui-hide")
+			  		$('#hideZd').removeClass("layui-hide")
+			  	}else{
+			  		$('#hideUser').removeClass("layui-hide")
+			  		$('#hideZd').addClass("layui-hide")
+			  	}
+			  });  
+			});
+		</script>
+		<!--数据展示-->
+		<script type="text/html" id="tpl">
+			{{# layui.each(d.list, function(index, item){ }}
+			<tr>
+				<!--<td><input type="checkbox" lay-skin="primary"></td>-->
+				<td class="detail-search" data-name="{{ item }}" data-opt='searchDel'>{{ item.name }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+				<td>
+					<a href="javascript:;" data-name="{{ item }}" data-opt="edit" class="layui-btn layui-btn-mini layui-btn-btnnew">查看</a>
+					<a href="javascript:;" data-name="{{ item }}" data-opt="edit1" class="layui-btn layui-btn-mini layui-btn-btnnew">操作</a>
+					<a href="javascript:;" data-name="{{ item }}" data-opt="edit2" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+				</td>
+			</tr>
+			{{# }); }}
+		</script>
+		<script>
+			layui.config({
+				base: '../../js/'
+			});
+
+			layui.use(['paging', 'form'], function() {
+				var $ = layui.jquery,
+					paging = layui.paging(),
+					layerTips = parent.layer === undefined ? layui.layer : parent.layer, //获取父窗口的layer对象
+					layer = layui.layer, //获取当前窗口的layer对象
+					form = layui.form;
+
+                paging.init({
+                    openWait: true,
+                    url: '../../datas/laytpl_laypage_data.json?v=' + new Date().getTime(), //地址
+					elem: '#content', //内容容器
+					params: { //发送到服务端的参数
+					},
+					type: 'GET',
+					tempElem: '#tpl', //模块容器
+					pageConfig: { //分页参数配置
+						elem: '#paged', //分页容器
+						pageSize: 3 //分页大小
+					},
+					success: function() { //渲染成功的回调
+						//alert('渲染成功');
+					},
+					fail: function(msg) { //获取数据失败的回调
+						//alert('获取数据失败')
+					},
+					complate: function() { //完成的回调
+						//alert('处理完成');
+						//重新渲染复选框
+						form.render('checkbox');
+						form.on('checkbox(allselector)', function(data) {
+							var elem = data.elem;
+
+							$('#content').children('tr').each(function() {
+								var $that = $(this);
+								//全选或反选
+								$that.children('td').eq(0).children('input[type=checkbox]')[0].checked = elem.checked;
+								form.render('checkbox');
+							});
+						});
+
+						//绑定所有编辑按钮事件	
+						//list点击详情
+						$('#content').children('tr').each(function() {
+							var $that = $(this);
+							//详情
+							$that.children('td:last-child').children('a[data-opt=edit]').on('click', function() {
+								layer.msg($(this).data('name'));
+								layer.open({
+							        type: 2 //此处以iframe举例
+							        ,title: '查看用户资料'
+							        ,area: ['100%', '100%']
+							        ,shade: 0
+							        ,maxmin: true
+							        ,content: 'agencyDetail.html'
+							        ,btn2: function(){
+							          layer.closeAll();
+							        }
+							        
+							        ,zIndex: layer.zIndex //重点1
+							      });
+							});
+							//操作
+							$that.children('td:last-child').children('a[data-opt=edit1]').on('click', function() {
+								layer.msg($(this).data('name'));
+								layer.open({
+							        type: 2 //此处以iframe举例
+							        ,title: '操作用户'
+							        ,area: ['100%', '100%']
+							        ,shade: 0
+							        ,maxmin: true
+							        ,content: 'agencyOperate.html'
+							        ,btn2: function(){
+							          layer.closeAll();
+							        }
+							        
+							        ,zIndex: layer.zIndex //重点1
+							      });
+							});
+							//删除
+							$that.children('td:last-child').children('a[data-opt=edit2]').on('click', function() {
+								//layer.msg($(this).data('name'));
+								layer.open({
+							        type: 1
+							        ,title: '删除' //不显示标题栏
+							        ,closeBtn: false
+							        ,area: ['30%', '40%']
+							        ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+							        ,btn: ['确认', '取消']
+							        ,yes: function(index){
+									    layer.close(index);
+									    layer.msg('删除成功！', {
+										  offset: 't',
+										  anim: 1
+										});
+									  }
+							        ,btnAlign: 'c'
+							        ,moveType: 1 //拖拽模式，0或者1
+							        ,content: '<span style="display: block;text-align: center;padding: 30px 0;font-size: 16px;">是否删除?</span>'
+							        ,success: function(layero){
+							        	//layer.msg($(this).data('name'));
+//							          var btn = layero.find('.layui-layer-btn');
+//							          btn.find('.layui-layer-btn0').attr({
+//							            href: 'http://www.layui.com/'
+//							            ,target: '_blank'
+//							          });
+							        }
+							      });
+							});
+							//撤单
+							$that.children('td:last-child').children('a[data-opt=edit]').on('click', function() {
+//								layer.confirm('确认删除么', function(index) {
+//				                  $.ajax({
+//				                      type: "post",
+//				                      url: "/cd/workPlatform/tool/remove.afca",
+//				                     dataType:'json',
+//				                     data: "id="+data.id,
+//				                     dataType: "json",
+//				                      success: function (data) {
+//				                       //  console.log(data);
+//				                        var message = data.msg;
+//				                         var code = data.code;
+//				                        // console.log(message);
+//				                        // console.log(code);
+//				                         if(data.code === '0'){
+//				                            //obj.del();
+//				                             layer.close(index);
+//				                             layer.alert(message,{icon: 1,time:2000});
+//				                             tableObj.reload({
+//				                                 url:'/cd/workPlatform/tool/queryTools.afca'
+//				                             });
+//				                         } else {
+//				                             layer.alert(message, {
+//				                                icon: 2,title:'提示'
+//				                             });
+//				                             return;
+//				                         }
+//				                    },
+//				                     error: function () {
+//				                     }
+//				 
+//				                })
+//				                  })
+								layer.msg('撤单成功！', {
+									  offset: 't',
+									  anim: 1
+									});
+//								layer.msg($(this).data('name'));
+//								layer.open({
+//							        type: 2 //此处以iframe举例
+//							        ,title: '修改管理员'
+//							        ,area: ['60%', '80%']
+//							        ,shade: 0
+//							        ,maxmin: true
+//							        ,content: 'updateAdmin.html'
+//							        ,btn2: function(){
+//							          layer.closeAll();
+//							        }
+//							        
+//							        ,zIndex: layer.zIndex //重点1
+//							        ,success: function(layero){
+//							          layer.setTop(layero); //添加成功刷新列表
+//							        }
+//							      });
+							});
+
+						});
+
+					},
+				});
+				$('#zd').on('click', function() {
+					layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: '修改管理员'
+				        ,area: ['60%', '80%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'updateAdmin.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				        ,zIndex: layer.zIndex //重点1
+				        ,success: function(layero){
+				          layer.setTop(layero); //添加成功刷新列表
+				        }
+				      });
+				});
+				$('#search').on('click', function() {
+//					parent.layer.alert('你点击了搜索按钮')
+					layer.msg('搜索成功！', {
+					  offset: 't',
+					  anim: 1
+					});
+					
+				});
+				$('#agencyInfo').on('click', function() {
+					layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: '批量发送消息'
+				        ,area: ['100%', '100%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'agencyInfo.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				        ,zIndex: layer.zIndex //重点1
+				        ,success: function(layero){
+				          layer.setTop(layero); //添加成功刷新列表
+				        }
+				      });
+					
+				});
+				
+
+				var addBoxIndex = -1;
+				
+
+				$('#import').on('click', function() {
+					var that = this;
+					var index = layer.tips('只想提示地精准些', that, { tips: [1, 'white'] });
+					$('#layui-layer' + index).children('div.layui-layer-content').css('color', '#000000');
+				});
+			});
+		</script>
+	</body>
+
+</html>

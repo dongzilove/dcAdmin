@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分配卡组</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+
+    .user {
+        display: inline-block;
+        width: 15%;
+        background: #F2F5F4;
+    }
+
+    .user p {
+        padding: 10px;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div class="layui-row admin-title">
+        <span class="left title-T">分配卡组</span>
+    </div>
+    <div class="user">
+        <p style="background: #ccc;margin-top: 10px">用户列表</p>
+        <p><a href="#">testaz<font color="#A0A0A0">(0)</font></a></p>
+        <p><a href="#">testaz1<font color="#A0A0A0">(0)</font></a></p>
+        <p><a href="#">gongz01<font color="#A0A0A0">(5)</font></a></p>
+        <p><a href="#">gongz001<font color="#A0A0A0">(1)</font></a></p>
+        <p><a href="#">jiali01<font color="#A0A0A0">(2)</font></a></p>
+    </div>
+    <div style="float: right; width: 85%;">
+        <div class="layui-field-box layui-form">
+            <table class="layui-table">
+                <thead>
+                <tr>
+                    <td>user_id</td>
+                    <td>用户名</td>
+                    <td>类型</td>
+                    <td>已分配卡组</td>
+                    <td>属性</td>
+                    <td>设定卡组（对所有孩子起作用）</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>guanwang <b style="color:red">[推广]</b></td>
+                    <td>
+                        总代
+                    </td>
+                    <td><label title="ref_group_id=1">默认层</label>
+                    </td>
+                    <td><b>特别指定</b>
+                    </td>
+                    <td>
+                        <div class="layui-form-item">
+                            <div class="layui-input-inline">
+                                <select>
+                                    <option value="-1">请选择</option>
+                                    <option value="0">继承上级（默认）</option>
+                                    <option value="1" selected="">默认层</option>
+                                    <option value="4">内层</option>
+                                    <option value="100">小黑屋</option>
+                                    <option value="99">测试层级</option>
+                                    <option value="5">中间层</option>
+                                    <option value="6">过渡内层</option>
+                                    <option value="3">过渡层</option>
+                                    <option value="22">阿萨德付</option>
+                                </select>
+                            </div>
+                            <div class="layui-form-mid layui-word-aux" style="padding:0 !important">
+                                <button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="demo1">批量设置
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td>dongbei <b style="color:red">[推广]</b></td>
+                    <td>
+                        总代
+                    </td>
+                    <td><label title="ref_group_id=5">中间层</label>
+                    </td>
+                    <td><b>特别指定</b>
+                    </td>
+                    <td>
+
+                        <select>
+                            <option value="-1">请选择</option>
+                            <option value="0">继承上级（默认）</option>
+                            <option value="1">默认层</option>
+                            <option value="4">内层</option>
+                            <option value="100">小黑屋</option>
+                            <option value="99">测试层级</option>
+                            <option value="5" selected="">中间层</option>
+                            <option value="6">过渡内层</option>
+                            <option value="3">过渡层</option>
+                            <option value="22">阿萨德付</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>34</td>
+                    <td>weijueye1 <b style="color:red">[推广]</b></td>
+                    <td>
+                        总代
+                    </td>
+                    <td><label title="ref_group_id=5">中间层</label>
+                    </td>
+                    <td><b>特别指定</b>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="-1">请选择</option>
+                            <option value="0">继承上级（默认）</option>
+                            <option value="1">默认层</option>
+                            <option value="4">内层</option>
+                            <option value="100">小黑屋</option>
+                            <option value="99">测试层级</option>
+                            <option value="5" selected="">中间层</option>
+                            <option value="6">过渡内层</option>
+                            <option value="3">过渡层</option>
+                            <option value="22">阿萨德付</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td>weijueye2 <b style="color:red">[推广]</b></td>
+                    <td>
+                        总代
+                    </td>
+                    <td><label title="ref_group_id=1">默认层</label>
+                    </td>
+                    <td><b>特别指定</b>
+                    </td>
+                    <td>
+                        <select class="input-sm form-control" name="ref_group_ids[40]">
+                            <option value="-1">请选择</option>
+                            <option value="0">继承上级（默认）</option>
+                            <option value="1" selected="">默认层</option>
+                            <option value="4">内层</option>
+                            <option value="100">小黑屋</option>
+                            <option value="99">测试层级</option>
+                            <option value="5">中间层</option>
+                            <option value="6">过渡内层</option>
+                            <option value="3">过渡层</option>
+                            <option value="22">阿萨德付</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>41</td>
+                    <td>weijueye3 <b style="color:red">[推广]</b></td>
+                    <td>
+                        总代
+                    </td>
+                    <td><label title="ref_group_id=1">默认层</label>
+                    </td>
+                    <td><b>特别指定</b>
+                    </td>
+                    <td>
+                        <select>
+                            <option value="-1">请选择</option>
+                            <option value="0">继承上级（默认）</option>
+                            <option value="1" selected="">默认层</option>
+                            <option value="4">内层</option>
+                            <option value="100">小黑屋</option>
+                            <option value="99">测试层级</option>
+                            <option value="5">中间层</option>
+                            <option value="6">过渡内层</option>
+                            <option value="3">过渡层</option>
+                            <option value="22">阿萨德付</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>42</td>
+                    <td>weijueye4 <b style="color:red">[推广]</b></td>
+                    <td>
+                        总代
+                    </td>
+                    <td><label title="ref_group_id=1">默认层</label>
+                    </td>
+                    <td><b>特别指定</b>
+                    </td>
+                    <td>
+                        <select class="input-sm form-control" name="ref_group_ids[42]">
+                            <option value="-1">请选择</option>
+                            <option value="0">继承上级（默认）</option>
+                            <option value="1" selected="">默认层</option>
+                            <option value="4">内层</option>
+                            <option value="100">小黑屋</option>
+                            <option value="99">测试层级</option>
+                            <option value="5">中间层</option>
+                            <option value="6">过渡内层</option>
+                            <option value="3">过渡层</option>
+                            <option value="22">阿萨德付</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr style="text-align: center">
+                    <td></td>
+                    <td colspan="6">
+                        <button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="demo1">提交</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.define(['layer', 'form'], function () {
+        var form = layui.form;
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            layer.alert('提交成功', {
+                title: '操作信息'
+            })
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

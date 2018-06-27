@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>代理明细管理下级菜单</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/companyManagement.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>menuid</td>
+            <td>名称</td>
+            <td>说明</td>
+            <td>控制器</td>
+            <td>行为</td>
+            <td>是否启用</td>
+            <td>是否记录日志</td>
+            <td>排序</td>
+            <td>下级菜单</td>
+            <td>更新时间</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>24</td>
+            <td>团队详情</td>
+            <td>团队详情</td>
+            <td>user</td>
+            <td>showTeam</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2013-01-17 23:04:26</td>
+            <td>
+                <button class="layui-btn layui-btn-mini layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-mini delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>42</td>
+            <td>设置返点</td>
+            <td></td>
+            <td>user</td>
+            <td>setRebate</td>
+            <td>启用</td>
+            <td>不记录</td>
+            <td><input type="text"  value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2013-08-03 07:40:03</td>
+            <td>
+                <button class="layui-btn layui-btn-mini layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-mini delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>57</td>
+            <td>回收帐号</td>
+            <td>回收帐号</td>
+            <td>user</td>
+            <td>recycle</td>
+            <td>启用</td>
+            <td>记录</td>
+            <td><input type="text" value="100" size="3"></td>
+            <td>
+                无
+            </td>
+            <td>2013-08-03 07:43:39</td>
+            <td>
+                <button class="layui-btn layui-btn-mini layui-btn-btnnew add_authority">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-mini delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">&nbsp;</td>
+            <td>
+                <button class="layui-btn layui-btn-mini layui-btn-btnnew save">保存</button>
+            </td>
+            <td>
+                <!--<button class="layui-btn layui-btn-mini layui-btn-btnnew">上级</button>-->
+            </td>
+            <td colspan="2"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="./../../../plugins/layui/layui.js"></script>
+<script src="./../../../js/userJurisdictionManage.js"></script>
+</body>
+</html>

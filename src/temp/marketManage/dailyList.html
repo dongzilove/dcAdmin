@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>日度报表</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list">
+			<div class="layui-row admin-title">
+				<span class="left title-T">日度报表<span style="font-size: 14px;color: red;">(注:日统计按照当日的00:00:00到23:59:59为准)</span></span>
+				<span class="right addAdmin">导出Excel</span>
+			</div>
+			<form class="layui-form" action="">
+				<div class="layui-row">
+					<div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+						<div class="layui-form-item" style="margin-right: 15px;">
+					      <label class="layui-form-label">游戏时间</label>
+					      <div class="layui-input-block">
+					        <input type="text" class="layui-input" id="test10" placeholder=" - ">
+					      </div>
+					    </div>
+					</div>
+				</div>
+				<div class="layui-inline" style="margin: auto;display: table;">
+					<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-btnnew" style="width: 100px;">搜索</a>
+					<button type="reset" class="layui-btn layui-btn-primary" style="width: 100px;">重置</button>
+				</div>
+			</form>
+			<!--列表展示-->
+			<table class="layui-hide" id="test"></table>
+			<!--<div id="demo7"></div>-->
+			<!--<div class="admin-table-page">
+				<div id="paged" class="page">
+				</div>
+			</div>-->
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="../../plugins/layui/lay/modules/jquery.js"></script>
+		<script>
+			layui.use('table', function(){
+			  var table = layui.table;
+			  
+			  table.render({
+			    elem: '#test'
+			    ,url:'/datas/data_list.json'
+			    ,height: 482
+			    ,cols: [[
+			      {field:'id', width:110, title: '日期', sort: true, fixed: 'left'}
+			      ,{field:'username', width:120, title: '总代数量'}
+			      ,{field:'sex', width:120, title: '新增总代数',}
+			      ,{field:'city', width:120, title: '新增用户数'}
+			      ,{field:'sign', width: 100, title: '订单数量	'}
+			      ,{field:'experience', width:120, title: '充值笔数',}
+			      ,{field:'score', width:120, title: '存款量',}
+			      ,{field:'classify', width:120, title: '首存人数'}
+			      ,{field:'wealth', width:120, title: '有效首存人数',}
+			      ,{field:'sex', width:120, title: '首存量',}
+			      ,{field:'city', width:120, title: '提款量'}
+			      ,{field:'sign', width: 219, title: '总销量'}
+			      ,{field:'experience', width:120, title: '总游戏盈亏',}
+			      ,{field:'score', width:120, title: '充值优惠',}
+			      ,{field:'classify', width:120, title: '日投注返水'}
+			      ,{field:'wealth', width:120, title: '净盈亏',}
+			      ,{field:'sex', width:120, title: '低频游戏销量',}
+			      ,{field:'city', width:120, title: '低频游戏盈亏'}
+			      ,{field:'sign', width: 219, title: '分分彩销量'}
+			      ,{field:'experience', width:120, title: '分分彩盈亏',}
+			      ,{field:'score', width:120, title: '秒秒彩销量',}
+			      ,{field:'classify', width:120, title: '秒秒彩盈亏'}
+			      ,{field:'username', width:600, title: '重庆时时彩销量',}
+			      ,{field:'username', width:400, title: '重庆时时彩盈亏'}
+			      ,{field:'sex', width:219, title: '山东11选5销量',}
+			      ,{field:'city', width:219, title: '山东11选5盈亏'}
+			      ,{field:'sign', width: 219, title: '新疆时时彩销量	'}
+			      ,{field:'experience', width:219, title: '新疆时时彩盈亏',}
+			      ,{field:'score', width:219, title: '江苏11选5销量',}
+			      ,{field:'classify', width:219, title: '江苏11选5盈亏'}
+			      ,{field:'wealth', width:219, title: '江西11选5销量',}
+			      ,{field:'sex', width:219, title: '江西11选5盈亏',}
+			      ,{field:'city', width:219, title: '广东11选5销量'}
+			      ,{field:'sign', width: 219, title: '广东11选5盈亏'}
+			      ,{field:'experience', width:219, title: '天津时时彩销量',}
+			      ,{field:'score', width:219, title: '天津时时彩盈亏',}
+			      ,{field:'classify', width:120, title: '福彩3D销量'}
+			      ,{field:'wealth', width:120, title: '福彩3D盈亏',}
+			      ,{field:'sex', width:219, title: '体彩P3P5销量',}
+			      ,{field:'city', width:219, title: '体彩P3P5盈亏'}
+			      ,{field:'sign', width: 219, title: '江苏快三销量'}
+			      ,{field:'experience', width:219, title: '江苏快三盈亏',}
+			      ,{field:'score', width:219, title: '快三分分彩销量',}
+			      ,{field:'classify', width:219, title: '快三分分彩盈亏'}
+			      ,{field:'wealth', width:120, title: '快乐扑克销量',}
+			      ,{field:'username', width:120, title: '快乐扑克盈亏'}
+			      ,{field:'sex', width:219, title: '115分分彩销量',}
+			      ,{field:'city', width:219, title: '115分分彩盈亏'}
+			      ,{field:'sign', width: 100, title: 'PK10销量'}
+			      ,{field:'experience', width:120, title: 'PK10盈亏',}
+			      ,{field:'score', width:120, title: '东京1.5销量',}
+			      ,{field:'classify', width:120, title: '东京1.5盈亏'}
+			      ,{field:'wealth', width:120, title: '安徽快三销量',}
+			      ,{field:'sex', width:120, title: '安徽快三盈亏',}
+			      ,{field:'city', width:219, title: '北京快三销量'}
+			      ,{field:'sign', width: 219, title: '北京快三盈亏'}
+			      ,{field:'experience', width:120, title: '六合彩销量',}
+			      ,{field:'score', width:120, title: '六合彩盈亏',}
+			      ,{field:'classify', width:120, title: '双色球销量'}
+			      ,{field:'wealth', width:120, title: '双色球盈亏',}
+			      ,{field:'sex', width:120, title: '幸运28销量',}
+			      ,{field:'city', width:120, title: '幸运28盈亏'}
+			      ,{field:'sign', width: 219, title: '腾讯分分彩销量'}
+			      ,{field:'experience', width:219, title: '腾讯分分彩盈亏',}
+			      ,{field:'score', width:120, title: '极速六合彩销量',}
+			      ,{field:'classify', width:120, title: '极速六合彩盈亏'}
+			      ,{field:'wealth', width:120, title: '幸运飞艇销量',}
+			      ,{field:'username', width:120, title: '幸运飞艇盈亏'}
+			      ,{field:'sex', width:120, title: '广西快三销量',}
+			      ,{field:'city', width:120, title: '广西快三盈亏'}
+			      ,{field:'sign', width: 100, title: '湖北快三销量'}
+			      ,{field:'experience', width:120, title: '湖北快三盈亏',}
+			      ,{field:'score', width:120, title: '河北快三销量',}
+			      ,{field:'classify', width:120, title: '河北快三盈亏'}
+			      ,{field:'wealth', width:120, title: '甘肃快三盈亏',}
+			    ]]
+			    ,page: true
+			  });
+			});
+		</script>
+
+	</body>
+
+</html>

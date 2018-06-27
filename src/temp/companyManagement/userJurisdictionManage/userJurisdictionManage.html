@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户权限管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/companyManagement.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html{background: #F2F5F4;}
+    .admin-list .admin-title .addAdmin{
+        color: #fff;
+        margin-top: 4px;
+    }
+    .admin-list .admin-title .addAdmin:hover{color: #fff;}
+</style>
+<body>
+<div class="user_jurisdiction_manage admin-list">
+    <div class="layui-row admin-title">
+        <span class="left title-T">用户权限管理</span>
+        <span>(说明：权限管理的实现基于控制器和行为来限定。)</span>
+        <button class="layui-btn layui-btn-btnnew add_authority right addAdmin">增加权限</button>
+    </div>
+    <div>
+        <table class="layui-table">
+            <thead>
+                <tr>
+                    <th>menuid</th>
+                    <th>名称</th>
+                    <th>说明</th>
+                    <th>控制器</th>
+                    <th>行为</th>
+                    <th>是否启用</th>
+                    <th>是否记录日志</th>
+                    <th>排序</th>
+                    <th>下级菜单</th>
+                    <th>更新时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>参与游戏</td>
+                    <td>参与游戏</td>
+                    <td>game</td>
+                    <td></td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm participationGameSubordinate">下级菜单</button>
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>财务管理</td>
+                    <td>财务管理</td>
+                    <td>fin</td>
+                    <td></td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm financeSubmenus">下级菜单</button>
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>游戏记录</td>
+                    <td>游戏记录</td>
+                    <td>report</td>
+                    <td></td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm gameRecordSubordinate">下级菜单</button>
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>消息管理</td>
+                    <td>消息管理</td>
+                    <td>message</td>
+                    <td></td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm informationMenu">下级菜单</button>
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>代理管理</td>
+                    <td>代理管理</td>
+                    <td>agent</td>
+                    <td></td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm agencyMenu">下级菜单</button>
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>帐户设定</td>
+                    <td>帐户设定</td>
+                    <td>user</td>
+                    <td></td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm AccountSettings">下级菜单</button>
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>39</td>
+                    <td>帮助中心</td>
+                    <td>帮助中心</td>
+                    <td>help</td>
+                    <td></td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm helpCenter">下级菜单</button>
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>64</td>
+                    <td>默认菜单</td>
+                    <td>默认菜单</td>
+                    <td>default</td>
+                    <td></td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm TheDefaultMenu">下级菜单</button>
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>347</td>
+                    <td>新支付</td>
+                    <td>新的支付方式</td>
+                    <td>newPay</td>
+                    <td>pay</td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        无
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>350</td>
+                    <td>新支付回调</td>
+                    <td>新支付回调</td>
+                    <td>newPay</td>
+                    <td>backPay</td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        无
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>351</td>
+                    <td>新支付配置</td>
+                    <td>新支付配置</td>
+                    <td>newPay</td>
+                    <td>fin</td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        无
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>369</td>
+                    <td>视讯游戏</td>
+                    <td>视讯游戏</td>
+                    <td>livegame</td>
+                    <td></td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm VideoGame">下级菜单</button>
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>376</td>
+                    <td>体育游戏</td>
+                    <td>体育游戏</td>
+                    <td>sportGame</td>
+                    <td></td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm sportsGames">下级菜单</button>
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>130</td>
+                    <td>主页</td>
+                    <td>主页</td>
+                    <td>default</td>
+                    <td>main</td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        无
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>137</td>
+                    <td>第三方支付</td>
+                    <td>第三方支付</td>
+                    <td>pay</td>
+                    <td></td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm thirdpartyPay">下级菜单</button>
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>180</td>
+                    <td>参与电子游戏</td>
+                    <td>参与电子游戏</td>
+                    <td>egame</td>
+                    <td></td>
+                    <td>启用</td>
+                    <td>不记录</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>
+                        <button class="layui-btn layui-btn-sm participationElectronicGame">下级菜单</button>
+                    </td>
+                    <td>2013-01-17 23:44:45</td>
+                    <td>
+                        <button class="layui-btn layui-btn-normal layui-btn-sm add_authority">增加</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-btnnew add_authority">编辑</button>
+                        <button class="layui-btn layui-btn-danger layui-btn-sm delete">删除</button>
+                    </td>
+                </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <button class="layui-btn layui-btn-sm layui-btn-btnnew save">保存</button>
+                </td>
+                <td>
+
+                </td>
+                <td></td>
+                <td>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script src="../../../js/userJurisdictionManage.js"></script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>操作用户</title>
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" />
+		<!--<link rel="stylesheet" href="css/global.css" media="all">-->
+		<style type="text/css">
+			html{background: #F2F5F4;}
+			#tab-show{margin: 15px 15px;background: #fff;border-radius: 4px;padding: 1px 0;}
+			.layui-tab-title li{background: #DDDDDD;}
+			.layui-tab-title li.layui-this{background: #FFF;}
+		</style>
+	</head>
+	<body>
+		<div id="tab-show">
+			<fieldset class="layui-elem-field layui-field-title" style="margin:15px  15px;">
+			  <legend>操作用户-修改、杀率、配额、密码、冻结、消息</legend>
+			</fieldset>
+			 
+			<div class="layui-tab" style="margin: 0 15px;">
+			  <ul class="layui-tab-title">
+			    <li class="layui-this">修改</li>
+			    <li>杀率</li>
+			    <li>配额</li>
+			    <li>密码</li>
+			    <li>冻结</li>
+			    <li>消息</li>
+			  </ul>
+			  <div class="layui-tab-content" style="margin-top: 10px;">
+			    <div class="layui-tab-item layui-show">
+					<form class="layui-form" action="" lay-filter="example">
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">真实姓名</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">昵称</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">QQ</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">mobile</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">层级</label>
+					    <div class="layui-input-block">
+					      <select name="interest" lay-filter="aihao">
+					        <option value=""></option>
+					        <option value="0">写作</option>
+					        <option value="1" selected="">阅读</option>
+					        <option value="2">游戏</option>
+					        <option value="3">音乐</option>
+					        <option value="4">旅行</option>
+					      </select>
+					    </div>
+					  </div>
+					  
+					  <div class="layui-form-item layui-form-text">
+					    <label class="layui-form-label">备注</label>
+					    <div class="layui-input-block">
+					      <textarea placeholder="请输入内容" class="layui-textarea" name="desc"></textarea>
+					    </div>
+					  </div>
+					 
+					  <div class="layui-form-item">
+					    <div class="layui-input-block">
+					      <button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="demo1">立即提交</button>
+					    </div>
+					  </div>
+					</form>
+			    </div>
+			    <div class="layui-tab-item">
+			    	<form class="layui-form" action="" lay-filter="example">
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">用户id</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="userId" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">用户名</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="userNameXl" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">QQ</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="userQQ" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">秒秒彩杀率</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="mmcsl" lay-verify="title" autocomplete="off" placeholder="请输入赔率" class="layui-input">
+					    </div>
+					  </div>
+					 
+					  <div class="layui-form-item">
+					    <div class="layui-input-block">
+					      <button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="demo2">立即提交</button>
+					    </div>
+					  </div>
+					</form>
+			    </div>
+			    <div class="layui-tab-item">
+			    	<form class="layui-form" action="" lay-filter="example">
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">用户id</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="userId" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">用户名</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="userNameXl" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">昵称</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="userQQ" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">操作</label>
+					    <div class="layui-input-block">
+					      <input type="radio" name="sex" value="1" title="增加" checked="">
+					      <input type="radio" name="sex" value="2" title="减少">
+					    </div>
+					  </div>
+					 <div class="layui-form-item">
+					    <div class="layui-inline">
+					      <label class="layui-form-label">配额1980</label>
+					      <div class="layui-input-inline">
+					        <input type="text" name="number" lay-verify="number" autocomplete="off" class="layui-input">
+					      </div>
+					       <div class="layui-form-mid layui-word-aux">
+					       	配额总量：100   已使用：0 剩余配额：100
+					       </div>
+					    </div>
+					   </div>
+					  <div class="layui-form-item">
+					    <div class="layui-input-block">
+					      <button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="demo3">立即提交</button>
+					    </div>
+					  </div>
+					</form>
+			    </div>
+			    <div class="layui-tab-item">
+			    	<fieldset class="layui-elem-field layui-field-title" style="margin:15px  15px;">
+					  <legend>修改登录密码</legend>
+					</fieldset>
+					<form class="layui-form" action="" lay-filter="example">
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">用户帐号</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">昵称</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">登录密码</label>
+					    <div class="layui-input-block">
+					      <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label" style="padding: 9px 10px;width: 90px;">确认登录密码</label>
+					    <div class="layui-input-block">
+					      <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+					    </div>
+					  </div>
+					 	<fieldset class="layui-elem-field layui-field-title" style="margin:15px  15px;">
+						  <legend>修改资金密码</legend>
+						</fieldset>
+						<div class="layui-form-item">
+						    <label class="layui-form-label">资金密码</label>
+						    <div class="layui-input-block">
+						      <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+						    </div>
+						  </div>
+						  <div class="layui-form-item">
+						    <label class="layui-form-label" style="padding: 9px 10px;width: 90px;">确认资金密码</label>
+						    <div class="layui-input-block">
+						      <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+						    </div>
+						  </div>
+						  <div class="layui-form-item layui-form-text">
+						    <label class="layui-form-label" style="padding: 9px 0px;width: 105px;">修改密码原因</label>
+						    <div class="layui-input-block">
+						      <textarea placeholder="请输入修改密码原因" class="layui-textarea" name="desc"></textarea>
+						    </div>
+						  </div>
+						  <div class="layui-form-item">
+						    <div class="layui-input-block">
+						      <button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="demo4">立即提交</button>
+						    </div>
+					  	  </div>
+					</form>
+			    </div>
+			    <div class="layui-tab-item">
+			    	<form class="layui-form" action="" lay-filter="example">
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">用户id</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="userId" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">用户名</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="userNameXl" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">目前状态</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="userQQ" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">冻结类型</label>
+					    <div class="layui-input-block">
+					      <select name="interest" lay-filter="aihao">
+					        <option value=""></option>
+					        <option value="0">写作</option>
+					        <option value="1" selected="">阅读</option>
+					        <option value="2">游戏</option>
+					        <option value="3">音乐</option>
+					        <option value="4">旅行</option>
+					      </select>
+					    </div>
+					  </div>
+					  
+					  <div class="layui-form-item layui-form-text">
+					    <label class="layui-form-label">冻结原因</label>
+					    <div class="layui-input-block">
+					      <textarea placeholder="请输入内容" class="layui-textarea" name="desc"></textarea>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">冻结下级</label>
+					    <div class="layui-input-block">
+					      <input type="radio" name="sex1" value="1" title="是" checked="">
+					      <input type="radio" name="sex1" value="2" title="否">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">冻结银行卡</label>
+					    <div class="layui-input-block">
+					      <input type="radio" name="sex3" value="1" title="是" checked="">
+					      <input type="radio" name="sex3" value="2" title="否">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <div class="layui-input-block">
+					      <button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="demo5">立即提交</button>
+					    </div>
+					  </div>
+					</form>
+			    </div>
+			    <div class="layui-tab-item">
+			    	<form class="layui-form" action="" lay-filter="example">
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">用户id</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="userId" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">用户名</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="userNameXl" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input layui-disabled" disabled>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">关联用户</label>
+					    <div class="layui-input-block">
+					      <select name="interest" lay-filter="aihao">
+					        <option value=""></option>
+					        <option value="0">写作</option>
+					        <option value="1" selected="">阅读</option>
+					        <option value="2">游戏</option>
+					        <option value="3">音乐</option>
+					        <option value="4">旅行</option>
+					      </select>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">标题</label>
+					    <div class="layui-input-block">
+					      <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+					    </div>
+					  </div>
+					  <div class="layui-form-item layui-form-text">
+					    <label class="layui-form-label">消息内容</label>
+					    <div class="layui-input-block">
+					      <textarea placeholder="消息内容" class="layui-textarea" name="desc"></textarea>
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <label class="layui-form-label">APP推送</label>
+					    <div class="layui-input-block">
+					      <input type="radio" name="sex6" value="1" title="是" checked="">
+					      <input type="radio" name="sex6" value="2" title="否">
+					    </div>
+					  </div>
+					  <div class="layui-form-item">
+					    <div class="layui-input-block">
+					      <button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="demo5">立即提交</button>
+					    </div>
+					  </div>
+					</form>
+			    </div>
+			  </div>
+			</div>
+		</div>
+        
+		          
+		<script src="../../plugins/layui/layui.js" charset="utf-8"></script>
+		<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 --> 
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function(){
+			  var form = layui.form
+			  ,layer = layui.layer
+			  ,layedit = layui.layedit
+			  ,laydate = layui.laydate;
+			  
+			  
+			  //创建一个编辑器
+			  var editIndex = layedit.build('LAY_demo_editor');
+			 
+			  //自定义验证规则
+			  form.verify({
+			    title: function(value){
+			      if(value.length < 5){
+			        return '标题至少得5个字符啊';
+			      }
+			    }
+			    ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+			    ,content: function(value){
+			      layedit.sync(editIndex);
+			    }
+			  });
+			  
+			  
+			  //监听提交-修改
+			  form.on('submit(demo1)', function(data){
+			    layer.alert(JSON.stringify(data.field), {
+			      title: '最终的提交信息'
+			    })
+			    return false;
+			  });
+			  //监听提交
+			  form.on('submit(demo2)', function(data){
+			    layer.alert(JSON.stringify(data.field), {
+			      title: '最终的提交信息'
+			    })
+			    return false;
+			  });
+			  //监听提交
+			  form.on('submit(demo3)', function(data){
+			    layer.alert(JSON.stringify(data.field), {
+			      title: '最终的提交信息'
+			    })
+			    return false;
+			  });
+			  //监听提交
+			  form.on('submit(demo4)', function(data){
+			    layer.alert(JSON.stringify(data.field), {
+			      title: '最终的提交信息'
+			    })
+			    return false;
+			  });
+			  //监听提交
+			  form.on('submit(demo5)', function(data){
+			    layer.alert(JSON.stringify(data.field), {
+			      title: '最终的提交信息'
+			    })
+			    return false;
+			  });
+			  //监听提交
+			  form.on('submit(demo6)', function(data){
+			    layer.alert(JSON.stringify(data.field), {
+			      title: '最终的提交信息'
+			    })
+			    return false;
+			  });
+			  //表单初始赋值
+			  form.val('example', {
+			    "username": "贤心" // "name": "value"
+			    ,"password": "123456"
+			    ,"interest": 1
+			    ,"like[write]": true //复选框选中状态
+			    ,"close": true //开关状态
+			    ,"sex": "女"
+			    ,"desc": "我爱 layui"
+			    ,"userId":"123"
+			    ,'userNameXl':"test100"
+			    ,'userQQ':"456123548"
+			  })
+			  
+			  
+			});
+			</script>
+		<script>
+		layui.use('element', function(){
+		  var $ = layui.jquery
+		  ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+		  
+		  
+		  $('.site-demo-active').on('click', function(){
+		    var othis = $(this), type = othis.data('type');
+		    active[type] ? active[type].call(this, othis) : '';
+		  });
+
+		  element.on('tab(test)', function(elem){
+		    location.hash = 'test='+ $(this).attr('lay-id');
+		  });
+		  
+		});
+		</script>
+	</body>
+</html>

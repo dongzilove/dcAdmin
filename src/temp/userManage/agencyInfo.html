@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>消息列表-回复</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+		</style>
+	</head>
+	<body>
+		<form class="layui-form" action="" style="border-radius: 4px;margin: 10px 15px;background: #fff;padding: 28px 15px 28px 0px;">
+			<div class="layui-row">
+		      	<div class="layui-form-item">
+				    <div class="layui-input-block">
+				      <input type="radio" name="zd" lay-filter="filter" value="0" title="总代选择">
+				      <input type="radio" name="zd" lay-filter="filter" value="1" title="用户名" checked="">
+				    </div>
+				</div>
+			</div>
+			<div class="layui-row">
+				<div class="layui-form-item" id="hideUser">
+					<label class="layui-form-label">发送给</label>
+					<div class="layui-input-block">
+						<textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="layui-row">
+		    	<div class="layui-form-item layui-hide" id="hideZd">
+					<label class="layui-form-label">发送给</label>
+					<div class="layui-input-block">
+						<select xm-select="select" xm-select-type="1">
+							<option value=""></option>
+							<option value="0" selected="selected">充值</option>
+							<option value="1">手续费优惠</option>
+							<option value="2">提现不符退款</option>
+							<option value="3">活动红包</option>
+							<option value="4">不活跃下级清理</option>
+							<option value="5">下级存款返佣</option>
+							<option value="6">代理分红</option>
+							<option value="7">接收转账</option>
+							<option value="8">给下级转账</option>
+							<option value="9">手工加余额</option>
+							<option value="10">提现</option>
+							<option value="11">手工减余额</option>
+							<option value="12">小额资金清理</option>
+							<option value="13">彩票转MW</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="layui-row">
+				<div class="layui-form-item">
+					<label class="layui-form-label">标题</label>
+					<div class="layui-input-block">
+						 <input type="text" name="title1" lay-verify="title1" autocomplete="off" placeholder="请输入标题（最长18个字）" class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-row">
+				<div class="layui-form-item">
+					<label class="layui-form-label">消息内容</label>
+					<div class="layui-input-block">
+						<textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="layui-row">
+				<div class="layui-form-item">
+				    <label class="layui-form-label">app推送</label>
+				    <div class="layui-input-block">
+				      <input type="radio" name="info" value="0" title="是" checked="">
+				      <input type="radio" name="info" value="1" title="否">
+				    </div>
+				</div>
+			</div>
+			<div class="layui-inline" style="margin: auto;display: table;">
+				<button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="addAdmin">发送</button>
+				<!--<a id="addMsg" herf="javaScript(0);" class="layui-btn layui-btn-btnnew" style="width: 100px;">发送</a>-->
+				<button type="reset" class="layui-btn layui-btn-primary" style="width: 100px;">重置</button>
+			</div>
+		</form>
+		
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					$ = layui.jquery,
+					laydate = layui.laydate;
+
+				//创建一个编辑器
+				var editIndex = layedit.build('LAY_demo_editor');
+				//自定义验证规则
+				form.verify({
+					title1: function(value) {
+						if(value.length <= 0) {
+							return '标题不能为空';
+						}
+					},				
+				});
+
+				//监听提交
+				form.on('submit(addAdmin)', function(data) {
+					layer.msg('发送成功！', {
+				  		offset: 't',
+					  	anim: 1
+					});
+					window.parent.location.reload();
+					layer.closeAll('iframe'); //关闭弹出层
+					
+					return false;
+				});
+				form.on('radio(filter)', function(data){
+					debugger;
+			  	if(data.value == 0){
+			  		$('#hideUser').addClass("layui-hide")
+			  		$('#hideZd').removeClass("layui-hide")
+			  	}else{
+			  		$('#hideUser').removeClass("layui-hide")
+			  		$('#hideZd').addClass("layui-hide")
+			  	}
+			  });
+			});
+		</script>
+	</body>
+</html>

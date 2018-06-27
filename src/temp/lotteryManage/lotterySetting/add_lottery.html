@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加彩种</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+
+    .time .layui-form-label {
+        width: 185px;
+
+    }
+</style>
+<body>
+<div class="admin-list">
+    <form class="layui-form" action="">
+        <table class="layui-table">
+            <tbody>
+            <tr>
+                <td class="fb" style="width: 15%;">彩种名称首字母缩写:</td>
+                <td><input class="layui-input" type="text" placeholder="请输入彩种首字母缩写"></td>
+            </tr>
+            <tr>
+                <td class="fb">中文全称:</td>
+                <td><input class="layui-input" type="text" placeholder="请输入中文全称"></td>
+            </tr>
+            <tr>
+                <td class="fb">彩种类型:</td>
+                <td>
+                    <input type="radio" name="lottery_type" value="1" title="数字类型" checked="">
+                    <input type="radio" name="lottery_type" value="2" title="乐透同区型(例如sd11y)">
+                    <input type="radio" name="lottery_type" value="3" title="乐透分区型(例如蓝红球)">
+                    <input type="radio" name="lottery_type" value="4" title="低频3D">
+                    <input type="radio" name="lottery_type" value="5" title="基诺型">
+                    <input type="radio" name="lottery_type" value="6" title="快三型(例如江苏快三)">
+                    <input type="radio" name="lottery_type" value="7" title="快乐扑克(例如山东快乐扑克)">
+                    <input type="radio" name="lottery_type" value="8" title="pk拾(例如北京pk拾)">
+                    <input type="radio" name="lottery_type" value="9" title="六合彩">
+                    <input type="radio" name="lottery_type" value="10" title="PC蛋蛋">
+                </td>
+            </tr>
+            <tr>
+                <td class="fb">性质:</td>
+                <td>
+                    <input type="radio" name="property_id" value="1" title="时时彩">
+                    <input type="radio" name="property_id" value="2" title="十一选五">
+                    <input type="radio" name="property_id" value="3" title="快三">
+                    <input type="radio" name="property_id" value="4" title="快乐扑克">
+                    <input type="radio" name="property_id" value="5" title="低频3D">
+                    <input type="radio" name="property_id" value="6" title="pk拾">
+                    <input type="radio" name="property_id" value="7" title="六合彩">
+                    <input type="radio" name="property_id" value="8" title="双色球">
+                    <input type="radio" name="property_id" value="9" title="幸运28">
+                </td>
+            </tr>
+            <tr>
+                <td class="fb">彩种描述:</td>
+                <td><textarea placeholder="请输入内容" class="layui-textarea"></textarea></td>
+            </tr>
+            <tr>
+                <td class="narrow-label">奖期时间设置<br><span id="addissueset"><font color="Blue">[增加时间段]</font></span></td>
+                <td>
+                    <table class="table table-responsive table-bordered" id="issueset">
+                        <tbody>
+                        <tr>
+                            <td class="issuesettitle" style="color:green;"><b>第一段销售时间设置</b></td>
+                        </tr>
+                        <tr>
+                            <td class="time">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">有效状态:</label>
+                                    <div class="layui-input-inline">
+                                        <select name="quiz1">
+                                            <option value="0">无效</option>
+                                            <option value="1" selected="">有效</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">序号:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="username" lay-verify="required" placeholder="请输入"
+                                               class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">销售开始时间:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" class="layui-input" id="test4" placeholder="请选择时间">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">官方第一期销售截止时间:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" class="layui-input" id="test5" placeholder="请选择时间">
+                                    </div>
+                                    <label class="layui-form-label">官方销售结束时间:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" class="layui-input" id="test6" placeholder="请选择时间">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">销售周期:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="number" class="layui-input" placeholder="秒">
+                                    </div>
+                                    <label class="layui-form-label">等待开奖时间:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" class="layui-input" placeholder="秒">
+                                    </div>
+                                    <label class="layui-form-label">撤单时间:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="number" class="layui-input" placeholder="秒">
+                                    </div>
+                                    <label class="layui-form-label">号码录入时间:</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" class="layui-input" placeholder="秒">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="fb ">奖期规则:</td>
+                <td><input class="layui-input" type="text" placeholder="请输入规则"></td>
+            </tr>
+            <tr>
+                <td class="fb">清零规则:</td>
+                <td>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">年：</label>
+                        <div class="layui-input-inline">
+                            <select name="quiz1">
+                                <option selected="" value="0">清零</option>
+                                <option value="1">不清零</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label">月：</label>
+                        <div class="layui-input-inline">
+                            <select name="quiz1">
+                                <option selected="" value="0">清零</option>
+                                <option value="1">不清零</option>
+                            </select>
+
+                        </div>
+                        <label class="layui-form-label">日：</label>
+                        <div class="layui-input-inline">
+                            <select name="quiz1">
+                                <option selected="" value="0">清零</option>
+                                <option value="1">不清零</option>
+                            </select>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="fb">直选转直注数:</td>
+                <td><input class="layui-input" type="text" placeholder="请输入直转注数"></td>
+            </tr>
+            <tr>
+                <td class="fb">总水率:</td>
+                <td><input class="layui-input" type="text" placeholder="请输入总水率"></td>
+            </tr>
+            <tr>
+                <td class="fb">公司最少留水:</td>
+                <td><input class="layui-input" type="text" placeholder="请输入公司最少留水"></td>
+            </tr>
+            <tr>
+                <td class="fb">最小返点差:</td>
+                <td>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">从</label>
+                        <div class="layui-input-inline">
+                            <input class="layui-input" type="text" size="5">
+                        </div>
+                        <label class="layui-form-label">到</label>
+                        <div class="layui-input-inline">
+                            <input class="layui-input" type="text" size="5">
+                        </div>
+                        <label class="layui-form-label">返点差</label>
+                        <div class="layui-input-inline">
+                            <input class="layui-input" type="text" size="5">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">从</label>
+                        <div class="layui-input-inline">
+                            <input class="layui-input" type="text" size="5">
+                        </div>
+                        <label class="layui-form-label">到</label>
+                        <div class="layui-input-inline">
+                            <input class="layui-input" type="text" size="5">
+                        </div>
+                        <label class="layui-form-label">返点差</label>
+                        <div class="layui-input-inline">
+                            <input class="layui-input" type="text" size="5">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="fb">年度休市开始时间:</td>
+                <td>
+                    <input type="text" class="layui-input" id="test7" placeholder="请选择年度休市开始时间">
+                </td>
+            </tr>
+            <tr>
+                <td class="fb">年度休市结束时间:</td>
+                <td>
+                    <input type="text" class="layui-input" id="test8" placeholder="请选择年度休市结束时间">
+                </td>
+            </tr>
+            <tr>
+                <td class="fb">抓号延后秒数:</td>
+                <td><input class="layui-input" type="text" placeholder="请输入抓号延后秒数"></td>
+            </tr>
+            <tr>
+                <td class="fb">抓号次数:</td>
+                <td><input class="layui-input" type="text" placeholder="请输入抓号延后次数"></td>
+            </tr>
+            <tr>
+                <td class="fb">重试间隔秒数：</td>
+                <td>
+                    <input class="layui-input" type="text" placeholder="请输入重试间隔秒数">
+                    <span style="color: red">抓号频率最低不得低于30秒，最高不得高于300秒</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="fb">显示顺序:</td>
+                <td><input class="layui-input" type="text" placeholder="请输入显示顺序"></td>
+            </tr>
+            <tr>
+                <td class="fb">支持模式:</td>
+                <td>
+                    <input type="checkbox" value="1" title="2元">
+                    <input type="checkbox" value="1" title="2角">
+                    <input type="checkbox" value="1" title="2分">
+                    <input type="checkbox" value="1" title="1元">
+                    <input type="checkbox" value="1" title="1角">
+                    <input type="checkbox" value="1" title="1分">
+                    <input type="checkbox" value="1" title="2厘">
+                    <span style="color: #ff2a2a">暂时只用于app与新版wap--但是数据需要产生</span>
+                </td>
+            </tr>
+            <tr>
+                <td>状态:</td>
+                <td>
+                    <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest" lay-text="启用|禁用">
+                </td>
+            </tr>
+            <tr style="text-align: center">
+                <td colspan="2">
+                    <button class="layui-btn  layui-btn-btnnew" lay-submit="" lay-filter="demo1">提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use(['form', 'laydate'], function () {
+        var laydate = layui.laydate, form = layui.form;
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.alert('提交成功', {
+                title: '操作信息'
+            })
+            return false;
+        });
+        //时间选择器
+        laydate.render({
+            elem: '#test4'
+            , type: 'time'
+        });
+        laydate.render({
+            elem: '#test5'
+            , type: 'time'
+        });
+        laydate.render({
+            elem: '#test6'
+            , type: 'time'
+        });
+        //日期时间选择器
+        laydate.render({
+            elem: '#test7'
+            , type: 'datetime'
+        });
+        //日期时间选择器
+        laydate.render({
+            elem: '#test8'
+            , type: 'datetime'
+        });
+    })
+</script>
+</body>
+</html>

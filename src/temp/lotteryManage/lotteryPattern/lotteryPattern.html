@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>彩种模式</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div>
+	<div class="admin-list">
+		<div class="layui-row admin-title">
+			<span class="left title-T">彩种模式<span style="font-size: 13px;color: red;">(暂时只用于app和新版wap)</span></span>
+			<span class="right addAdmin add_pattern">增加模式</span>
+		</div>
+	    <div class="layui-field-box layui-form">
+	        <table class="layui-table">
+	            <thead>
+	            <tr>
+	                <td>模式名称</td>
+	                <td>模式值</td>
+	                <td>模式位</td>
+	                <td>状态</td>
+	                <td>操作</td>
+	            </tr>
+	            </thead>
+	            <tbody>
+	            <tr>
+	                <td>2元</td>
+	                <td>1</td>
+	                <td>1</td>
+	                <td>
+	                    <select data-area="1">
+	                        <option value="1" selected="selected">使用中</option>
+	                        <option value="0">禁用</option>
+	                    </select>
+	                </td>
+	                <td>
+	                    <button class="layui-btn layui-btn-btnnew pattern_compile" lay-submit="" lay-filter="demo1">编辑
+	                    </button>
+	                </td>
+	            </tr>
+	            <tr class="even1">
+	                <td>2角</td>
+	                <td>0.1</td>
+	                <td>2</td>
+	                <td>
+	                    <select data-area="2">
+	                        <option value="1" selected="selected">使用中</option>
+	                        <option value="0">禁用</option>
+	                    </select>
+	                </td>
+	                <td>
+	                    <button class="layui-btn layui-btn-btnnew pattern_compile" lay-submit="" lay-filter="demo1">编辑
+	                    </button>
+	                </td>
+	            </tr>
+	            <tr class="odd1">
+	                <td>2分</td>
+	                <td>0.01</td>
+	                <td>4</td>
+	                <td>
+	                    <select data-area="4">
+	                        <option value="1" selected="selected">使用中</option>
+	                        <option value="0">禁用</option>
+	                    </select>
+	                </td>
+	                <td>
+	                    <button class="layui-btn layui-btn-btnnew pattern_compile" lay-submit="" lay-filter="demo1">编辑
+	                    </button>
+	                </td>
+	            </tr>
+	            <tr class="even1">
+	                <td>1元</td>
+	                <td>0.5</td>
+	                <td>8</td>
+	                <td>
+	                    <select data-area="8">
+	                        <option value="1" selected="selected">使用中</option>
+	                        <option value="0">禁用</option>
+	                    </select>
+	                </td>
+	                <td>
+	                    <button class="layui-btn layui-btn-btnnew pattern_compile" lay-submit="" lay-filter="demo1">编辑
+	                    </button>
+	                </td>
+	            </tr>
+	            <tr class="odd1">
+	                <td>1角</td>
+	                <td>0.05</td>
+	                <td>16</td>
+	                <td>
+	                    <select data-area="16">
+	                        <option value="1" selected="selected">使用中</option>
+	                        <option value="0">禁用</option>
+	                    </select>
+	                </td>
+	                <td>
+	                    <button class="layui-btn layui-btn-btnnew pattern_compile" lay-submit="" lay-filter="demo1">编辑
+	                    </button>
+	                </td>
+	            </tr>
+	            <tr class="even1">
+	                <td>1分</td>
+	                <td>0.005</td>
+	                <td>32</td>
+	                <td>
+	                    <select data-area="32">
+	                        <option value="1" selected="selected">使用中</option>
+	                        <option value="0">禁用</option>
+	                    </select>
+	                </td>
+	                <td>
+	                    <button class="layui-btn layui-btn-btnnew pattern_compile" lay-submit="" lay-filter="demo1">编辑
+	                    </button>
+	                </td>
+	            </tr>
+	            <tr class="odd1">
+	                <td>2厘</td>
+	                <td>0.001</td>
+	                <td>64</td>
+	                <td>
+	                    <select data-area="64">
+	                        <option value="1">使用中</option>
+	                        <option value="0" selected="selected">禁用</option>
+	                    </select>
+	                </td>
+	                <td>
+	                    <button class="layui-btn layui-btn-btnnew pattern_compile" lay-submit="" lay-filter="demo1">编辑
+	                    </button>
+	                </td>
+	            </tr>
+	            </tbody>
+	        </table>
+	    </div>
+	</div>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'form', 'table'], function () {
+        var $ = layui.jquery, table = layui.table, form = layui.form;
+        $('.add_pattern').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '增加模式'
+                , area: ['80%', '90%']
+                , shade: 0
+                , maxmin: true
+                , content: 'add_pattern.html'
+                , zIndex: layer.zIndex //重点1
+            })
+        });
+        $('.pattern_compile').each(function () {
+            var $that = $(this);
+            $that.on('click', function () {
+                layer.open({
+                    type: 2,
+                    title: '模式编辑'
+                    , area: ['80%', '90%']
+                    , shade: 0
+                    , maxmin: true
+                    , content: 'pattern_compile.html'
+                    , zIndex: layer.zIndex //重点1
+                })
+            })
+        })
+    })
+</script>
+</body>
+</html>

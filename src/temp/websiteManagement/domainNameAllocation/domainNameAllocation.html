@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>域名分配</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+    .admin-list .admin-title .addAdmin{
+        color: #fff;
+        margin-top: 4px;
+    }
+    .admin-list .admin-title .addAdmin:hover{color: #fff;}
+</style>
+<body>
+<div class="admin-list">
+    <div class="layui-row admin-title">
+        <span class="left title-T">域名分配</span>
+        <span>(1.一个推广型域名只分配给一个总代，该域名注册的会员属于该总代，但目前也不限制其他会员登录；)</span>
+        <button class="layui-btn layui-btn-btnnew ManualAllocation right addAdmin">推广域名手动分配</button>
+        <button class="layui-btn layui-btn-btnnew add_domainName right addAdmin">增加域名</button>
+    </div>
+    <form class="layui-form" action="">
+        <table class="layui-table">
+            <thead>
+            <tr>
+                <td></td>
+                <td>总代</td>
+                <td>已分配域名</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" name="like1[write]" lay-skin="primary">
+                </td>
+                <td>guanwang</td>
+                <td>
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="51877.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="51877.net">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="81866.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="91966.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="www.51877.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="www.56877.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="www.51877.net">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="www.81866.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="www.91966.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="m.51877.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="m.56877.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="m.51877.net">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="m.81866.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="m.91966.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="119.28.73.82">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary" title="119.28.60.204">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="text-align: center;">
+            <button class="layui-btn  layui-btn-btnnew" lay-submit="" lay-filter="demo1">取消关联</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+
+        <div>
+            <b>可分配域名:</b>
+        </div>
+        <table class="layui-table">
+            <tbody>
+            <tr>
+                <td colspan="3">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary"
+                           title="346233.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary"
+                           title="m.346233.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary"
+                           title="www.346233.com">
+                </td>
+                <td colspan="3">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary"
+                           title="346533.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary"
+                           title="m.346533.com">
+                    <input type="checkbox" name="like1[write]" lay-skin="primary"
+                           title="www.346533.com">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="layui-btn layui-btn-danger">删除</button>
+                </td>
+                <td><b>总代:</b></td>
+                <td>
+                    <select>
+                        <option class="bs-title-option" value="">请选择 ...</option>
+                        <option value="guanwang" data-id="1">guanwang</option>
+                        <option value="dongbei" data-id="31">dongbei</option>
+                        <option value="weijueye1" data-id="34">weijueye1</option>
+                        <option value="weijueye2" data-id="40">weijueye2</option>
+                        <option value="weijueye3" data-id="41">weijueye3</option>
+                        <option value="weijueye4" data-id="42">weijueye4</option>
+                    </select>
+                </td>
+                <td>
+                    <button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="demo1">关联</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'form'], function () {
+        var $ = layui.jquery, form = layui.form;
+        //监听指定开关
+        form.on('submit(demo1)', function (data) {
+            layer.alert('操作成功', {
+                title: '操作信息'
+            });
+            return false;
+        });
+        $('.ManualAllocation').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '推广域名手工分配'
+                , area: ['70%', '90%']
+                , shade: 0
+                , maxmin: true
+                , content: 'ManualAllocation.html'
+                , zIndex: layer.zIndex //重点1
+            })
+        });
+        $('.add_domainName').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '增加域名'
+                , area: ['70%', '90%']
+                , shade: 0
+                , maxmin: true
+                , content: 'add_domainName.html'
+                , zIndex: layer.zIndex //重点1
+            })
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>表单</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<style>.layui-form-item .layui-form-checkbox{margin: 15px 15px;}</style>
+	</head>
+
+	<body>
+		<div style="margin: 15px;">
+			<form class="layui-form" action="">
+				<div class="layui-form-item">
+				    <div class="layui-input-block" style="margin: 0;">
+				      <input type="checkbox" name="like[write]" title="重庆时时彩">
+				      <input type="checkbox" name="like[read]" title="山东11选5">
+				      <input type="checkbox" name="like[daze]" title="新疆时时彩">
+				      <input type="checkbox" name="like[write]" title="江苏11选5">
+				      <input type="checkbox" name="like[read]" title="江西11选5">
+				      <input type="checkbox" name="like[daze]" title="广东11选5">
+				      <input type="checkbox" name="like[write]" title="天津时时彩">
+				      <input type="checkbox" name="like[read]" title="福彩3D">
+				      <input type="checkbox" name="like[daze]" title="体彩P3P5">
+				      <input type="checkbox" name="like[write]" title="幸运分分彩">
+				      <input type="checkbox" name="like[read]" title="江苏快三">
+				      <input type="checkbox" name="like[daze]" title="快三分分彩">
+				      <input type="checkbox" name="like[write]" title="山东快乐扑克3">
+				      <input type="checkbox" name="like[read]" title="500万秒秒彩">
+				      <input type="checkbox" name="like[daze]" title="11选5分分彩">
+				      <input type="checkbox" name="like[write]" title="北京PK拾">
+				      <input type="checkbox" name="like[read]" title="东京1.5分彩">
+				      <input type="checkbox" name="like[daze]" title="安徽快三">
+				      <input type="checkbox" name="like[write]" title="北京快三">
+				      <input type="checkbox" name="like[read]" title="香港⑥合彩">
+				      <input type="checkbox" name="like[daze]" title="双色球">
+				      <input type="checkbox" name="like[write]" title="幸运28">
+				      <input type="checkbox" name="like[read]" title="腾讯分分彩">
+				      <input type="checkbox" name="like[daze]" title="极速⑥合彩">
+				      <input type="checkbox" name="like[write]" title="幸运飞艇">
+				      <input type="checkbox" name="like[read]" title="广西快三">
+				      <input type="checkbox" name="like[daze]" title="湖北快三">
+				      <input type="checkbox" name="like[write]" title="河北快三">
+				      <input type="checkbox" name="like[read]" title="甘肃快三">
+				      <input type="checkbox" name="like[daze]" title="极速赛车">
+				    </div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-input-block" style="margin-top: 35px;margin-left: 40%;">
+						<button class="layui-btn layui-btn-btnnew" lay-submit="" lay-filter="addAdmin">立即提交</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate;
+
+				//创建一个编辑器
+				var editIndex = layedit.build('LAY_demo_editor');
+				//自定义验证规则
+				form.verify({
+					userName: function(value) {
+						if(value.length < 5) {
+							return '用户名长度4-21个字符不能为空且不能为纯数字!';
+						}
+					},
+					pass: [/(.+){6,12}$/, '密码必须6到12位'],
+					content: function(value) {
+						layedit.sync(editIndex);
+					},
+					zubie:function(value){
+						if(value.length <= 0) {
+							return '所属组别不能为空';
+						}
+					}
+				});
+
+				//监听提交
+				form.on('submit(addAdmin)', function(data) {
+					layer.closeAll('iframe'); //关闭弹出层
+					window.parent.location.reload();
+					return false;
+				});
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>收款行记录</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+
+    .select {
+        height: 38px;
+        line-height: 1.3;
+        border-width: 1px;
+        border-style: solid;
+        background-color: #fff;
+        border-radius: 2px;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div class="layui-row admin-title">
+        <span class="left title-T">收款行记录</span>
+    </div>
+    <div class="layui-field-box layui-form">
+        <div class="layui-inline">
+            <label class="layui-form-label">账变时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test6" placeholder="请输入日期区间">
+            </div>
+            <label>银行卡类型</label>
+            <div class="layui-input-inline">
+                <select class="select">
+                    <option value="0">请选择</option>
+                    <option value="1">收款卡</option>
+                    <option value="2">付款卡</option>
+                    <option value="3">备用金卡</option>
+                </select>
+            </div>
+            <label>银行卡</label>
+            <div class="layui-input-inline">
+                <select class="select">
+                    <option>请选择</option>
+                    <option value="79" style="">仁信微信&nbsp;仁信微信&nbsp;0004566</option>
+                    <option value="204" style="">&nbsp;浦发二维码7默认&nbsp;</option>
+                </select>
+            </div>
+            <label>账变类型</label>
+            <div class="layui-input-inline">
+                <select class="select">
+                    <option value="0">请选择</option>
+                    <option value="1">从玩家收款</option>
+                    <option value="2">付款给玩家</option>
+                    <option value="3">内部转入</option>
+                    <option value="4">内部转出</option>
+                </select>
+            </div>
+            <button class="layui-btn layui-btn-btnnew" style="margin-left:20px; " lay-submit="" lay-filter="demo1">查询</button>
+        </div>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td width="5%">帐变id</td>
+            <td>所属银行</td>
+            <td width="6%">源卡类型</td>
+            <td>源卡信息</td>
+            <td>目的卡信息</td>
+            <td>帐变类型</td>
+            <td>帐变金额</td>
+            <td>付出手续费</td>
+            <td>帐变前余额</td>
+            <td>帐变后余额</td>
+            <td>帐变时间</td>
+            <td>备注</td>
+            <td>ref_auto_id</td>
+            <td>提案id</td>
+        </tr>
+        </thead>
+    </table>
+    <div id="demo7"></div>
+</div>
+<script src="../../plugins/layui/layui.js"></script>
+<script>
+    layui.define(['layer', 'laypage', 'laydate', 'form'], function () {
+        var laypage = layui.laypage,form = layui.form;
+        //完整功能(分页)
+        laypage.render({
+            elem: 'demo7'
+            , count: 100
+            , layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+            , jump: function (obj) {
+                console.log(obj)
+            }
+        });
+        //日期范围
+        var laydate = layui.laydate;
+        laydate.render({
+            elem: '#test6'
+            , range: true
+        });
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            layer.alert('提交成功', {
+                title: '操作信息'
+            })
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

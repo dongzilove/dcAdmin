@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>存款列表</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+			#layui-layer1{width: 80%!important;}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list">
+			<div class="layui-row admin-title">
+				<span class="left title-T">存款列表</span>
+				<span class="right addAdmin">导出Excel</span>
+			</div>
+			<form class="layui-form" action="" style="margin: 0 15px;">
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4	">
+				      	<div class="layui-inline layui-form-item" style="width: 100%;">
+				        	<label class="layui-form-label">时间</label>
+				      		<div class="layui-input-block">
+				        		<input type="text" class="layui-input" id="test10" placeholder=" - ">
+				      		</div>
+				    	</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+						    <div class="layui-inline">
+						      <label class="layui-form-label">金额区间</label>
+						      <div class="layui-input-inline" style="width: 100px;">
+						        <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
+						      </div>
+						      <div class="layui-form-mid">-</div>
+						      <div class="layui-input-inline" style="width: 100px;">
+						        <input type="text" name="price_max" placeholder="￥" autocomplete="off" class="layui-input">
+						      </div>
+						    </div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">手工存款</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">自动存款</option>
+									<option value="2">手工存款</option>
+								</select>
+							</div>
+						</div>
+				    </div>
+				</div>
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">银行</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">2018-5-26</option>
+									<option value="2">2017-5-27</option>
+								</select>
+							</div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">收款卡</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">2018-5-26</option>
+									<option value="2">2017-5-27</option>
+								</select>
+							</div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">测试账号</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">正式账号</option>
+									<option value="2">测试账号</option>
+								</select>
+							</div>
+						</div>
+				    </div>
+				</div>
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				      	<div class="layui-form-item">
+						    <div class="layui-input-block">
+						      <input type="radio" name="zd" lay-filter="filter" value="0" title="所属总代">
+						      <input type="radio" name="zd" lay-filter="filter" value="1" title="用户名" checked="">
+						    </div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item layui-hide" id="hideZd">
+							<label class="layui-form-label">所属总代</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">11111</option>
+									<option value="2">22222</option>
+								</select>
+							</div>
+						</div>
+						<div class="layui-form-item" id="hideUser">
+							<label class="layui-form-label">用户名</label>
+							<div class="layui-input-block">
+								<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入用户名" class="layui-input">
+							</div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+						    <label class="layui-form-label">包含下级</label>
+						    <div class="layui-input-block">
+						      <input type="radio" name="sex" value="0" title="是" checked="">
+						      <input type="radio" name="sex" value="1" title="否">
+						    </div>
+						</div>
+				    </div>
+				</div>
+				<div class="layui-row">
+					<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">时间状态</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="1" selected="">申请时间</option>
+									<option value="2">完成时间</option>
+								</select>
+							</div>
+						</div>
+				    </div>
+				    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+				    	<div class="layui-form-item">
+							<label class="layui-form-label">状态</label>
+							<div class="layui-input-block">
+								<select name="interest" lay-filter="aihao">
+									<option value="0" selected="">请选择</option>
+									<option value="1">未处理</option>
+									<option value="2">已处理</option>
+								</select>
+							</div>
+						</div>
+				    </div>
+				</div>
+				<div class="layui-row">
+			    	<div class="layui-form-item">
+						<label class="layui-form-label">存款方式</label>
+						<div class="layui-input-block">
+							<select xm-select="select" xm-select-type="1">
+								<option value=""></option>
+								<option value="0" selected="selected">充值</option>
+								<option value="1">手续费优惠</option>
+								<option value="2">提现不符退款</option>
+								<option value="3">活动红包</option>
+								<option value="4">不活跃下级清理</option>
+								<option value="5">下级存款返佣</option>
+								<option value="6">代理分红</option>
+								<option value="7">接收转账</option>
+								<option value="8">给下级转账</option>
+								<option value="9">手工加余额</option>
+								<option value="10">提现</option>
+								<option value="11">手工减余额</option>
+								<option value="12">小额资金清理</option>
+								<option value="13">彩票转MW</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="layui-inline" style="margin: auto;display: table;">
+					<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-btnnew" style="width: 100px;">搜索</a>
+					<button type="reset" class="layui-btn layui-btn-primary" style="width: 100px;">重置</button>
+				</div>
+			</form>
+			<!--列表展示-->
+			<table class="layui-table" lay-data="{ height:482, url:'/datas/data_list.json', page:true, id:'idTest'}" lay-filter="demo">
+			  <thead>
+			    <tr>
+			      <th lay-data="{field:'id', width:120, fixed: 'left'}">用户名</th>
+			      <th lay-data="{field:'username', width:80}">类型</th>
+			      <th lay-data="{field:'sex', width:80}">卡户名</th>
+			      <th lay-data="{field:'city', width:80}">金额</th>
+			      <th lay-data="{field:'sign', width:160}">收款银行</th>
+			      <th lay-data="{field:'experience', width:80}">收款卡</th>
+			      <th lay-data="{field:'id', width:80}">订单号</th>
+			      <th lay-data="{field:'username', width:120}">请求订单号</th>
+			      <th lay-data="{field:'sex', width:140}">第三方订单号</th>
+			      <th lay-data="{field:'city', width:100}">支付账号</th>
+			      <th lay-data="{field:'sign', width:160}">发起时间</th>
+			      <th lay-data="{field:'experience', width:110}">完成时间</th>
+			      <th lay-data="{field:'experience', width:80}">时间差</th>
+			      <th lay-data="{field:'classify', width:150}">微信号/其他账号</th>
+			      <th lay-data="{field:'wealth', width:135, sort: true}">备注</th>
+			      <th lay-data="{field:'score', width:80, sort: true, fixed: 'right'}">状态</th>
+			      <th lay-data="{fixed: 'right', width:310, align:'center', toolbar: '#barDemo'}">操作</th>
+			    </tr>
+			  </thead>
+			</table>
+			 
+			<script type="text/html" id="barDemo">
+			  <a style="line-height: 30px;border-radius: 0;" class="layui-btn layui-btn-mini layui-btn-btnnew" lay-event="detail">查看</a>
+			  <a style="line-height: 30px;border-radius: 0;" class="layui-btn layui-btn-mini layui-btn-btnnew" lay-event="edit">确认充值</a>
+			  <a style="line-height: 30px;border-radius: 0;" class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">取消提案</a>
+			</script>
+			
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['form', 'layedit', 'laydate'], function() {
+				var form = layui.form,
+					layer = layui.layer,
+					layedit = layui.layedit,
+					laydate = layui.laydate,
+					$ = layui.jquery;
+				//监听提交
+				form.on('submit(demo1)', function(data) {
+					layer.alert(JSON.stringify(data.field), {
+						title: '最终的提交信息'
+					})
+					return false;
+				});
+				//日期时间范围
+			  laydate.render({
+			    elem: '#test10'
+			    ,type: 'datetime'
+			    ,range: true
+			  });
+			  form.on('radio(filter)', function(data){
+			  	if(data.value == 0){
+			  		$('#hideUser').addClass("layui-hide")
+			  		$('#hideZd').removeClass("layui-hide")
+			  	}else{
+			  		$('#hideUser').removeClass("layui-hide")
+			  		$('#hideZd').addClass("layui-hide")
+			  	}
+			  });  
+			  
+			layui.config({
+				base: '../../js/'
+			}).extend({
+				formSelects: 'formSelects-v3'
+			}).use(['form', 'formSelects'], function() {
+				var form = layui.form,
+				      formSelects = layui.formSelects;
+				      
+				      
+				formSelects.value('select');			//获取选中的值
+				formSelects.value('select', 'val');		//获取选中的val数组
+				formSelects.value('select', 'name');		//获取选中的name数组
+				formSelects.value('select', [1, 3]);	//动态赋值
+			});
+			});
+		</script>
+		
+		<script>
+			layui.use('table', function(){
+			  var table = layui.table;
+			  //监听表格复选框选择
+			  table.on('checkbox(demo)', function(obj){
+			    console.log(obj)
+			  });
+			  //监听工具条
+			  table.on('tool(demo)', function(obj){
+			    var data = obj.data;
+			    if(obj.event === 'detail'){//取消提案
+//			      layer.msg('ID：'+ data.id + ' 的查看操作');
+			      layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: '查看存款提案		'
+				        ,area: ['60%', '100%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'incomeInfo.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				        ,zIndex: layer.zIndex //重点1
+				      });
+			    } else if(obj.event === 'del'){
+			      layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: '取消提案		'
+				        ,area: ['60%', '50%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'incomeDetail.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				        ,zIndex: layer.zIndex //重点1
+				      });
+			    } else if(obj.event === 'edit'){//确认充值
+			    	layer.open({
+				        type: 2 //此处以iframe举例
+				        ,title: '确认充值'
+				        ,area: ['60%', '50%']
+				        ,shade: 0
+				        ,maxmin: true
+				        ,content: 'incomeDetail.html'
+				        ,btn2: function(){
+				          layer.closeAll();
+				        }
+				        
+				        ,zIndex: layer.zIndex //重点1
+				      });
+			      //layer.alert('编辑行：<br>'+JSON.stringify(data)) //得到的数据
+			    }
+			  });
+			  
+			  var $ = layui.$, active = {
+			    getCheckData: function(){ //获取选中数据
+			      var checkStatus = table.checkStatus('idTest')
+			      ,data = checkStatus.data;
+			      layer.alert(JSON.stringify(data));
+			    }
+			    ,getCheckLength: function(){ //获取选中数目
+			      var checkStatus = table.checkStatus('idTest')
+			      ,data = checkStatus.data;
+			      layer.msg('选中了：'+ data.length + ' 个');
+			    }
+			    ,isAll: function(){ //验证是否全选
+			      var checkStatus = table.checkStatus('idTest');
+			      layer.msg(checkStatus.isAll ? '全选': '未全选')
+			    }
+			  };
+			  
+			  $('.demoTable .layui-btn').on('click', function(){
+			    var type = $(this).data('type');
+			    active[type] ? active[type].call(this) : '';
+			  });
+			  $('#search').on('click', function() {
+					layer.msg('搜索成功！', {
+					  offset: 't',
+					  anim: 1
+					});
+					
+				});
+			});
+			</script>
+
+	</body>
+
+</html>

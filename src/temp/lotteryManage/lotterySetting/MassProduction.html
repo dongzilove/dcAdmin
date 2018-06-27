@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>批量生成奖期</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <table class="layui-table">
+        <tbody>
+        <tr>
+            <td>所属彩种</td>
+            <td>CQSSC</td>
+        </tr>
+        <tr>
+            <td>分段销售时间1</td>
+            <td>
+                开始时间：00:00:00<br>
+                结束时间：01:55:00<br>
+                游戏周期：300秒<br>
+                停售时间：30秒之前<br>
+                撤单时间：30秒之前<br>
+                开奖号码录入时间：30秒之后<br>
+            </td>
+        </tr>
+        <tr>
+            <td>分段销售时间2</td>
+            <td>
+                开始时间：05:00:00<br>
+                结束时间：22:00:00<br>
+                游戏周期：600秒<br>
+                停售时间：60秒之前<br>
+                撤单时间：60秒之前<br>
+                开奖号码录入时间：30秒之后<br>
+            </td>
+        </tr>
+        <tr>
+            <td>分段销售时间3</td>
+            <td>
+                开始时间：18:46:00<br>
+                结束时间：00:00:00<br>
+                游戏周期：300秒<br>
+                停售时间：30秒之前<br>
+                撤单时间：30秒之前<br>
+                开奖号码录入时间：30秒之后<br>
+            </td>
+        </tr>
+        <tr>
+            <td>休市日期</td>
+            <td>
+                0000-00-00 至 0000-00-00
+            </td>
+        </tr>
+        <tr>
+            <td>奖期生成日期</td>
+            <td>
+                <div class="layui-inline">
+                    <label class="layui-form-label">日期范围</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" id="test6" placeholder="请选择时间">
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr style="text-align: center">
+            <td></td>
+            <td colspan="2">
+                <button class="layui-btn  layui-btn-btnnew" lay-submit="" lay-filter="demo1">批量生成奖期</button>
+                <button  type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use(['laydate','form'], function () {
+        var laydate = layui.laydate, form = layui.form;
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            layer.alert('提交成功', {
+                title: '操作信息'
+            })
+            return false;
+        });
+        laydate.render({
+            elem: '#test6'
+            , range: true
+        });
+    })
+</script>
+</body>
+</html>

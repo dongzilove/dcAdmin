@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加固定奖金组</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+
+        background: #F2F5F4;
+    }
+
+    .layui-form-item .layui-form-label {
+        width: 100px;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div style="padding: 10px 0 0 10px">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">奖金组名称：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" placeholder="请输入奖金组名称">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">说明：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" placeholder="请输入说明">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">总代最高返点：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" placeholder="请输入总代最高返点">
+                </div>
+            </div>
+            <buuton class="layui-btn increase layui-btn-btnnew">批量设置</buuton>
+        </div>
+    </div>
+    <form class="layui-form" action="">
+        <table class="layui-table">
+            <thead>
+            <tr>
+                <td>彩种</td>
+                <td>玩法组</td>
+                <td>玩法</td>
+                <td>全包金额</td>
+                <td width="19%">奖金</td>
+                <td>对于多奖级是否兼中兼得</td>
+                <td>总利润</td>
+                <td>总代返点</td>
+                <td>公司留水</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td rowspan="3">CQSSC</td>
+                <td rowspan="3">两面盘</td>
+                <td>总和</td>
+                <td>8</td>
+                <td>
+                    <div class="layui-form-item">
+                        <div class="layui-input-inline">
+                            <input class="layui-input" placeholder="请输入金额" type="text"
+                                   style="display: inline-block;width: 50%">
+                            元（2注）
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    <span id="total_profit_874_1">1.000</span><br>
+                </td>
+                <td>
+                    <input class="layui-input" placeholder="请输入总代返点" type="text"></td>
+                <td>
+                    <span id="pure_profit_874_1">1.000</span><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    龙虎和
+                </td>
+                <td>200</td>
+                <td>
+                    <div>
+                        龙:
+                        <input size="9" value="">元
+                        （45注）<br>
+                        虎:
+                        <input size="9" value="" >元
+                        （45注）<br>
+                        和:
+                        <input size="9" value="">元
+                        （10注）<br>
+                    </div>
+                </td>
+                <td>&nbsp;
+                </td>
+                <td>
+                    <span id="total_profit_1068_1">1.000</span><br>
+                    <span id="total_profit_1068_2">1.000</span><br>
+                    <span id="total_profit_1068_3">1.000</span><br>
+                </td>
+                <td>
+                    <input class="layui-input" placeholder="请输入总代返点" type="text"></td>
+                <td>
+                    <span id="pure_profit_1068_1">1.000</span><br>
+                    <span id="pure_profit_1068_2">1.000</span><br>
+                    <span id="pure_profit_1068_3">1.000</span><br>
+                </td>
+            </tr>
+            <tr style="text-align: center">
+                <td colspan="9">
+                    <button class="layui-btn  layui-btn-btnnew" lay-submit="" lay-filter="demo1">提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use(['form', 'laydate'], function () {
+        var laydate = layui.laydate, form = layui.form;
+        //监听提交
+        form.on('submit(demo1)', function (data) {
+            layer.alert('提交成功', {
+                title: '操作信息'
+            })
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

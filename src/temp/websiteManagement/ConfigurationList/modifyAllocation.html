@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改配置</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <form class="layui-form" action="">
+        <table class="layui-table">
+            <tbody>
+            <tr>
+                <td style="width:20%;">所属父配置</td>
+                <td>
+                    <select style="height:30px;">
+                        <option value="0">作为顶级配置类</option>
+                        <option value="1">基本设置</option>
+                        <option value="4">号源网站参数</option>
+                        <option value="9">运营参数</option>
+                        <option value="16">优惠设置</option>
+                        <option value="23">财务相关</option>
+                        <option value="53">网络加速维护</option>
+                        <option value="99">彩票杀率配置</option>
+                        <option value="112">微信服务号</option>
+                        <option value="134">CDN配置</option>
+                        <option value="142">第三方支付接口地址</option>
+                        <option value="150">注册信息显示控制</option>
+                        <option value="185">活动配置</option>
+                        <option value="196">开奖直播</option>
+                        <option value="200">电子游戏配置</option>
+                        <option value="202">阿里云Oss配置</option>
+                        <option value="228">系统维护设置</option>
+                        <option value="258">基础设置</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>配置标题</td>
+                <td><input class="layui-input" type="text" name="title" placeholder="请输入标题"></td>
+            </tr>
+            <tr>
+                <td>说明</td>
+                <td><textarea class="layui-textarea" placeholder="请输入说明"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>配置key（不可重复）</td>
+                <td><input class="layui-input" type="text" placeholder="情输入配置key"></td>
+            </tr>
+            <tr>
+                <td>配置value</td>
+                <td><input class="layui-input" type="text" placeholder="请输入配置value"></td>
+            </tr>
+            <tr style="text-align: center">
+                <td colspan="2">
+                    <button class="layui-btn layui-btn-btnnew submit" lay-submit="" lay-filter="demo1">更新</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use(['layer','form'], function () {
+        var $ = layui.jquery,form = layui.form;
+        form.on('submit(demo1)', function(data){
+            layer.alert('操作成功', {
+                title: '操作信息'
+            });
+            return false;
+        });
+    })
+</script>
+</body>
+</html>

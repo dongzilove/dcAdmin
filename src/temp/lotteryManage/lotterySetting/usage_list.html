@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>玩法组列表</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../../plugins/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../../../plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../css/admin_list.css">
+</head>
+<style>
+    html {
+        background: #F2F5F4;
+    }
+</style>
+<body>
+<div class="admin-list">
+    <div style="padding: 10px 0 0 10px">
+        <button class="layui-btn increase layui-btn-btnnew add_Play_group">增加玩法组</button>
+    </div>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <td>所属彩种</td>
+            <td>mg_id</td>
+            <td>玩法组名称</td>
+            <td>说明</td>
+            <td>排序</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>CQSSC</td>
+            <td>410</td>
+            <td>斗牛</td>
+            <td>斗牛</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[410]" value="1" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>13</td>
+            <td>定位胆</td>
+            <td>五星定位</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[13]" value="2" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>16</td>
+            <td>五星</td>
+            <td>万位，千位，百位，十位和个位数字</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[16]" value="2" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>246</td>
+            <td>两面盘</td>
+            <td>两面盘</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[246]" value="3" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>409</td>
+            <td>1-5球</td>
+            <td>1-5球</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[409]" value="4" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>408</td>
+            <td>前中后</td>
+            <td>前中后</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[408]" value="5" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>403</td>
+            <td>第一球</td>
+            <td>第一球</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[403]" value="6" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>404</td>
+            <td>第二球</td>
+            <td>第二球</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[404]" value="7" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr class="odd1 click1">
+            <td>CQSSC</td>
+            <td>405</td>
+            <td>第三球</td>
+            <td>第三球</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[405]" value="8" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>406</td>
+            <td>第四球</td>
+            <td>第四球</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[406]" value="9" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>407</td>
+            <td>第五球</td>
+            <td>第五球</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[407]" value="10" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>26</td>
+            <td>四星</td>
+            <td>四星</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[26]" value="20" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>14</td>
+            <td>前三</td>
+            <td>万位，千位和百位数字</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[14]" value="30" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>27</td>
+            <td>中三</td>
+            <td>千位，百位，十位 三个数</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[27]" value="40" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>1</td>
+            <td>后三</td>
+            <td>百位，十位与个位数字</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[1]" value="50" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>15</td>
+            <td>前二</td>
+            <td>万位与千位数字</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[15]" value="60" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>2</td>
+            <td>后二</td>
+            <td>十位与和个位数字</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[2]" value="75" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>4</td>
+            <td>大小单双</td>
+            <td></td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[4]" value="80" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>3</td>
+            <td>不定胆</td>
+            <td>对应数字相同，与位置无关</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[3]" value="90" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>134</td>
+            <td>任选</td>
+            <td>任选</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[134]" value="100" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td>CQSSC</td>
+            <td>151</td>
+            <td>趣味玩法</td>
+            <td>趣味玩法</td>
+            <td>
+                <input class="input-sm form-control" type="text" name="sort_ids[151]" value="110" size="3"></td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew add_usage">玩法</button>
+                <button class="layui-btn layui-btn-btnnew add_Play_group">修改</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+            <td>
+                <button class="layui-btn layui-btn-btnnew">保存</button>
+            </td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../../../plugins/layui/layui.js"></script>
+<script>
+    layui.use('layer', function () {
+        var $ = layui.jquery;
+        $('.add_usage').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '玩法列表'
+                , area: ['100%', '100%']
+                , shade: 0
+                , maxmin: true
+                , content: 'add_usage.html'
+                , zIndex: layer.zIndex //重点1
+            })
+        })
+        //增加玩法组add_Play_group
+        $('.add_Play_group').on('click', function () {
+            layer.open({
+                type: 2,
+                title: '增加玩法组'
+                , area: ['100%', '100%']
+                , shade: 0
+                , maxmin: true
+                , content: 'add_Play_group.html'
+                , zIndex: layer.zIndex //重点1
+            })
+        })
+    })
+</script>
+</body>
+</html>

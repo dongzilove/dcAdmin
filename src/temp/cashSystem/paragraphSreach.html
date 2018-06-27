@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>查看提款提案</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+
+		<link rel="stylesheet" href="../../plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/admin_list.css">
+		<style>
+			html{background: #F2F5F4;}
+			.layui-tab-title .layui-this{background: #fff;}
+			.layui-tab-content{background: #F2F5F4;}
+			.layui-tab-content .par_bg{background: #fff;border-radius: 4px;}
+			.par_bg span{padding: 0 10px;color: #999}
+			.layui-btn-btnnew{
+				width: 60px;
+			    padding: 0 0;
+			    height: 25px;
+			    line-height: 25px;
+			    margin-top: -4px;
+    			margin-left: 10px;
+			}
+			.layui-table-view{margin: 0 0 25px 0;}
+		</style>
+	</head>
+
+	<body>
+		<div class="admin-list">
+			<!--<div class="layui-row admin-title">
+				<span class="left title-T">数字型开奖</span>
+			</div>-->
+			<div class="layui-tab">
+			  <ul class="layui-tab-title" style="background: #ddd;">
+			    <li class="layui-this">基本信息</li>
+			    <li>提款风险评估一(最近存提趋势)</li>
+			    <li>提款风险评估二(上次提款后到现在)</li>
+			    <li>提款风险评估三(帐号与投注风险)</li>
+			    <li>提款风险评估四(流水要求)</li>
+			  </ul>
+			  <div class="layui-tab-content">
+			    <div class="layui-tab-item layui-show">
+			    	<div class="par_bg">
+			    		<div class="layui-row">
+						    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>withdraw_id</span>1</div>
+						    </div>
+						    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>用户名</span>bill00</div>
+						    </div>
+						    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>注册时间</span>2018-04-17 16:38:19【2个月前】</div>
+						    </div>
+						</div>
+						<div class="layui-row">
+						    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>提款银行</span>招商银行<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-btnnew">复制</a></div>
+						    </div>
+						    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>提款卡户名</span>比尔<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-btnnew">复制</a></div>
+						    </div>
+						    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>提款卡号</span>62140004001116113<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-btnnew">复制</a></div>
+						    </div>
+						</div>
+						<div class="layui-row">
+						    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>提款金额</span>300.00<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-btnnew">复制</a></div>
+						    </div>
+						    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>支行地址</span>广东省 广州市 liwanzhihang</div>
+						    </div>
+						    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>申请提款时间</span>2018-06-07 19:52:55</div>
+						    </div>
+						</div>
+						<div class="layui-row">
+						    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>状态</span>我 正在处理</div>
+						    </div>
+						    <div class="layui-col-xs4 layui-col-sm4 layui-col-md4" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>备注</span>2018-06-07 19:52:55</div>
+						    </div>
+						</div>
+						<fieldset class="layui-elem-field layui-field-title" style="20px 15px;">
+						  <legend>出款信息</legend>
+						</fieldset>
+						<table class="layui-hide" id="test"></table>
+ 
+			    	</div>
+			    </div>
+			    <div class="layui-tab-item">
+			    	<div class="par_bg">
+			    		<div class="layui-row">
+						    <div class="layui-col-xs3 layui-col-sm3 layui-col-md3" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>小计(存)</span>0</div>
+						    </div>
+						    <div class="layui-col-xs3 layui-col-sm3 layui-col-md3" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>小计(提)</span>0</div>
+						    </div>
+						    <div class="layui-col-xs3 layui-col-sm3 layui-col-md3" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>总存提差</span>0</div>
+						    </div>
+						    <div class="layui-col-xs3 layui-col-sm3 layui-col-md3" style="    margin-top: 15px;">
+						      <div class="grid-demo"><span>近期总盈亏比</span>0</div>
+						    </div>
+						</div>
+						<fieldset class="layui-elem-field layui-field-title" style="margin: 20px 15px 0 15px;">
+						  <legend>近期存提列表</legend>
+						</fieldset>
+						<!--列表展示-->
+						<div class="layui-field-box layui-form">
+							<table class="layui-table admin-table">
+								<thead>
+									<tr>
+										<!--<th style="width: 30px;"><input type="checkbox" lay-filter="allselector" lay-skin="primary"></th>-->
+										<th>时间</th>
+										<th>存</th>
+										<th>提</th>
+									</tr>
+								</thead>
+								<tbody id="content">
+								</tbody>
+							</table>
+						</div>
+ 
+			    	</div>
+			    </div>
+			    <div class="layui-tab-item">
+			    	<div class="par_bg" style="padding: 1px 0px 25px 0;">
+			    		<div class="layui-row" style="margin-top: 20px;">
+					      <div class="layui-form-item">
+						    <label style="width: 105px;" class="layui-form-label layui-form-mid	 layui-word-aux">上次提款情况</label>
+						    <div class="layui-form-mid" style="color: red;">【第一次提款】</div>
+						  </div>
+						</div>
+						<div class="layui-row" style="margin-top: 20px;">
+					      <div class="layui-form-item">
+						    <label style="width: 105px;" class="layui-form-label layui-form-mid	 layui-word-aux">本次提款情况</label>
+						    <div class="layui-form-mid">2018-06-07 19:52:55 提款 300.00   提款后余额：9700.0000</div>
+						  </div>
+						</div>
+						<div class="layui-row" style="margin-top: 20px;">
+					      <div class="layui-form-item">
+						    <label style="width: 105px;" class="layui-form-label layui-form-mid	 layui-word-aux">期间优惠总额</label>
+						    <div class="layui-form-mid" style="color: red;">0</div>
+						  </div>
+						</div>
+						<div class="layui-row" style="margin-top: 20px;">
+					      <div class="layui-form-item">
+						    <label style="width: 105px;" class="layui-form-label layui-form-mid	 layui-word-aux">余额核算</label>
+						    <div class="layui-form-mid">(本次提款金额 + 本次本地余额) - (上次本地余额 + 期间存款量 + 期间优惠总额) = 输赢值
+(300.00 + 9700.0000) - (0 + 0 + 0) = <span style="color: red;">10000</span></div>
+						  </div>
+						</div>
+						<div class="layui-row" style="margin-top: 20px;">
+					      <div class="layui-form-item">
+						    <label style="width: 105px;" class="layui-form-label layui-form-mid	 layui-word-aux">期间盈亏比</label>
+						    <div class="layui-form-mid">0</div>
+						  </div>
+						</div>
+ 
+			    	</div>
+			    </div>
+			    <div class="layui-tab-item">
+			    	<div class="par_bg" style="padding: 1px 0px 25px 0;">
+			    		<div class="layui-row" style="margin-top: 20px;">
+					      <div class="layui-form-item">
+						    <label class="layui-form-label layui-form-mid	 layui-word-aux">低危</label>
+						    <div class="layui-form-mid">客户第一次提款</div>
+						  </div>
+						</div>
+						<div class="layui-row" style="margin-top: 20px;">
+					      <div class="layui-form-item">
+						    <label style="color: red!important;" class="layui-form-label layui-form-mid	 layui-word-aux">中危</label>
+						    <div class="layui-form-mid" style="color: red;">
+						    	于2018-06-20 19:00:51, 客户更新了新的绑定卡，并且正在使用这张银行卡取款（时间范围：上次成功取款到本次申请取款之间）
+						    </div>
+						  </div>
+						</div>
+						<div class="layui-row" style="margin-top: 20px;">
+					      <div class="layui-form-item">
+						    <label style="color: red!important;" class="layui-form-label layui-form-mid	 layui-word-aux">高危</label>
+						    <div class="layui-form-mid" style="color: red;">
+						    	于2018-06-20 19:22:11, 客户通过客服修改资金密码（时间范围：上次成功取款到本次申请取款之间）
+						    </div>
+						  </div>
+						</div>
+ 
+			    	</div>
+			    </div>
+			    <div class="layui-tab-item">
+			    	<!--列表展示(11选5分分彩)-->
+			    	<table class="layui-hide" id="test5"></table>
+			    	<fieldset class="layui-elem-field layui-field-title" style="margin: 20px 15px 0 15px;">
+					  <legend>提案过程</legend>
+					  <span style="width: 100%;line-height: 35px;display: inline-block;">本提案已由 agent 于 2018-06-20 19:50:24 取消提款，取消原因：dd</span>
+					  <span>本提案已由 agent 于 2018-06-20 19:50:24 取消提款，取消原因：dd</span>
+					</fieldset>
+					<div class="layui-inline" style="margin: auto;display: table;margin-top: 30px;">
+						<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-btnnew" style="margin-top: 0;width: 100px;height: 38px;line-height: 38px;">审核提款</a>
+						<a id="search" herf="javaScript(0);" class="layui-btn layui-btn-danger layui-btn-mini" style="width: 100px;">拒绝提款</a>
+					</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../plugins/layui/layui.js"></script>
+		<!--数据展示-->
+		<script type="text/html" id="tpl">
+			{{# layui.each(d.list, function(index, item){ }}
+			<tr>
+				<!--<td><input type="checkbox" lay-skin="primary"></td>-->
+				<td>{{ item.name }}</td>
+				<td>{{ item.age }}</td>
+				<td>{{ item.age }}</td>
+			</tr>
+			{{# }); }}
+		</script>
+		<script>
+			layui.config({
+				base: '../../js/'
+			});
+
+			layui.use(['paging', 'form'], function() {
+				var $ = layui.jquery,
+					paging = layui.paging(),
+					layerTips = parent.layer === undefined ? layui.layer : parent.layer, //获取父窗口的layer对象
+					layer = layui.layer, //获取当前窗口的layer对象
+					form = layui.form;
+
+                paging.init({
+                    openWait: true,
+                    url: '../../datas/laytpl_laypage_data.json?v=' + new Date().getTime(), //地址
+					elem: '#content', //内容容器
+					params: { //发送到服务端的参数
+					},
+					type: 'GET',
+					tempElem: '#tpl', //模块容器
+					pageConfig: { //分页参数配置
+						elem: '#paged', //分页容器
+						pageSize: 3 //分页大小
+					},
+					success: function() { //渲染成功的回调
+						//alert('渲染成功');
+					},
+					fail: function(msg) { //获取数据失败的回调
+						//alert('获取数据失败')
+					},
+				});
+
+				var addBoxIndex = -1;
+			});
+		</script>
+		<script>
+			layui.use('table', function(){
+			  var table = layui.table;
+			  
+			  table.render({
+			    elem: '#test'
+			    ,url:'/datas/data_list.json'
+			    ,cols: [[
+			      {field:'id', title: '用户名'}
+			      ,{field:'username', title: '类型'} //width 支持：数字、百分比和不填写。你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
+			      ,{field:'sex', title: '所属总代'}
+			      ,{field:'city', title: '提款银行'}
+			      ,{field:'sign', title: '户名'}
+			      ,{field:'classify', title: '提款金额'} //单元格内容水平居中
+			      ,{field:'experience', title: '客户发起时间'} //单元格内容水平居中
+			      ,{field:'score', title: '执行时间'}
+			      ,{field:'wealth', title: '付款卡'}
+			    ]]
+			  });
+			});
+		</script>
+		<script>
+			layui.use(['element','form'],function(){
+				var element = layui.element;
+				var $ = layui.jquery;
+			  	var form = layui.form;
+			  	form.on('submit(btnSave)', function (data) {
+			  		console.log(data.field.interst);
+			  		console.log(data.field.title);
+					console.log(data);
+					if(data.field.interest == undefined || data.field.interest == ''){
+						layer.msg('奖期不能为空！', {
+					  		offset: 't',
+						  	anim: 1
+						});
+						return false;
+					}
+					if(data.field.title == undefined || data.field.title == ''){
+						layer.msg('中奖号码不能为空！', {
+					  		offset: 't',
+						  	anim: 1
+						});
+						return false;
+					}
+
+					
+					// * 发起请求
+					$.ajax({
+					    data: formData,
+					    type: "POST",
+					    dataType: "JSON",
+					    url: url,
+					    beforeSend: function () {
+					        // 禁用
+					        $("#btnSave").addClass('layui-btn-disabled');
+					    },
+					    complete: function () {
+					        // 启用
+					        $("#btnSave").removeClass('layui-btn-disabled');
+					    },
+					    success: function (result) {
+					        console.info("保存数据成功，返回的数据为：↓ ");
+					        console.info(result);
+					
+					        if (result.Status) {                            
+					            // 刷新列表
+					            parent.$("#mainGrid").bootstrapTable("selectPage", 1);
+					
+					            // 确保在最后关闭窗体
+					            parent.layer.close(parent.layer.getFrameIndex(window.name));
+					        } else {
+					            // 提示失败
+					            layer.alert(result.StatusMessage, { title: '提示信息', icon: 5 });
+					        }
+					    }
+					}); // end ajax
+					
+					return false;
+					});
+			});
+	
+			//11选5分分彩数据接口
+			layui.use('table', function(){
+			  var table = layui.table;
+			  
+			  table.render({
+			    elem: '#test5'
+			    ,url:'/datas/data_list.json'
+			    ,cols: [[
+			      {field:'id',width: 125, title: '序号'}
+			      ,{field:'username',width: 115,  title: '存款金额'}
+			      ,{field:'sex', width: 115, title: '存款类型'}
+			      ,{field:'city',width: 115,title: '倍数'}
+			      ,{field:'sign', title: '存款时间'}
+			      ,{field:'experience', title: '提交时间'}
+			      ,{field:'score',title: '期间有效投注总额 / 期间打码量需求'}
+			    ]]
+			  });
+			});
+		
+		</script>
+	</body>
+
+</html>
